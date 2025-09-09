@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 5
   laneDistance: 6
+  speed_multiplier: 0.3
   jumpForce: 7
   gravity: -20
   groundCheck: {fileID: 3039079450148733133}
