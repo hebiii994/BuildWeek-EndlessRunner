@@ -4,27 +4,48 @@ using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
-    [SerializeField] private Transform spawnPoint;
-    [SerializeField] private GameObject triggerPoint;
-    [SerializeField] private float offset;
+    [SerializeField] private string[] _roadTags;
+    [SerializeField] private float _roadLength = 50f;
+    [SerializeField] private int _numberOfRoads = 5;
 
-    [SerializeField] private GameObject roadPrefab;
+    private ObjectPooler _objectPooler;
+    private float _zSpawn = 0f;
+    private List<GameObject> _activeRoads = new List<GameObject>();
+    private Transform _playerTransform;
 
-    public void PlaceRoad()
+
+    void Start()
     {
-        var n = Instantiate(roadPrefab,new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z + offset),Quaternion.identity);
+        _objectPooler = ObjectPooler.Instance;
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        DestroyComponent(this);
+        for (int i = 0; i < _numberOfRoads; i++)
+        {
+            if (i == 0)
+                SpawnRoad(0);
+            else
+                SpawnRoad(Random.Range(0, _roadTags.Length));
+        }
+    }
+    public void SpawnRoad(int roadIndex)
+    {
+        string tag = _roadTags[roadIndex];
+        GameObject road = _objectPooler.SpawnFromPool(tag, transform.forward * _zSpawn, transform.rotation);
+
+        _activeRoads.Add(road);
+        _zSpawn += _roadLength;
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (_playerTransform.position.z - 35 > _zSpawn - (_numberOfRoads * _roadLength))
         {
-            PlaceRoad();
+            SpawnRoad(Random.Range(0, _roadTags.Length));
+            DeleteRoad();
         }
     }
-    private void DestroyComponent(RoadGenerator road)
+    private void DeleteRoad()
     {
-        Destroy(road);
+        _activeRoads[0].SetActive(false);
+        _activeRoads.RemoveAt(0);
     }
 }
