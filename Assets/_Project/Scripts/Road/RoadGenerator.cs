@@ -7,7 +7,6 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject triggerPoint;
     [SerializeField] private float offset;
-
     [SerializeField] private GameObject roadPrefab;
 
     public void PlaceRoad()
