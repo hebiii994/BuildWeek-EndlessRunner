@@ -15,6 +15,12 @@ public class CharacterMovement : MonoBehaviour
     private float verticalVelocity;
     private bool isSliding = false;
 
+    [Header("Ground Check Custom")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.2f;
+    [SerializeField] private LayerMask groundMask;
+    private bool isGrounded;
+
     [Header("Riferimenti")]
     private CharacterController controller;
     private Transform modelTransform;
@@ -59,6 +65,9 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        // nuovo ground check
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
         // Avanzamento costante
         Vector3 move = Vector3.forward * forwardSpeed;
 
@@ -77,16 +86,28 @@ public class CharacterMovement : MonoBehaviour
         move.x = (targetPosition - transform.position).x * 10f;
 
         // Salto e scivolata
-        if (controller.isGrounded)
+        if (isGrounded)
         {
-            verticalVelocity = -1f;
+            // Se siamo a terra e la velocità verticale è negativa, la resettiamo per "ancorarci"
+            if (verticalVelocity < 0)
+            {
+                verticalVelocity = -2f;
+            }
+
+            // Gestione degli input quando si è a terra
             if (Input.GetKeyDown(KeyCode.Space))
+            {
                 verticalVelocity = jumpForce;
+            }
+
             if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
                 StartCoroutine(Slide());
+            }
         }
         else
         {
+            // Applica la gravità solo quando il personaggio è in aria
             verticalVelocity += gravity * Time.deltaTime;
         }
 
@@ -98,7 +119,14 @@ public class CharacterMovement : MonoBehaviour
         // Aumenta velocità nel tempo 
          forwardSpeed += Time.deltaTime * 0.1f;
     }
-
+    private void OnDrawGizmos()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
+        }
+    }
     IEnumerator Slide()
     {
         if (isSliding) yield break;

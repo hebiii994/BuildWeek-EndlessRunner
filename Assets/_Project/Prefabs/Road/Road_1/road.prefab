@@ -12,14 +12,14 @@ GameObject:
   - component: {fileID: 8756169930926459348}
   - component: {fileID: 7147531619640922175}
   - component: {fileID: 5880714091279107841}
-  - component: {fileID: 7933475101998999622}
-  m_Layer: 0
+  - component: {fileID: 6782580254364754758}
+  m_Layer: 10
   m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3028563595012658270
 Transform:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7933475101998999622
+--- !u!114 &6782580254364754758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,13 +116,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1542494115597975724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065e019a695200640954962e57dbc78c, type: 3}
+  m_Script: {fileID: 11500000, guid: 740a2b47677df2444ade2cc663c971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 2102022606304970138}
-  triggerPoint: {fileID: 5827558185461122276}
-  offset: 25
-  roadPrefab: {fileID: 1542494115597975724}
+  _obstacleTags:
+  - Defensor
+  _spawnPoints:
+  - {fileID: 3517544297196654596}
+  - {fileID: 5619779617362930520}
+  - {fileID: 6246880537930231397}
 --- !u!1 &3517544297196654596
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +134,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102022606304970138}
-  m_Layer: 0
-  m_Name: spawnPoint
+  m_Layer: 10
+  m_Name: spawnPoint_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +150,38 @@ Transform:
   m_GameObject: {fileID: 3517544297196654596}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.49199998}
+  m_LocalPosition: {x: -0.3, y: 1.5, z: 0.4061}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7022803838534945489}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5619779617362930520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6492428602680021564}
+  m_Layer: 10
+  m_Name: spawnPoint_C
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6492428602680021564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619779617362930520}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0.432}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 193151211215681818}
   - component: {fileID: 8730908624030643015}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: triggerPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,12 +234,43 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 8.74, z: 0.026174095}
   m_Center: {x: 0, y: 3.9499998, z: 0.0027497292}
+--- !u!1 &6246880537930231397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7945755840857883856}
+  m_Layer: 10
+  m_Name: spawnPoint_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7945755840857883856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6246880537930231397}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 1.5, z: 0.419}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7022803838534945489}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6616365294940533274
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7022803838534945489}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RoadPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,6 +301,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2102022606304970138}
+  - {fileID: 6492428602680021564}
+  - {fileID: 7945755840857883856}
   - {fileID: 193151211215681818}
   m_Father: {fileID: 3028563595012658270}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
