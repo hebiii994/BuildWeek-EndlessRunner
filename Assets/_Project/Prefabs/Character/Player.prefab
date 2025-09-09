@@ -254,8 +254,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5361399240291055914}
-  - component: {fileID: 3118020319390830832}
   - component: {fileID: 8797068297817854892}
+  - component: {fileID: 6202750657240045690}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -280,27 +280,6 @@ Transform:
   - {fileID: 3039079450148733133}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3118020319390830832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7532332846195921786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce2cb0ec17ef2074b8628b10a7336818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwardSpeed: 5
-  laneDistance: 6
-  jumpForce: 7
-  gravity: -20
-  groundCheck: {fileID: 3039079450148733133}
-  groundDistance: 0.2
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!143 &8797068297817854892
 CharacterController:
   m_ObjectHideFlags: 0
@@ -327,6 +306,28 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6202750657240045690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7532332846195921786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2cb0ec17ef2074b8628b10a7336818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 5
+  laneDistance: 3
+  speed_multiplier: 0.1
+  jumpForce: 7
+  gravity: -20
+  groundCheck: {fileID: 3039079450148733133}
+  groundDistance: 0.2
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &7665779359005586414
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class CharacterMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movimento base")]
     public float forwardSpeed = 5f;      // Velocità iniziale
