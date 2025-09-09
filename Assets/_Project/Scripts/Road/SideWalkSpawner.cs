@@ -12,6 +12,6 @@ public class SideWalkSpawner : MonoBehaviour
     }
     public void RandomBuilding()
     {
-     var building = Instantiate(BuildingsPrefabs[Random.Range(0,BuildingsPrefabs.Count)],transform.position,Quaternion.identity);
+     var building = Instantiate(BuildingsPrefabs[Random.Range(0,BuildingsPrefabs.Count)],transform.position,Quaternion.identity,transform.parent);
     }
 }

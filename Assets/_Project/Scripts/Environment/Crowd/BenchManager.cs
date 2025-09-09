@@ -36,7 +36,7 @@ public class BenchManager : MonoBehaviour
                     SpawnPoints[i].transform.position.z);
 
 
-                Instantiate(_spectator, _spawnpointPos, Quaternion.identity);
+                Instantiate(_spectator, _spawnpointPos, Quaternion.identity,transform.parent);
             }
         }
     }
