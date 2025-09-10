@@ -37,7 +37,7 @@ public class RoadGenerator : MonoBehaviour
     }
     private void Update()
     {
-        if (_playerTransform.position.z - 35 > _zSpawn - (_numberOfRoads * _roadLength))
+        if (_playerTransform.position.z - 55 > _zSpawn - (_numberOfRoads * _roadLength))
         {
             SpawnRoad(Random.Range(0, _roadTags.Length));
             DeleteRoad();

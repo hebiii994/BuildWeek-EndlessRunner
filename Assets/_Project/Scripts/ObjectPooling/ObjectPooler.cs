@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pool
 {
     public string tag; // Un nome per identificare la pool 
-    public GameObject prefab; // Il prefab che questa pool gestisce
+    public List<GameObject> prefab = new List<GameObject>();
     public int size; // Il numero di oggetti da creare all'inizio
 }
 
@@ -28,7 +28,7 @@ public class ObjectPooler : MonoBehaviour
 
             for (int i = 0; i < pool.size; i++)
             {
-                GameObject obj = Instantiate(pool.prefab);
+                GameObject obj = Instantiate(pool.prefab[Random.Range(0,pool.prefab.Count)]);
                 obj.SetActive(false); 
                 objectPool.Enqueue(obj); 
             }
