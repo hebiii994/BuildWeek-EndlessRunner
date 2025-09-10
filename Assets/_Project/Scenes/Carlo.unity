@@ -536,14 +536,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7933475101998999622, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
-      propertyPath: isSnow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7933475101998999622, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
-      propertyPath: isDefault
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
