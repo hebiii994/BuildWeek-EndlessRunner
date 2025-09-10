@@ -8,7 +8,7 @@ public class BenchManager : MonoBehaviour
     [SerializeField] private GameObject _spectator;
     [SerializeField] private float _spawnPointOffset;
 
-    private void Awake()
+    private void Start()
     {
         for (int i = 0; i <= SpawnPoints.Count -1; i++)
         {

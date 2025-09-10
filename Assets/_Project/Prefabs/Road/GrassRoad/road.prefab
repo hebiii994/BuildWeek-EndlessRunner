@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740a2b47677df2444ade2cc663c971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingsPrefabs:
-  - {fileID: 1112738248936802904, guid: b5bc2912a5ac3534487394f410d29174, type: 3}
+  _obstacleTags: []
+  _spawnPoints: []
 --- !u!1 &104426311643253886
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,8 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740a2b47677df2444ade2cc663c971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingsPrefabs:
-  - {fileID: 1112738248936802904, guid: b5bc2912a5ac3534487394f410d29174, type: 3}
+  _obstacleTags: []
+  _spawnPoints: []
 --- !u!1 &186565073267553485
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,8 +729,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740a2b47677df2444ade2cc663c971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingsPrefabs:
-  - {fileID: 1112738248936802904, guid: b5bc2912a5ac3534487394f410d29174, type: 3}
+  _obstacleTags: []
+  _spawnPoints: []
 --- !u!1 &433513742259400742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,7 +1833,6 @@ GameObject:
   - component: {fileID: 8756169930926459348}
   - component: {fileID: 7147531619640922175}
   - component: {fileID: 5880714091279107841}
-  - component: {fileID: 7933475101998999622}
   m_Layer: 0
   m_Name: road
   m_TagString: Untagged
@@ -1932,27 +1931,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7933475101998999622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542494115597975724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065e019a695200640954962e57dbc78c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 2102022606304970138}
-  triggerPoint: {fileID: 5827558185461122276}
-  offset: 50
-  _roadDefaultPrefab: {fileID: 1542494115597975724}
-  _roadRainPrefab: {fileID: 4428617558853171702, guid: 1b67da5ca626c9a449f9bc0962a60f6b, type: 3}
-  _roadSnowPrefab: {fileID: 2412965016147905584, guid: bf0a00f2a9b11354ab286a5060746b44, type: 3}
-  isDefault: 0
-  isRain: 0
-  isSnow: 1
 --- !u!1 &1549464302862297092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4888,8 +4866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740a2b47677df2444ade2cc663c971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingsPrefabs:
-  - {fileID: 1112738248936802904, guid: b5bc2912a5ac3534487394f410d29174, type: 3}
+  _obstacleTags: []
+  _spawnPoints: []
 --- !u!1 &4172117392392737052
 GameObject:
   m_ObjectHideFlags: 0
@@ -7037,7 +7015,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -8674,8 +8652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740a2b47677df2444ade2cc663c971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingsPrefabs:
-  - {fileID: 1112738248936802904, guid: b5bc2912a5ac3534487394f410d29174, type: 3}
+  _obstacleTags: []
+  _spawnPoints: []
 --- !u!1 &7190065955355495581
 GameObject:
   m_ObjectHideFlags: 0
@@ -10641,8 +10619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740a2b47677df2444ade2cc663c971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingsPrefabs:
-  - {fileID: 1112738248936802904, guid: b5bc2912a5ac3534487394f410d29174, type: 3}
+  _obstacleTags: []
+  _spawnPoints: []
 --- !u!1 &8814372700137029078
 GameObject:
   m_ObjectHideFlags: 0
