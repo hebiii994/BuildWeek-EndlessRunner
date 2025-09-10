@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameOverMenu;
 
-    private int score = 0;
+    private int _score = 0;
 
     private void Awake()
     {
@@ -20,10 +20,21 @@ public class UIManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        UpdateScore(0);
+    }
+
     public void UpdateScore(int newScore)
     {
-        score = newScore;
-        scoreText.text = score.ToString();
+        _score = newScore;
+        scoreText.text = _score.ToString();
+    }
+
+    public void AddScore(int amount)
+    {
+        _score += amount;
+        UpdateScore(_score); 
     }
 
     public void SetCollectibleIcon(Sprite icon)
