@@ -4,47 +4,48 @@ using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
-    [SerializeField] private Transform spawnPoint;
-    [SerializeField] private GameObject triggerPoint;
-    [SerializeField] private float offset;
-    [SerializeField] private GameObject _roadDefaultPrefab;
-    [SerializeField] private GameObject _roadRainPrefab;
-    [SerializeField] private GameObject _roadSnowPrefab;
+    [SerializeField] private string[] _roadTags;
+    [SerializeField] private float _roadLength = 50f;
+    [SerializeField] private int _numberOfRoads = 5;
 
-    [SerializeField] private bool isDefault;
-    [SerializeField] private bool isRain;
-    [SerializeField] private bool isSnow;
+    private ObjectPooler _objectPooler;
+    private float _zSpawn = 0f;
+    private List<GameObject> _activeRoads = new List<GameObject>();
+    private Transform _playerTransform;
 
-    public void PlaceRoad()
+
+    void Start()
     {
+        _objectPooler = ObjectPooler.Instance;
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        switch ((isDefault, isRain, isSnow))
+        for (int i = 0; i < _numberOfRoads; i++)
         {
-            case(true,false,false):
-                Instantiate(_roadDefaultPrefab, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z + offset), Quaternion.identity);
-                break;
-
-            case(false,true,false):
-                Instantiate(_roadRainPrefab, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z + offset), Quaternion.identity);
-                break;
-
-            case(false,false,true):
-                Instantiate(_roadSnowPrefab, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z + offset), Quaternion.identity);
-                break;
-
+            if (i == 0)
+                SpawnRoad(0);
+            else
+                SpawnRoad(Random.Range(0, _roadTags.Length));
         }
+    }
+    public void SpawnRoad(int roadIndex)
+    {
+        string tag = _roadTags[roadIndex];
+        GameObject road = _objectPooler.SpawnFromPool(tag, transform.forward * _zSpawn, transform.rotation);
 
-          DestroyComponent(this);
+        _activeRoads.Add(road);
+        _zSpawn += _roadLength;
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (_playerTransform.position.z - 35 > _zSpawn - (_numberOfRoads * _roadLength))
         {
-            PlaceRoad();
+            SpawnRoad(Random.Range(0, _roadTags.Length));
+            DeleteRoad();
         }
     }
-    private void DestroyComponent(RoadGenerator road)
+    private void DeleteRoad()
     {
-        Destroy(road);
+        _activeRoads[0].SetActive(false);
+        _activeRoads.RemoveAt(0);
     }
 }

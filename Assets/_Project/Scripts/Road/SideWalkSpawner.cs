@@ -4,14 +4,31 @@ using UnityEngine;
 
 public class SideWalkSpawner : MonoBehaviour
 {
-    [SerializeField]private List<GameObject> BuildingsPrefabs = new List<GameObject>();
+    [SerializeField] private string[] _obstacleTags;
+    [SerializeField] private GameObject[] _spawnPoints;
 
-    private void Awake()
+    private ObjectPooler _objectPooler;
+
+    void OnEnable()
     {
-        RandomBuilding();
+        if (_objectPooler == null)
+        {
+            _objectPooler = ObjectPooler.Instance;
+        }
+
+        GenerateObstacles();
     }
-    public void RandomBuilding()
+    void GenerateObstacles()
     {
-     var building = Instantiate(BuildingsPrefabs[Random.Range(0,BuildingsPrefabs.Count)],transform.position,Quaternion.identity,transform.parent);
+        foreach (var point in _spawnPoints)
+        {
+            if (Random.Range(0, 100) < 50) 
+            {
+                string randomTag = _obstacleTags[Random.Range(0, _obstacleTags.Length)];
+                GameObject obstacle = _objectPooler.SpawnFromPool(randomTag, point.transform.position, Quaternion.identity);
+
+                obstacle.transform.SetParent(transform);
+            }
+        }
     }
 }
