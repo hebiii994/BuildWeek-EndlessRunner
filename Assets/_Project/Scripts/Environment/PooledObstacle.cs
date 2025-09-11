@@ -1,17 +1,22 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class PooledObstacle : MonoBehaviour
+public class PooledObstacle : Interactable
 {
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    public override void OnCollisionHappened(GameObject player)
     {
-        if (hit.gameObject.CompareTag("Player"))
+        // Recupera il LifeController del player
+        LifeController life = player.GetComponent<LifeController>();
+        if (life != null)
         {
-            Debug.Log("Collisione con ostacolo! GAME OVER");
-            // GameManager.Instance.EndGame();
-            Time.timeScale = 0;
+            life.TakeDamage();
+            Debug.Log("Player ha colpito un ostacolo!");
         }
+
+        // Qui puoi aggiungere effetti specifici dell'ostacolo
+        // ad esempio suoni, particelle, ecc.
     }
+
 }
 
