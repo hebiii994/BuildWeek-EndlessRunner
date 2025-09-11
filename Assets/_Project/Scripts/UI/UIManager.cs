@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _shopMenu;
     [SerializeField] private GameObject _optionsMenu;
 
-    private int score = 0;
+    private int _score = 0;
 
     private void Awake()
     {
@@ -24,16 +24,21 @@ public class UIManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void UpdateScore(int newScore)
+    private void Start()
     {
-        score = newScore;
-        _scoreText.text = score.ToString();
+        UpdateScore(0);
     }
 
-    public void UpdateTrophyCounter(int trophies)
+    public void UpdateScore(int newScore)
     {
-        if (_trophyCounterText != null)
-            _trophyCounterText.text = trophies.ToString();
+        _score = newScore;
+        scoreText.text = _score.ToString();
+    }
+
+    public void AddScore(int amount)
+    {
+        _score += amount;
+        UpdateScore(_score); 
     }
 
     public void SetCollectibleIcon(Sprite icon)
