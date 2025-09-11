@@ -526,6 +526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+      propertyPath: _roadTags.Array.data[0]
+      value: Stadium
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -580,6 +584,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+<<<<<<< Updated upstream
       propertyPath: pools.Array.data[0].prefab.Array.data[0]
       value: 
       objectReference: {fileID: 8709482373560122842, guid: edb2c414c162fd64faa9f9bd139edeec, type: 3}
@@ -603,6 +608,15 @@ PrefabInstance:
       propertyPath: pools.Array.data[1].prefab.Array.data[2]
       value: 
       objectReference: {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+=======
+      propertyPath: pools.Array.data[1].prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 4529197963528753858, guid: 9f3fca65030a66a41a34959e20fe4bc0, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[1].prefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 6365875043672229096, guid: 5b333cebda01df14281fd7f34decf280, type: 3}
+>>>>>>> Stashed changes
     - target: {fileID: 5341723745783326209, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: m_Name
       value: ObjectPooler

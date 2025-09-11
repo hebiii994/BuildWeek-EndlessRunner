@@ -49,5 +49,23 @@ MonoBehaviour:
     prefab: {fileID: 1542494115597975724, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
     size: 10
   - tag: Defensor
+<<<<<<< Updated upstream
     prefab: {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
     size: 20
+=======
+    prefab:
+    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    size: 20
+  - tag: Trophy
+    prefab:
+    - {fileID: 3453040407033113979, guid: 47f233ee538e68549b36329c661ce799, type: 3}
+    size: 40
+  - tag: Stadium
+    prefab:
+    - {fileID: 1542494115597975724, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
+    - {fileID: 6369876181176748688, guid: 3a3e5572803c3ed4aa3e296279d29c1c, type: 3}
+    - {fileID: 3245058584079454670, guid: 2cf3fb671679b85469a969612e2e77ed, type: 3}
+    size: 10
+>>>>>>> Stashed changes
