@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "PowerUp", menuName = "ScriptableObject/PowerUp")]
+//[CreateAssetMenu(fileName = "PowerUp", menuName = "ScriptableObject/PowerUp")]
 
 public abstract class AbstractPowerUp : ScriptableObject
 {
@@ -17,7 +17,7 @@ public abstract class AbstractPowerUp : ScriptableObject
         ApplyEffect(player);
 
         // Salva che questo power-up è attivo
-        SavePowerUpState();
+        
     }
 
     // Metodo astratto per applicare l'effetto specifico del power-up
@@ -26,17 +26,5 @@ public abstract class AbstractPowerUp : ScriptableObject
     protected abstract void ApplyEffect(GameObject player);
 
     //Questo sotto va aggiunto al metodo di acquisto del power-up
-    private void SavePowerUpState()
-    {
-        SaveData saveData = SaveSystem.Load() ?? new SaveData();
-
-        if (saveData.powerUps == null)
-            saveData.powerUps = new List<string>();
-
-        if (!saveData.powerUps.Contains(_powerUpID))
-        {
-            saveData.powerUps.Add(_powerUpID);
-            SaveSystem.Save(saveData);
-        }
-    }
+   
 }
