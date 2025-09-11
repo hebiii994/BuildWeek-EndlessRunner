@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float metersTraveled = 0f;
     [SerializeField] private float timeElapsed = 0f;
 
+    public float MetersTraveled => metersTraveled;
+    public float TimeElapsed => timeElapsed;
 
     void Awake()
     {
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // nuovo ground check
+        // Nuovo ground check
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         // Avanzamento costante
@@ -133,6 +135,17 @@ public class PlayerController : MonoBehaviour
         // Aumenta velocità nel tempo 
          forwardSpeed += Time.deltaTime * speed_multiplier;
     }
+    
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Controlla se l'oggetto ha un Interactable
+        Interactable interactable = hit.gameObject.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            interactable.OnCollisionHappened(gameObject);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if (groundCheck != null)
