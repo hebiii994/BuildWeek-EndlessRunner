@@ -2,66 +2,76 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &5341723745783326209
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1106684027694945099}
-  - component: {fileID: 4312130142915950033}
-  m_Layer: 0
-  m_Name: ObjectPooler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106684027694945099}
+  - component: {fileID: 4312130142915950033}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &1106684027694945099
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341723745783326209}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.14306, y: 1.6246316, z: -4.4794106}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341723745783326209}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.14306, y: 1.6246316, z: -4.4794106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4312130142915950033
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5341723745783326209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85849d62be572344092d89417edb10aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools:
-  - tag: Street
-    prefabs: 
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341723745783326209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85849d62be572344092d89417edb10aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Street
+    prefab: {fileID: 1542494115597975724, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
+    size: 10
+  - tag: Defensor
+<<<<<<< Updated upstream
+    prefab: {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    size: 20
+=======
+    prefab:
+    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    size: 20
+  - tag: Trophy
+    prefab:
+    - {fileID: 3453040407033113979, guid: 47f233ee538e68549b36329c661ce799, type: 3}
+    size: 40
+  - tag: Stadium
+    prefab:
     - {fileID: 1542494115597975724, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
-    size: 10
-  - tag: Defensor
-    prefabs:
-    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
-    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
-    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
-    size: 20
-  - tag: Trophy
-    prefabs:
-    - {fileID: 3453040407033113979, guid: 47f233ee538e68549b36329c661ce799, type: 3}
-    size: 40
-  - tag: Stadium
-    prefabs:
-    - {fileID: 1542494115597975724, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
-    - {fileID: 6369876181176748688, guid: 3a3e5572803c3ed4aa3e296279d29c1c, type: 3}
-    - {fileID: 3245058584079454670, guid: 2cf3fb671679b85469a969612e2e77ed, type: 3}
-    size: 10
+    - {fileID: 6369876181176748688, guid: 3a3e5572803c3ed4aa3e296279d29c1c, type: 3}
+    - {fileID: 3245058584079454670, guid: 2cf3fb671679b85469a969612e2e77ed, type: 3}
+    size: 10
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
