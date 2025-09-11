@@ -1835,11 +1835,8 @@ GameObject:
   - component: {fileID: 5880714091279107841}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
   m_Layer: 0
 =======
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   - component: {fileID: 5833284027361152503}
@@ -4274,7 +4271,6 @@ BoxCollider:
   m_Center: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 --- !u!1 &3517544297196654596
 GameObject:
   m_ObjectHideFlags: 0
@@ -4306,8 +4302,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7022803838534945489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
