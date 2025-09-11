@@ -6,14 +6,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    [SerializeField] private TMP_Text _scoreText;
-    [SerializeField] private TMP_Text _trophyCounterText;
+    [SerializeField] private TMP_Text _scoreText;           
+    [SerializeField] private TMP_Text _trophyCounterText;  
     [SerializeField] private Image _trophyIcon;
     [SerializeField] private Image[] _powerupSlots;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _gameOverMenu;
-    [SerializeField] private GameObject _mainMenu;
-    [SerializeField] private GameObject _shopMenu;
     [SerializeField] private GameObject _optionsMenu;
 
     private int _score = 0;
@@ -27,18 +25,32 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         UpdateScore(0);
+        UpdateTrophyUI(TrophyManager.Instance.GetTrophies());
+
+        TrophyManager.Instance.OnTrophyChanged += UpdateTrophyUI;
+    }
+
+    private void OnDestroy()
+    {
+        if (TrophyManager.Instance != null)
+            TrophyManager.Instance.OnTrophyChanged -= UpdateTrophyUI;
     }
 
     public void UpdateScore(int newScore)
     {
         _score = newScore;
-        scoreText.text = _score.ToString();
+        _scoreText.text = _score.ToString();
     }
 
     public void AddScore(int amount)
     {
         _score += amount;
-        UpdateScore(_score); 
+        UpdateScore(_score);
+    }
+
+    private void UpdateTrophyUI(int total)
+    {
+        _trophyCounterText.text = total.ToString();
     }
 
     public void SetCollectibleIcon(Sprite icon)
@@ -66,7 +78,5 @@ public class UIManager : MonoBehaviour
 
     public void ShowPauseMenu(bool show) => _pauseMenu.SetActive(show);
     public void ShowGameOver(bool show) => _gameOverMenu.SetActive(show);
-    public void ShowMainMenu(bool show) => _mainMenu.SetActive(show);
-    public void ShowShop(bool show) => _shopMenu.SetActive(show);
     public void ShowOptions(bool show) => _optionsMenu.SetActive(show);
 }

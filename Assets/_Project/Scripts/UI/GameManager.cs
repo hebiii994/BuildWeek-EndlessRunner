@@ -6,7 +6,7 @@ public enum GameState { Start, InGame, Paused, GameOver }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameState currentState = GameState.Start;
+    private GameState _currentState = GameState.Start;
 
     private void Awake()
     {
@@ -16,23 +16,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SetState(GameState.Start);
+        //SetState(GameState.Start);
+        SetState(GameState.InGame); 
     }
 
     public void SetState(GameState newState)
     {
-        currentState = newState;
+        _currentState = newState;
 
         switch (newState)
         {
             case GameState.Start:
                 Time.timeScale = 0f;
-                UIManager.Instance.ShowMainMenu(true);
                 break;
 
             case GameState.InGame:
                 Time.timeScale = 1f;
-                UIManager.Instance.ShowMainMenu(false);
                 UIManager.Instance.ShowPauseMenu(false);
                 UIManager.Instance.ShowGameOver(false);
                 break;
@@ -49,20 +48,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
-    {
-        SetState(GameState.InGame);
-    }
-
-    public void PauseGame()
-    {
-        SetState(GameState.Paused);
-    }
-
-    public void ResumeGame()
-    {
-        SetState(GameState.InGame);
-    }
+    public void StartGame() => SetState(GameState.InGame);
+    public void PauseGame() => SetState(GameState.Paused);
+    public void ResumeGame() => SetState(GameState.InGame);
+    public void EndGame() => SetState(GameState.GameOver);
 
     public void RestartGame()
     {
@@ -73,16 +62,8 @@ public class GameManager : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu"); 
+        SceneManager.LoadScene(SceneNames.MainMenu);
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-
-    public void EndGame()
-    {
-        SetState(GameState.GameOver);
-    }
+    public void ExitGame() => Application.Quit();
 }

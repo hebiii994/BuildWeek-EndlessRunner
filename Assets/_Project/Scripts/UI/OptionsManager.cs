@@ -5,8 +5,8 @@ public class OptionsManager : MonoBehaviour
 {
     public static OptionsManager Instance;
 
-    [SerializeField] private AudioMixer audioMixer;
-    private float volume = 1f;
+    [SerializeField] private AudioMixer _audioMixer;
+    private float _volume = 1f;
 
     private void Awake()
     {
@@ -23,12 +23,9 @@ public class OptionsManager : MonoBehaviour
 
     public void SetVolume(float value)
     {
-        volume = value;
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
+        _volume = Mathf.Clamp(value, 0.0001f, 1f); 
+        _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_volume) * 20);
     }
 
-    public float GetVolume()
-    {
-        return volume;
-    }
+    public float GetVolume() => _volume;
 }

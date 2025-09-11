@@ -3,35 +3,36 @@ using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
 {
-    public string itemName;
-    public int price;
-    public Button buyButton;
+    [SerializeField] private string _itemName;
+    [SerializeField] private int _price;
+    [SerializeField] private Button _buyButton;
 
-    private void Start()
+    private void OnEnable()
     {
         TrophyManager.Instance.OnTrophyChanged += UpdateButton;
         UpdateButton(TrophyManager.Instance.GetTrophies());
 
-        buyButton.onClick.AddListener(Buy);
+        _buyButton.onClick.AddListener(Buy);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (TrophyManager.Instance != null)
             TrophyManager.Instance.OnTrophyChanged -= UpdateButton;
+
+        _buyButton.onClick.RemoveListener(Buy);
     }
 
     private void UpdateButton(int currentTrophies)
     {
-        buyButton.interactable = currentTrophies >= price;
+        _buyButton.interactable = currentTrophies >= _price;
     }
 
     private void Buy()
     {
-        if (TrophyManager.Instance.SpendTrophies(price))
+        if (TrophyManager.Instance.SpendTrophies(_price))
         {
-            Debug.Log($"Acquistato {itemName} per {price} trofei!");
-
+            Debug.Log($"Acquistato {_itemName} per {_price} trofei!");
         }
     }
 }

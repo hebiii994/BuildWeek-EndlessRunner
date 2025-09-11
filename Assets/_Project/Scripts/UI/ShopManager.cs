@@ -3,12 +3,11 @@ using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text trophyCounterText;
+    [SerializeField] private TMP_Text _trophyCounterText;
 
     private void OnEnable()
     {
         UpdateTrophyUI(TrophyManager.Instance.GetTrophies());
-
         TrophyManager.Instance.OnTrophyChanged += UpdateTrophyUI;
     }
 
@@ -20,6 +19,6 @@ public class ShopManager : MonoBehaviour
 
     private void UpdateTrophyUI(int total)
     {
-        trophyCounterText.text = total.ToString();
+        _trophyCounterText.text = total.ToString();
     }
 }
