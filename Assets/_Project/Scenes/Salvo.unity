@@ -586,6 +586,7 @@ PrefabInstance:
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       propertyPath: pools.Array.data[0].prefab.Array.data[0]
       value: 
       objectReference: {fileID: 8709482373560122842, guid: edb2c414c162fd64faa9f9bd139edeec, type: 3}
@@ -612,6 +613,8 @@ PrefabInstance:
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
       propertyPath: pools.Array.data[1].prefab.Array.data[1]
       value: 
       objectReference: {fileID: 4529197963528753858, guid: 9f3fca65030a66a41a34959e20fe4bc0, type: 3}
@@ -620,6 +623,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6365875043672229096, guid: 5b333cebda01df14281fd7f34decf280, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
