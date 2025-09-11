@@ -15,12 +15,12 @@ public class ShopPowerUp : AbstractPowerUp
     {
         SaveData saveData = SaveSystem.Load() ?? new SaveData();
 
-        if (saveData.powerUps == null)
-            saveData.powerUps = new List<string>();
+        if (saveData.powerUpsID == null)
+            saveData.powerUpsID = new List<string>();
 
-        if (!saveData.powerUps.Contains(PowerUpID))
+        if (!saveData.powerUpsID.Contains(PowerUpID))
         {
-            saveData.powerUps.Add(PowerUpID);
+            saveData.powerUpsID.Add(PowerUpID);
             SaveSystem.Save(saveData);
             Debug.Log($"Power-up {PowerUpID} applied!");
         }
