@@ -7,7 +7,7 @@ public class TrophyManager : MonoBehaviour
 
     public event Action<int> OnTrophyChanged;
 
-    private int totalTrophies = 0;
+    private int _totalTrophies = 0;
 
     private void Awake()
     {
@@ -16,7 +16,7 @@ public class TrophyManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            totalTrophies = PlayerPrefs.GetInt("TotalTrophies", 0);
+            _totalTrophies = PlayerPrefs.GetInt("TotalTrophies", 0);
         }
         else
         {
@@ -24,25 +24,22 @@ public class TrophyManager : MonoBehaviour
         }
     }
 
-    public int GetTrophies()
-    {
-        return totalTrophies;
-    }
+    public int GetTrophies() => _totalTrophies;
 
     public void AddTrophies(int amount)
     {
-        totalTrophies += amount;
+        _totalTrophies += amount;
         Save();
-        OnTrophyChanged?.Invoke(totalTrophies);
+        OnTrophyChanged?.Invoke(_totalTrophies);
     }
 
     public bool SpendTrophies(int amount)
     {
-        if (totalTrophies >= amount)
+        if (_totalTrophies >= amount)
         {
-            totalTrophies -= amount;
+            _totalTrophies -= amount;
             Save();
-            OnTrophyChanged?.Invoke(totalTrophies);
+            OnTrophyChanged?.Invoke(_totalTrophies);
             return true;
         }
         return false;
@@ -50,7 +47,7 @@ public class TrophyManager : MonoBehaviour
 
     private void Save()
     {
-        PlayerPrefs.SetInt("TotalTrophies", totalTrophies);
+        PlayerPrefs.SetInt("TotalTrophies", _totalTrophies);
         PlayerPrefs.Save();
     }
 }
