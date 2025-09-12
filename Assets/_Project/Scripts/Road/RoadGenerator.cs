@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
-    [SerializeField] private string[] _roadTags;
+    [SerializeField] public string _roadTags;
     [SerializeField] private float _roadLength = 50f;
     [SerializeField] private int _numberOfRoads = 5;
 
@@ -13,23 +14,27 @@ public class RoadGenerator : MonoBehaviour
     private List<GameObject> _activeRoads = new List<GameObject>();
     private Transform _playerTransform;
 
+    private BiomeManager _biomeManager;
 
+    private void Awake()
+    {
+        _biomeManager = gameObject.GetComponent<BiomeManager>();//DEVE ESSERE SULLO STESSO OBJECT DI BIOMEMANAGER
+        _biomeManager.UpdateBiome();
+    }
     void Start()
     {
+
         _objectPooler = ObjectPooler.Instance;
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         for (int i = 0; i < _numberOfRoads; i++)
         {
-            if (i == 0)
-                SpawnRoad(0);
-            else
-                SpawnRoad(Random.Range(0, _roadTags.Length));
+            SpawnRoad();
         }
     }
-    public void SpawnRoad(int roadIndex)
+    public void SpawnRoad()
     {
-        string tag = _roadTags[roadIndex];
+        string tag = _biomeManager.UpdateBiome();
         GameObject road = _objectPooler.SpawnFromPool(tag, transform.forward * _zSpawn, transform.rotation);
 
         _activeRoads.Add(road);
@@ -39,7 +44,7 @@ public class RoadGenerator : MonoBehaviour
     {
         if (_playerTransform.position.z - 55 > _zSpawn - (_numberOfRoads * _roadLength))
         {
-            SpawnRoad(Random.Range(0, _roadTags.Length));
+            SpawnRoad();
             DeleteRoad();
         }
     }

@@ -249,6 +249,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &751671553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4844747073154020992, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+  m_PrefabInstance: {fileID: 1559195935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &751671556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751671553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24a5c981fb912646b953a2d4c939ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roadSoFar: 0
+  _roadString: Road
+  _parkingString: Parking
+  _streetString: Street
 --- !u!1001 &1181799767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,25 +544,32 @@ PrefabInstance:
       value: RoadGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+      propertyPath: _roadTags
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
       propertyPath: _roadLength
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
       propertyPath: _roadTags.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
       propertyPath: _roadTags.Array.data[1]
-      value: Parking
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
       propertyPath: _roadTags.Array.data[2]
-      value: Road
+      value: 114
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4844747073154020992, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 751671556}
   m_SourcePrefab: {fileID: 100100000, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
 --- !u!1 &1951389655
 GameObject:
@@ -696,8 +724,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6369876181176748688, guid: 3a3e5572803c3ed4aa3e296279d29c1c, type: 3}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[0].prefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[1].prefab.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[2].prefab.Array.size
@@ -710,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[0].prefab.Array.data[0]
       value: 
-      objectReference: {fileID: 1542494115597975724, guid: 2cef1fa507cbf84479904dffaca71fc1, type: 3}
+      objectReference: {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[0].prefab.Array.data[1]
       value: 
@@ -722,7 +754,7 @@ PrefabInstance:
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[1].prefab.Array.data[0]
       value: 
-      objectReference: {fileID: 2970130166576628357, guid: e59514baf56bacf43b0c31c07c8caf17, type: 3}
+      objectReference: {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[1].prefab.Array.data[1]
       value: 
@@ -734,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[3].prefab.Array.data[0]
       value: 
-      objectReference: {fileID: 8709482373560122842, guid: edb2c414c162fd64faa9f9bd139edeec, type: 3}
+      objectReference: {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
     - target: {fileID: 5341723745783326209, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: m_Name
       value: ObjectPooler
