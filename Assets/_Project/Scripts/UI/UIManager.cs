@@ -6,13 +6,15 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private Image collectibleIcon;
-    [SerializeField] private Image[] powerupSlots;
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private TMP_Text _scoreText;           
+    [SerializeField] private TMP_Text _trophyCounterText;  
+    [SerializeField] private Image _trophyIcon;
+    [SerializeField] private Image[] _powerupSlots;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _gameOverMenu;
+    [SerializeField] private GameObject _optionsMenu;
 
-    private int score = 0;
+    private int _score = 0;
 
     private void Awake()
     {
@@ -20,42 +22,61 @@ public class UIManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        UpdateScore(0);
+        UpdateTrophyUI(TrophyManager.Instance.GetTrophies());
+
+        TrophyManager.Instance.OnTrophyChanged += UpdateTrophyUI;
+    }
+
+    private void OnDestroy()
+    {
+        if (TrophyManager.Instance != null)
+            TrophyManager.Instance.OnTrophyChanged -= UpdateTrophyUI;
+    }
+
     public void UpdateScore(int newScore)
     {
-        score = newScore;
-        scoreText.text = score.ToString();
+        _score = newScore;
+        _scoreText.text = _score.ToString();
+    }
+
+    public void AddScore(int amount)
+    {
+        _score += amount;
+        UpdateScore(_score);
+    }
+
+    private void UpdateTrophyUI(int total)
+    {
+        _trophyCounterText.text = total.ToString();
     }
 
     public void SetCollectibleIcon(Sprite icon)
     {
-        collectibleIcon.sprite = icon;
-        collectibleIcon.enabled = true;
+        _trophyIcon.sprite = icon;
+        _trophyIcon.enabled = true;
     }
 
     public void SetPowerup(int slotIndex, Sprite icon)
     {
-        if (slotIndex >= 0 && slotIndex < powerupSlots.Length)
+        if (slotIndex >= 0 && slotIndex < _powerupSlots.Length)
         {
-            powerupSlots[slotIndex].sprite = icon;
-            powerupSlots[slotIndex].enabled = true;
+            _powerupSlots[slotIndex].sprite = icon;
+            _powerupSlots[slotIndex].enabled = true;
         }
     }
 
     public void ClearPowerup(int slotIndex)
     {
-        if (slotIndex >= 0 && slotIndex < powerupSlots.Length)
+        if (slotIndex >= 0 && slotIndex < _powerupSlots.Length)
         {
-            powerupSlots[slotIndex].enabled = false;
+            _powerupSlots[slotIndex].enabled = false;
         }
     }
 
-    public void ShowPauseMenu(bool show)
-    {
-        pauseMenu.SetActive(show);
-    }
-
-    public void ShowGameOver()
-    {
-        gameOverMenu.SetActive(true);
-    }
+    public void ShowPauseMenu(bool show) => _pauseMenu.SetActive(show);
+    public void ShowGameOver(bool show) => _gameOverMenu.SetActive(show);
+    public void ShowOptions(bool show) => _optionsMenu.SetActive(show);
 }

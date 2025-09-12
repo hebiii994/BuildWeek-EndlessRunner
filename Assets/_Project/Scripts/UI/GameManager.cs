@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public enum GameState { Start, InGame, GameOver }
+public enum GameState { Start, InGame, Paused, GameOver }
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameState currentState = GameState.Start;
+    private GameState _currentState = GameState.Start;
 
     private void Awake()
     {
@@ -15,12 +16,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SetState(GameState.Start);
+        //SetState(GameState.Start);
+        SetState(GameState.InGame); 
     }
 
     public void SetState(GameState newState)
     {
-        currentState = newState;
+        _currentState = newState;
 
         switch (newState)
         {
@@ -30,22 +32,38 @@ public class GameManager : MonoBehaviour
 
             case GameState.InGame:
                 Time.timeScale = 1f;
+                UIManager.Instance.ShowPauseMenu(false);
+                UIManager.Instance.ShowGameOver(false);
+                break;
+
+            case GameState.Paused:
+                Time.timeScale = 0f;
+                UIManager.Instance.ShowPauseMenu(true);
                 break;
 
             case GameState.GameOver:
                 Time.timeScale = 0f;
-                UIManager.Instance.ShowGameOver();
+                UIManager.Instance.ShowGameOver(true);
                 break;
         }
     }
 
-    public void StartGame()
+    public void StartGame() => SetState(GameState.InGame);
+    public void PauseGame() => SetState(GameState.Paused);
+    public void ResumeGame() => SetState(GameState.InGame);
+    public void EndGame() => SetState(GameState.GameOver);
+
+    public void RestartGame()
     {
-        SetState(GameState.InGame);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void EndGame()
+    public void GoToMainMenu()
     {
-        SetState(GameState.GameOver);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneNames.MainMenu);
     }
+
+    public void ExitGame() => Application.Quit();
 }
