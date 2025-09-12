@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[0].prefab.Array.data[0]
       value: 
-      objectReference: {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
+      objectReference: {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[0].prefab.Array.data[1]
       value: 
@@ -766,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[3].prefab.Array.data[0]
       value: 
-      objectReference: {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
+      objectReference: {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
     - target: {fileID: 5341723745783326209, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: m_Name
       value: ObjectPooler
