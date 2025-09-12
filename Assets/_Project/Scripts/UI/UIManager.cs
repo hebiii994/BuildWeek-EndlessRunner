@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     public void UpdateScore(int newScore)
     {
         _score = newScore;
-        scoreText.text = _score.ToString();
+        _scoreText.text = _score.ToString();
     }
 
     public void AddScore(int amount)

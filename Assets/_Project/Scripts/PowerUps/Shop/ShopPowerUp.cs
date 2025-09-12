@@ -1,29 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//[CreateAssetMenu(fileName = "PowerUp", menuName = "ScriptableObject/ShopPowerUp")]
 public class ShopPowerUp : AbstractPowerUp
 {
     [SerializeField] private int _cost; // Costo del power-up
     public int Cost => _cost;
-    protected override void ApplyEffect(GameObject player)
-    {        
-        SavePowerUpState();
+    public override void ApplyEffect(GameObject player)
+    {
+        SaveData data = SaveSystem.Load();
+        SavePowerUpState(data, this);        
     }
 
-    private void SavePowerUpState()
+    private void SavePowerUpState(SaveData data, AbstractPowerUp powerUp)
     {
-        SaveData saveData = SaveSystem.Load() ?? new SaveData();
-
-        if (saveData.powerUpsID == null)
-            saveData.powerUpsID = new List<string>();
-
-        if (!saveData.powerUpsID.Contains(PowerUpID))
+        if (data == null || powerUp == null)
         {
-            saveData.powerUpsID.Add(PowerUpID);
-            SaveSystem.Save(saveData);
-            Debug.Log($"Power-up {PowerUpID} applied!");
+            Debug.LogError("SaveData or PowerUp is null. Cannot save power-up state.");
+            return;
         }
+        if (!data.ownedPowerUp.Contains(powerUp.PowerUpID))
+        {
+            data.ownedPowerUp.Add(powerUp.PowerUpID);
+            Debug.Log($"Power-up {powerUp.PowerUpID} added to owned power-ups.");
+        }
+        else
+        {
+            Debug.LogWarning($"Power-up {powerUp.PowerUpID} is already owned.");
+        }
+
+        SaveSystem.Save(data);
     }
 
 }

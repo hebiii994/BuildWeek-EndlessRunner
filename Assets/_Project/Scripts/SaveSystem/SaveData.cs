@@ -7,13 +7,13 @@ public class SaveData
 {
     public string username;
     public List<float> highScores;
-    public int value;
+    public int playerCoins;
     //Aggiungo quest'altra variabile per tenere traccia del giocatore
     //Così da poter aggiornare i power-up applicati
     public GameObject _playerPreFab;
     //Nota bene: Ho messo GameObject per farmi capire che sono oggetti di gioco,
     //aggiornerò dopo che avremo definito una classe power-up
-    public List<string> powerUpsID; // Lista degli ID dei power-up acquistati
+    public List<string> ownedPowerUp; // Lista degli ID dei power-up acquistati
 
 
 
