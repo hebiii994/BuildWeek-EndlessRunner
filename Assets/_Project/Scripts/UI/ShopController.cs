@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class ShopManager : MonoBehaviour
+public class ShopController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _trophyCounterText;
 

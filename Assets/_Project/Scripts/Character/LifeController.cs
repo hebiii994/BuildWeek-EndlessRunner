@@ -74,6 +74,6 @@ public class LifeController : MonoBehaviour
     private void Die()
     {
         Debug.Log("Game Over!");
-        EndGame();
+        GameManager.Instance.EndGame();
     }
 }

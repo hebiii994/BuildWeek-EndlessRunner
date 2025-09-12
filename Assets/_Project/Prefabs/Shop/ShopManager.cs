@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopManager : MonoBehaviour
+public class ShopoController : MonoBehaviour
 {
     private SaveData _saveData;
     // Array di tutti i power-up disponibili nel gioco
