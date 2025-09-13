@@ -6,22 +6,15 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-<<<<<<< Updated upstream
     [SerializeField] private TMP_Text _scoreText;           
     [SerializeField] private TMP_Text _trophyCounterText;   
     [SerializeField] private Image _trophyIcon;
-=======
-    [SerializeField] private TMP_Text _ballsCounterText;     
-    [SerializeField] private Image _ballsIcon;              
-    [SerializeField] private TMP_Text _trophyCounterText;     
-    [SerializeField] private Image _trophyIcon;              
->>>>>>> Stashed changes
     [SerializeField] private Image[] _powerupSlots;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _gameOverMenu;
     [SerializeField] private GameObject _optionsMenu;
 
-    private int _balls = 0;
+    private int _score = 0;
 
     private void Awake()
     {
@@ -31,7 +24,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateBalls(0);
+        UpdateScore(0);
         UpdateTrophyUI(TrophyManager.Instance.GetTrophies());
 
         TrophyManager.Instance.OnTrophyChanged += UpdateTrophyUI;
@@ -43,33 +36,24 @@ public class UIManager : MonoBehaviour
             TrophyManager.Instance.OnTrophyChanged -= UpdateTrophyUI;
     }
 
-    public void UpdateBalls(int newCount)
+    public void UpdateScore(int newScore)
     {
-        _balls = newCount;
-        _ballsCounterText.text = _balls.ToString();
+        _score = newScore;
+        _scoreText.text = _score.ToString();
     }
 
-    public void AddBall(int amount)
+    public void AddScore(int amount)
     {
-        _balls += amount;
-        UpdateBalls(_balls);
+        _score += amount;
+        UpdateScore(_score);
     }
 
-    public void UseBall()
-    {
-        if (_balls > 0)
-        {
-            _balls--;
-            UpdateBalls(_balls);
-        }
-    }
-
-    public void UpdateTrophyUI(int total)
+    private void UpdateTrophyUI(int total)
     {
         _trophyCounterText.text = total.ToString();
     }
 
-    public void SetTrophyIcon(Sprite icon)
+    public void SetCollectibleIcon(Sprite icon)
     {
         _trophyIcon.sprite = icon;
         _trophyIcon.enabled = true;
@@ -95,16 +79,4 @@ public class UIManager : MonoBehaviour
     public void ShowPauseMenu(bool show) => _pauseMenu.SetActive(show);
     public void ShowGameOver(bool show) => _gameOverMenu.SetActive(show);
     public void ShowOptions(bool show) => _optionsMenu.SetActive(show);
-    public void OpenOptionsFromPause()
-    {
-        ShowPauseMenu(false);   
-        ShowOptions(true);     
-    }
-
-    public void CloseOptionsToPause()
-    {
-        ShowOptions(false);    
-        ShowPauseMenu(true);    
-    }
-
 }
