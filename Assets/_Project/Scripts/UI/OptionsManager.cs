@@ -25,13 +25,9 @@ public class OptionsManager : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
-<<<<<<< Updated upstream
-        _volume = Mathf.Clamp(value, 0.0001f, 1f); // prevenire log10(0)
-        _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_volume) * 20);
-=======
+
         _masterVolume = Mathf.Clamp(value, 0.0001f, 1f);
         _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_masterVolume) * 20);
->>>>>>> Stashed changes
     }
     public float GetMasterVolume() => _masterVolume;
 

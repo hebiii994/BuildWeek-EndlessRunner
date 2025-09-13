@@ -6,16 +6,11 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-<<<<<<< Updated upstream
-    [SerializeField] private TMP_Text _scoreText;           
-    [SerializeField] private TMP_Text _trophyCounterText;   
-    [SerializeField] private Image _trophyIcon;
-=======
+
     [SerializeField] private TMP_Text _ballsCounterText;     
     [SerializeField] private Image _ballsIcon;              
     [SerializeField] private TMP_Text _trophyCounterText;     
     [SerializeField] private Image _trophyIcon;              
->>>>>>> Stashed changes
     [SerializeField] private Image[] _powerupSlots;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _gameOverMenu;

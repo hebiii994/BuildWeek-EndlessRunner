@@ -2,24 +2,12 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-<<<<<<< HEAD
-    [Header("Effetti")]
-    [SerializeField] private ParticleSystem _collectEffectPrefab;
-    [SerializeField] private AudioClip _collectSound;
-    [SerializeField] private int _scoreValue = 10;
-=======
-<<<<<<< Updated upstream
-    [SerializeField] private int _scoreValue = 1; 
 
-    // [SerializeField] private AudioClip _collectSound;
-    // [SerializeField] private GameObject _collectEffect;
-=======
     [Header("Effetti")]
     [SerializeField] private ParticleSystem _collectEffectPrefab;
     [SerializeField] private AudioClip _collectSound;
-    [SerializeField] private int _amount;
->>>>>>> Stashed changes
->>>>>>> parent of 8f306f9 (Revert "aggiunte canvas menu e logica trofei/palloni")
+    [SerializeField] private int _trophyAmount = 10;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,16 +15,7 @@ public class Collectible : MonoBehaviour
         {
             Collect();
         }
-<<<<<<< Updated upstream
-=======
 
-        if (UIManager.Instance != null)
-        {
-            UIManager.Instance.UpdateTrophyUI(_amount);
-        }
-
-        gameObject.SetActive(false);
->>>>>>> Stashed changes
     }
 
     private void Collect()
@@ -53,7 +32,7 @@ public class Collectible : MonoBehaviour
 
         if (UIManager.Instance != null)
         {
-            UIManager.Instance.UpdateScore(_scoreValue);
+            UIManager.Instance.UpdateTrophyUI(_trophyAmount);
         }
 
         gameObject.SetActive(false);
