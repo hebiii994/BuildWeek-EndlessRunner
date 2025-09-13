@@ -47,17 +47,29 @@ MonoBehaviour:
   pools:
   - tag: Street
     prefab:
-    - {fileID: 8709482373560122842, guid: edb2c414c162fd64faa9f9bd139edeec, type: 3}
-    - {fileID: 8709482373560122842, guid: edb2c414c162fd64faa9f9bd139edeec, type: 3}
-    - {fileID: 8709482373560122842, guid: edb2c414c162fd64faa9f9bd139edeec, type: 3}
+    - {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
+    - {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
+    - {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
     size: 10
   - tag: Defensor
     prefab:
     - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
-    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
-    - {fileID: 7346197485676614886, guid: 0814bc0f52797164281decb9788a758e, type: 3}
+    - {fileID: 6365875043672229096, guid: 5b333cebda01df14281fd7f34decf280, type: 3}
+    - {fileID: 4529197963528753858, guid: 9f3fca65030a66a41a34959e20fe4bc0, type: 3}
     size: 20
   - tag: Trophy
     prefab:
     - {fileID: 3453040407033113979, guid: 47f233ee538e68549b36329c661ce799, type: 3}
     size: 20
+  - tag: Stadium
+    prefab:
+    - {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
+    - {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
+    - {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
+    size: 10
+  - tag: Parking
+    prefab:
+    - {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
+    - {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
+    - {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
+    size: 10
