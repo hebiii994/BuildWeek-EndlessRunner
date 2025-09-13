@@ -31,7 +31,6 @@ public class SaveSystem
         {
             Debug.LogWarning($"Save file not found in {path}");
             return null;
-
         }
 
         string jsonString = File.ReadAllText(path);
