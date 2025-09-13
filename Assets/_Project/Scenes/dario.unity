@@ -127,27 +127,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4042434634268129985, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
   m_PrefabInstance: {fileID: 1287057341}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &515025729 stripped
+--- !u!1 &583065590 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3698102138861903995, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
-  m_PrefabInstance: {fileID: 1287057341}
+  m_CorrespondingSourceObject: {fileID: 4844747073154020992, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+  m_PrefabInstance: {fileID: 1046311811}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &515025733
+--- !u!114 &583065591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515025729}
+  m_GameObject: {fileID: 583065590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caba34d8a468d774580be553f3e12dab, type: 3}
+  m_Script: {fileID: 11500000, guid: b24a5c981fb912646b953a2d4c939ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 3
-  currentLives: 0
-  invincibleTime: 2
-  speedPenaltyPercent: 0.1
+  _roadSoFar: 0
+  _roadString: Street
+  _parkingString: Parking
+  _streetString: Stadium
 --- !u!1001 &802099143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,6 +196,94 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[3].tag
+      value: Stadium
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[4].tag
+      value: Parking
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[5].tag
+      value: Parking
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[3].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[4].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[5].size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[3].prefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[4].prefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[5].prefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[0].prefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[0].prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[0].prefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 370307972252313682, guid: ad45a96d49431be4fa0a60188c92d765, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[1].prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 6365875043672229096, guid: 5b333cebda01df14281fd7f34decf280, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[1].prefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 4529197963528753858, guid: 9f3fca65030a66a41a34959e20fe4bc0, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[3].prefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[3].prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[3].prefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 7359988403283699525, guid: ad88c3a2c14de4d4e8d14246f7127504, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[4].prefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[4].prefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[4].prefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[5].prefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 6497596707463464335, guid: d9d61a002fd85d84cb8e9454e83748aa, type: 3}
     - target: {fileID: 5341723745783326209, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: m_Name
       value: ObjectPooler
@@ -257,10 +345,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+      propertyPath: _roadTags
+      value: Stadium
+      objectReference: {fileID: 0}
+    - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+      propertyPath: _roadLength
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4844747073154020992, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 583065591}
   m_SourcePrefab: {fileID: 100100000, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
 --- !u!1 &1216365314
 GameObject:
@@ -401,10 +500,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Player '
       objectReference: {fileID: 0}
-    - target: {fileID: 3698102138861903995, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4042434634268129985, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -445,25 +540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7887061131611694050, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
-      propertyPath: jumpForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7996616356499054779, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
-      propertyPath: m_CullingMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7996616356499054779, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3698102138861903995, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 515025733}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
 --- !u!1 &1296269544
 GameObject:
