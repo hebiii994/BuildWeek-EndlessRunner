@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [SerializeField] private TMP_Text _scoreText;           
-    [SerializeField] private TMP_Text _trophyCounterText;  
+    [SerializeField] private TMP_Text _trophyCounterText;   
     [SerializeField] private Image _trophyIcon;
     [SerializeField] private Image[] _powerupSlots;
     [SerializeField] private GameObject _pauseMenu;

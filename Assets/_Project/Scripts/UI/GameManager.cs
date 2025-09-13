@@ -16,8 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //SetState(GameState.Start);
-        SetState(GameState.InGame); 
+        SetState(GameState.InGame); // debug: puoi cambiarlo in Start se vuoi
     }
 
     public void SetState(GameState newState)
