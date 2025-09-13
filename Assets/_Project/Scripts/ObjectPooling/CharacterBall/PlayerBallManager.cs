@@ -14,6 +14,8 @@ public class PlayerBallManager : MonoBehaviour
     private ObjectPool<BallController> ballPool;
 
     private int currentBalls;
+    public int CurrentBalls => currentBalls;
+
 
     [Header("Cooldown")]
     [SerializeField] private float shootCooldown = 0.5f; // mezzo secondo tra un tiro e l'altro
