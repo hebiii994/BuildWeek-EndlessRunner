@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+<<<<<<< Updated upstream
     [SerializeField] private int _scoreValue = 1; 
 
     // [SerializeField] private AudioClip _collectSound;
     // [SerializeField] private GameObject _collectEffect;
+=======
+    [Header("Effetti")]
+    [SerializeField] private ParticleSystem _collectEffectPrefab;
+    [SerializeField] private AudioClip _collectSound;
+    [SerializeField] private int _amount;
+>>>>>>> Stashed changes
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,5 +30,15 @@ public class Collectible : MonoBehaviour
 
             gameObject.SetActive(false);
         }
+<<<<<<< Updated upstream
+=======
+
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.UpdateTrophyUI(_amount);
+        }
+
+        gameObject.SetActive(false);
+>>>>>>> Stashed changes
     }
 }
