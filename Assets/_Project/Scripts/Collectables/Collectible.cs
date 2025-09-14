@@ -1,10 +1,12 @@
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
+
 { 
     [SerializeField] private ParticleSystem _collectEffectPrefab;
     [SerializeField] private AudioClip _collectSound;
     [SerializeField] private int _trophyAmount;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +14,7 @@ public class Collectible : MonoBehaviour
         {
             Collect();
         }
+
     }
     private void Collect()
     {

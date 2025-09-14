@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 632028935573678658}
   - component: {fileID: 8969574216868396099}
+  - component: {fileID: 6723706330449272663}
   m_Layer: 0
   m_Name: RoadGenerator
   m_TagString: Untagged
@@ -44,7 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065e019a695200640954962e57dbc78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roadTags:
-  - Street
-  _roadLength: 50
+  _roadTags: Stadium
+  _roadLength: 100
   _numberOfRoads: 5
+--- !u!114 &6723706330449272663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844747073154020992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24a5c981fb912646b953a2d4c939ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roadSoFar: 0
+  _roadString: Street
+  _parkingString: Parking
+  _streetString: Stadium

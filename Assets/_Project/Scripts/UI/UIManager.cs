@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _ballsIcon;              
     [SerializeField] private TMP_Text _trophyCounterText;     
     [SerializeField] private Image _trophyIcon;         
+
     [SerializeField] private Image[] _powerupSlots;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _gameOverMenu;
