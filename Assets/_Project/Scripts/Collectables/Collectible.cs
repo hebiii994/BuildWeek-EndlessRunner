@@ -5,7 +5,7 @@ public class Collectible : MonoBehaviour
 { 
     [SerializeField] private ParticleSystem _collectEffectPrefab;
     [SerializeField] private AudioClip _collectSound;
-    [SerializeField] private int _trophyAmount;
+    [SerializeField] private int _trophyAmount = 1;
 
 
     private void OnTriggerEnter(Collider other)
@@ -28,9 +28,9 @@ public class Collectible : MonoBehaviour
             Instantiate(_collectEffectPrefab, transform.position, Quaternion.identity);
         }
 
-        if (UIManager.Instance != null)
+        if (TrophyManager.Instance != null)
         {
-            UIManager.Instance.UpdateTrophyUI(_trophyAmount);
+            TrophyManager.Instance.AddTrophies(_trophyAmount);
         }
 
         gameObject.SetActive(false);
