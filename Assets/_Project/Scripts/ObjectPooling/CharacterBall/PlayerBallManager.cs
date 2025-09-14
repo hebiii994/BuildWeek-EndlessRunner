@@ -12,8 +12,7 @@ public class PlayerBallManager : MonoBehaviour
     public GameObject ballPrefab;
     public int maxBalls = 5;
     private ObjectPool<BallController> ballPool;
-
-    private int currentBalls;
+    public int currentBalls;
     public int CurrentBalls => currentBalls;
 
 

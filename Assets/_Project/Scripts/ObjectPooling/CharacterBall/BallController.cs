@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class BallController : MonoBehaviour
 {
@@ -7,35 +8,43 @@ public class BallController : MonoBehaviour
     private bool returning = false;
     private PlayerBallManager owner;
 
+    private float maxX; // limite laterale del campo
+    private float minY = -10f; // altezza minima per considerare persa la palla
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Lancia il pallone verso la direzione cliccata, aggiungendo la velocità del player
+    // Lancia il pallone verso la direzione cliccata, velocità uguale al player
     public void Launch(Vector3 direction, PlayerBallManager manager, float playerSpeed)
     {
         owner = manager;
         startPoint = manager.hitPoint;
         returning = false;
 
-        rb.velocity = Vector3.zero;
+        // Imposto il limite laterale corretto
+        maxX = manager.playerController.laneDistance;
+
+        rb.velocity = direction.normalized * playerSpeed;
         rb.angularVelocity = Vector3.zero;
 
-        rb.AddForce(direction * 15f, ForceMode.Impulse);
-        rb.AddForce(Vector3.forward * playerSpeed, ForceMode.VelocityChange);
+        // Avvia il controllo per la palla persa
+        StartCoroutine(CheckOutOfBounds());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Quando colpisce qualcosa, torna indietro
-        returning = true;
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        StartCoroutine(ReturnToPlayer());
+        if (!returning)
+        {
+            returning = true;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            StartCoroutine(ReturnToPlayer());
+        }
     }
 
-    private System.Collections.IEnumerator ReturnToPlayer()
+    private IEnumerator ReturnToPlayer()
     {
         while (Vector3.Distance(transform.position, startPoint.position) > 0.1f)
         {
@@ -44,5 +53,20 @@ public class BallController : MonoBehaviour
         }
 
         owner.ReturnBall(this);
+    }
+
+    private IEnumerator CheckOutOfBounds()
+    {
+        while (!returning)
+        {
+            // Controlla se la palla esce dai limiti laterali o scende sotto l'altezza minima
+            if (Mathf.Abs(transform.position.x) > maxX || transform.position.y < minY)
+            {
+                Destroy(gameObject); // palla persa
+                yield break;
+            }
+
+            yield return null;
+        }
     }
 }
