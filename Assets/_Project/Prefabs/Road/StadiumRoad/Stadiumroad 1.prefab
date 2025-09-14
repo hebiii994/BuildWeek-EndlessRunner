@@ -276,7 +276,6 @@ GameObject:
   - component: {fileID: 3656977280297561948}
   - component: {fileID: 2967632053055202645}
   - component: {fileID: 5025001530764443072}
-  - component: {fileID: 7601962217984111179}
   m_Layer: 0
   m_Name: CrowdBench (2)
   m_TagString: Untagged
@@ -377,49 +376,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7601962217984111179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213096444397947427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 6720930545935966417}
-  - {fileID: 5129606332089402680}
-  - {fileID: 7969477745642754186}
-  - {fileID: 7666212629380457224}
-  - {fileID: 922290119912176685}
-  - {fileID: 26446593991446941}
-  - {fileID: 7366825315386622191}
-  - {fileID: 3979315570404594825}
-  - {fileID: 6714363780852783015}
-  - {fileID: 4518244365235142180}
-  - {fileID: 8783584329222264606}
-  - {fileID: 510138113229010666}
-  - {fileID: 5730453017872591958}
-  - {fileID: 832168094412406359}
-  - {fileID: 4558674076602121519}
-  - {fileID: 2178426495569250623}
-  - {fileID: 7638063798964589354}
-  - {fileID: 467393941674110446}
-  - {fileID: 6736656229965260450}
-  - {fileID: 3454863621609084391}
-  - {fileID: 4671433370994624802}
-  - {fileID: 8891530045889090339}
-  - {fileID: 4215556342120670163}
-  - {fileID: 5947703103746578835}
-  - {fileID: 9027208326487223501}
-  - {fileID: 5292680666318814424}
-  - {fileID: 7559687939455552621}
-  - {fileID: 1030302904680448614}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &332516466885808656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4552272371974480315}
   m_Layer: 0
-  m_Name: Bench
+  m_Name: Bench_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,14 +1051,14 @@ Transform:
   m_GameObject: {fileID: 954374119975325804}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4566262, y: 1.1402216, z: -0.009153252}
+  m_LocalPosition: {x: 1.4566262, y: 1.1402217, z: -0.00915329}
   m_LocalScale: {x: 0.05, y: 1, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6250004077967483373}
   - {fileID: 8326497478378714786}
   - {fileID: 3656977280297561948}
-  m_Father: {fileID: 7467645644363075412}
+  m_Father: {fileID: 3633162122626749561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089600244410172856
 GameObject:
@@ -4125,7 +4081,6 @@ GameObject:
   - component: {fileID: 8326497478378714786}
   - component: {fileID: 6092904765307646822}
   - component: {fileID: 6378276702549631338}
-  - component: {fileID: 6079208706217769813}
   m_Layer: 0
   m_Name: CrowdBench
   m_TagString: Untagged
@@ -4226,49 +4181,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6079208706217769813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3957374054721627102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 4966981712614767478}
-  - {fileID: 2509740624543759112}
-  - {fileID: 8530243895198776733}
-  - {fileID: 3089680983473384474}
-  - {fileID: 7765296087727268632}
-  - {fileID: 8619465841289391583}
-  - {fileID: 3433270171976635428}
-  - {fileID: 1843746599799644344}
-  - {fileID: 330190693720951396}
-  - {fileID: 6499728000647128477}
-  - {fileID: 2447041985610769664}
-  - {fileID: 6686334266585025576}
-  - {fileID: 1116209795746445113}
-  - {fileID: 2337598525339448556}
-  - {fileID: 7149776566964696984}
-  - {fileID: 5827548418542477054}
-  - {fileID: 2412541198846142533}
-  - {fileID: 4687467743468596459}
-  - {fileID: 259886808411214152}
-  - {fileID: 7889283729984167697}
-  - {fileID: 5294397130030843363}
-  - {fileID: 5183886443054193408}
-  - {fileID: 1659251208357167738}
-  - {fileID: 1474292231221917011}
-  - {fileID: 4364279298792818892}
-  - {fileID: 386585539739054034}
-  - {fileID: 5828310013118437936}
-  - {fileID: 2142428239151619430}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &3976425849120017565
 GameObject:
   m_ObjectHideFlags: 0
@@ -5982,7 +5894,6 @@ GameObject:
   - component: {fileID: 8233317869175962985}
   - component: {fileID: 2225130347967423173}
   - component: {fileID: 4284699989901670050}
-  - component: {fileID: 7776959470228127549}
   m_Layer: 0
   m_Name: CrowdBench (1)
   m_TagString: Untagged
@@ -6083,49 +5994,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7776959470228127549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5037442889126297087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 4268940804940898278}
-  - {fileID: 2449334792890506465}
-  - {fileID: 2058019991289345640}
-  - {fileID: 7743206430547887683}
-  - {fileID: 5586549490883474346}
-  - {fileID: 1206387991971958985}
-  - {fileID: 2682693623200019655}
-  - {fileID: 1321039257008208659}
-  - {fileID: 2726454232914335292}
-  - {fileID: 5050493197805314713}
-  - {fileID: 3526107696287132516}
-  - {fileID: 2783459558142358290}
-  - {fileID: 6625768061719337845}
-  - {fileID: 3685113368915230949}
-  - {fileID: 6287259550908972857}
-  - {fileID: 8309836037544137817}
-  - {fileID: 3800903490706473318}
-  - {fileID: 6177610766762711751}
-  - {fileID: 6398357599631358813}
-  - {fileID: 6441054605329817326}
-  - {fileID: 649972843636185531}
-  - {fileID: 194064690641499879}
-  - {fileID: 47343909257380009}
-  - {fileID: 33777313834087732}
-  - {fileID: 2781356192978606500}
-  - {fileID: 7947299487402140385}
-  - {fileID: 6750490850373800872}
-  - {fileID: 731992342548670459}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &5118694818380158044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7409,7 +7277,6 @@ GameObject:
   - component: {fileID: 5414187934206551486}
   - component: {fileID: 109513457981777592}
   - component: {fileID: 5081983386396166637}
-  - component: {fileID: 3573707969884062267}
   m_Layer: 0
   m_Name: CrowdBench
   m_TagString: Untagged
@@ -7510,49 +7377,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3573707969884062267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6113496258248481354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 2063090771043077557}
-  - {fileID: 7550832693989903616}
-  - {fileID: 5766358299441699448}
-  - {fileID: 1250859292246150858}
-  - {fileID: 7510576518922795699}
-  - {fileID: 3020325806237796207}
-  - {fileID: 4403622520015343525}
-  - {fileID: 7181359228354029334}
-  - {fileID: 976317751307748944}
-  - {fileID: 1820898414461379536}
-  - {fileID: 3529296519500486965}
-  - {fileID: 2896815777887924363}
-  - {fileID: 1874469715228832885}
-  - {fileID: 9196569964099568714}
-  - {fileID: 2886402998964474984}
-  - {fileID: 7448582778544138452}
-  - {fileID: 321158797371391007}
-  - {fileID: 6917249423832127779}
-  - {fileID: 3977128589323929807}
-  - {fileID: 7328895378164992564}
-  - {fileID: 4316198352723029847}
-  - {fileID: 5472856423757021648}
-  - {fileID: 1857219165334062305}
-  - {fileID: 4780687932915792162}
-  - {fileID: 8663831208252844902}
-  - {fileID: 9125442212616999635}
-  - {fileID: 7077003945244690129}
-  - {fileID: 5709862423896176778}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &6192102317960092216
 GameObject:
   m_ObjectHideFlags: 0
@@ -8737,7 +8561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7467645644363075412
 Transform:
   m_ObjectHideFlags: 0
@@ -8753,7 +8577,7 @@ Transform:
   m_Children:
   - {fileID: 5301173739359642589}
   - {fileID: 5574146725483103274}
-  - {fileID: 4552272371974480315}
+  - {fileID: 3633162122626749561}
   - {fileID: 1455959246262543854}
   - {fileID: 829718721252019717}
   m_Father: {fileID: 0}
@@ -9655,6 +9479,223 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &8163333830402694551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3633162122626749561}
+  - component: {fileID: 3923397973463482432}
+  m_Layer: 0
+  m_Name: Bench
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3633162122626749561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163333830402694551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4552272371974480315}
+  m_Father: {fileID: 7467645644363075412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3923397973463482432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163333830402694551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPoints:
+  - {fileID: 7082937247279689235}
+  - {fileID: 4587876504648235632}
+  - {fileID: 3954730432515604274}
+  - {fileID: 5341609848820683018}
+  - {fileID: 4216082589448897938}
+  - {fileID: 1358644640564049925}
+  - {fileID: 7077384120698077894}
+  - {fileID: 2828201413661803216}
+  - {fileID: 7771902943285984236}
+  - {fileID: 152275959368727643}
+  - {fileID: 5773099208555881566}
+  - {fileID: 5265374935491453727}
+  - {fileID: 4044866403396004422}
+  - {fileID: 2499188483601436482}
+  - {fileID: 9182614794036922570}
+  - {fileID: 9148087502161575288}
+  - {fileID: 6834833881143044299}
+  - {fileID: 537733479708828118}
+  - {fileID: 8041131582061556675}
+  - {fileID: 274792938511054745}
+  - {fileID: 6035575258704376301}
+  - {fileID: 7302700406276609764}
+  - {fileID: 6560656812676740562}
+  - {fileID: 9170653757058677325}
+  - {fileID: 2398413569730517369}
+  - {fileID: 6134277596313781220}
+  - {fileID: 5595556594448650112}
+  - {fileID: 1764876738242890493}
+  - {fileID: 4966981712614767478}
+  - {fileID: 2509740624543759112}
+  - {fileID: 8530243895198776733}
+  - {fileID: 3089680983473384474}
+  - {fileID: 7765296087727268632}
+  - {fileID: 8619465841289391583}
+  - {fileID: 3433270171976635428}
+  - {fileID: 1843746599799644344}
+  - {fileID: 330190693720951396}
+  - {fileID: 6499728000647128477}
+  - {fileID: 2447041985610769664}
+  - {fileID: 6686334266585025576}
+  - {fileID: 1116209795746445113}
+  - {fileID: 2337598525339448556}
+  - {fileID: 7149776566964696984}
+  - {fileID: 5827548418542477054}
+  - {fileID: 2412541198846142533}
+  - {fileID: 4687467743468596459}
+  - {fileID: 259886808411214152}
+  - {fileID: 7889283729984167697}
+  - {fileID: 5294397130030843363}
+  - {fileID: 5183886443054193408}
+  - {fileID: 1659251208357167738}
+  - {fileID: 1474292231221917011}
+  - {fileID: 4364279298792818892}
+  - {fileID: 386585539739054034}
+  - {fileID: 5828310013118437936}
+  - {fileID: 2142428239151619430}
+  - {fileID: 6720930545935966417}
+  - {fileID: 5129606332089402680}
+  - {fileID: 7969477745642754186}
+  - {fileID: 7666212629380457224}
+  - {fileID: 922290119912176685}
+  - {fileID: 26446593991446941}
+  - {fileID: 7366825315386622191}
+  - {fileID: 3979315570404594825}
+  - {fileID: 6714363780852783015}
+  - {fileID: 4518244365235142180}
+  - {fileID: 8783584329222264606}
+  - {fileID: 510138113229010666}
+  - {fileID: 5730453017872591958}
+  - {fileID: 832168094412406359}
+  - {fileID: 4558674076602121519}
+  - {fileID: 2178426495569250623}
+  - {fileID: 7638063798964589354}
+  - {fileID: 467393941674110446}
+  - {fileID: 6736656229965260450}
+  - {fileID: 3454863621609084391}
+  - {fileID: 4671433370994624802}
+  - {fileID: 8891530045889090339}
+  - {fileID: 4215556342120670163}
+  - {fileID: 5947703103746578835}
+  - {fileID: 9027208326487223501}
+  - {fileID: 5292680666318814424}
+  - {fileID: 7559687939455552621}
+  - {fileID: 1030302904680448614}
+  - {fileID: 4268940804940898278}
+  - {fileID: 2449334792890506465}
+  - {fileID: 2058019991289345640}
+  - {fileID: 7743206430547887683}
+  - {fileID: 5586549490883474346}
+  - {fileID: 1206387991971958985}
+  - {fileID: 2682693623200019655}
+  - {fileID: 1321039257008208659}
+  - {fileID: 2726454232914335292}
+  - {fileID: 5050493197805314713}
+  - {fileID: 3526107696287132516}
+  - {fileID: 2783459558142358290}
+  - {fileID: 6625768061719337845}
+  - {fileID: 3685113368915230949}
+  - {fileID: 6287259550908972857}
+  - {fileID: 8309836037544137817}
+  - {fileID: 3800903490706473318}
+  - {fileID: 6177610766762711751}
+  - {fileID: 6398357599631358813}
+  - {fileID: 6441054605329817326}
+  - {fileID: 649972843636185531}
+  - {fileID: 194064690641499879}
+  - {fileID: 47343909257380009}
+  - {fileID: 33777313834087732}
+  - {fileID: 2781356192978606500}
+  - {fileID: 7947299487402140385}
+  - {fileID: 6750490850373800872}
+  - {fileID: 731992342548670459}
+  - {fileID: 2063090771043077557}
+  - {fileID: 7550832693989903616}
+  - {fileID: 5766358299441699448}
+  - {fileID: 1250859292246150858}
+  - {fileID: 7510576518922795699}
+  - {fileID: 3020325806237796207}
+  - {fileID: 4403622520015343525}
+  - {fileID: 7181359228354029334}
+  - {fileID: 976317751307748944}
+  - {fileID: 1820898414461379536}
+  - {fileID: 3529296519500486965}
+  - {fileID: 2896815777887924363}
+  - {fileID: 1874469715228832885}
+  - {fileID: 9196569964099568714}
+  - {fileID: 2886402998964474984}
+  - {fileID: 7448582778544138452}
+  - {fileID: 321158797371391007}
+  - {fileID: 6917249423832127779}
+  - {fileID: 3977128589323929807}
+  - {fileID: 7328895378164992564}
+  - {fileID: 4316198352723029847}
+  - {fileID: 5472856423757021648}
+  - {fileID: 1857219165334062305}
+  - {fileID: 4780687932915792162}
+  - {fileID: 8663831208252844902}
+  - {fileID: 9125442212616999635}
+  - {fileID: 7077003945244690129}
+  - {fileID: 5709862423896176778}
+  - {fileID: 5333357637251324724}
+  - {fileID: 8425344830854250740}
+  - {fileID: 7147047535893504396}
+  - {fileID: 6064670570806594891}
+  - {fileID: 8864953197332233504}
+  - {fileID: 7543334659252261967}
+  - {fileID: 2041717931824525033}
+  - {fileID: 3995492776634076236}
+  - {fileID: 6054978431124088045}
+  - {fileID: 9119731915159611167}
+  - {fileID: 6709419094365866987}
+  - {fileID: 36627466162039171}
+  - {fileID: 5813574399435484754}
+  - {fileID: 8522105925121956349}
+  - {fileID: 2836624360554134350}
+  - {fileID: 4559613073439462273}
+  - {fileID: 9049024981258874852}
+  - {fileID: 5141884644221466424}
+  - {fileID: 7213545066287174911}
+  - {fileID: 6443852034485167646}
+  - {fileID: 7939631388793119036}
+  - {fileID: 1253702043808067945}
+  - {fileID: 6361439159827725863}
+  - {fileID: 7020822583023391581}
+  - {fileID: 2328679343536506997}
+  - {fileID: 3529209623630987082}
+  - {fileID: 3826527397476817579}
+  - {fileID: 6660714949555052429}
+  SpawnObjects:
+  - {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
+  _spawnPointOffset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &8192832732943101442
 GameObject:
   m_ObjectHideFlags: 0
@@ -9719,7 +9760,6 @@ GameObject:
   - component: {fileID: 6250004077967483373}
   - component: {fileID: 6927246738156679888}
   - component: {fileID: 190752246091346872}
-  - component: {fileID: 3758627267808036177}
   m_Layer: 0
   m_Name: CrowdBench (1)
   m_TagString: Untagged
@@ -9820,49 +9860,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3758627267808036177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197761381374344910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 7082937247279689235}
-  - {fileID: 4587876504648235632}
-  - {fileID: 3954730432515604274}
-  - {fileID: 5341609848820683018}
-  - {fileID: 4216082589448897938}
-  - {fileID: 1358644640564049925}
-  - {fileID: 7077384120698077894}
-  - {fileID: 2828201413661803216}
-  - {fileID: 7771902943285984236}
-  - {fileID: 152275959368727643}
-  - {fileID: 5773099208555881566}
-  - {fileID: 5265374935491453727}
-  - {fileID: 4044866403396004422}
-  - {fileID: 2499188483601436482}
-  - {fileID: 9182614794036922570}
-  - {fileID: 9148087502161575288}
-  - {fileID: 6834833881143044299}
-  - {fileID: 537733479708828118}
-  - {fileID: 8041131582061556675}
-  - {fileID: 274792938511054745}
-  - {fileID: 6035575258704376301}
-  - {fileID: 7302700406276609764}
-  - {fileID: 6560656812676740562}
-  - {fileID: 9170653757058677325}
-  - {fileID: 2398413569730517369}
-  - {fileID: 6134277596313781220}
-  - {fileID: 5595556594448650112}
-  - {fileID: 1764876738242890493}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &8204039887941368580
 GameObject:
   m_ObjectHideFlags: 0
@@ -10598,7 +10595,6 @@ GameObject:
   - component: {fileID: 4174270836565648371}
   - component: {fileID: 8120489198300142216}
   - component: {fileID: 8750005046469904191}
-  - component: {fileID: 8356746501182867559}
   m_Layer: 0
   m_Name: CrowdBench (2)
   m_TagString: Untagged
@@ -10699,49 +10695,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8356746501182867559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064345836201173176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 5333357637251324724}
-  - {fileID: 8425344830854250740}
-  - {fileID: 7147047535893504396}
-  - {fileID: 6064670570806594891}
-  - {fileID: 8864953197332233504}
-  - {fileID: 7543334659252261967}
-  - {fileID: 2041717931824525033}
-  - {fileID: 3995492776634076236}
-  - {fileID: 6054978431124088045}
-  - {fileID: 9119731915159611167}
-  - {fileID: 6709419094365866987}
-  - {fileID: 36627466162039171}
-  - {fileID: 5813574399435484754}
-  - {fileID: 8522105925121956349}
-  - {fileID: 2836624360554134350}
-  - {fileID: 4559613073439462273}
-  - {fileID: 9049024981258874852}
-  - {fileID: 5141884644221466424}
-  - {fileID: 7213545066287174911}
-  - {fileID: 6443852034485167646}
-  - {fileID: 7939631388793119036}
-  - {fileID: 1253702043808067945}
-  - {fileID: 6361439159827725863}
-  - {fileID: 7020822583023391581}
-  - {fileID: 2328679343536506997}
-  - {fileID: 3529209623630987082}
-  - {fileID: 3826527397476817579}
-  - {fileID: 6660714949555052429}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &9099452328211660033
 GameObject:
   m_ObjectHideFlags: 0
@@ -11031,7 +10984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1455959246262543854}
   m_Layer: 0
-  m_Name: Bench (1)
+  m_Name: Bench_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

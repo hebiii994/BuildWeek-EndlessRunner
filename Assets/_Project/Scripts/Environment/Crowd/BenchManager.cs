@@ -5,8 +5,8 @@ using UnityEngine;
 public class BenchManager : MonoBehaviour
 {
     [SerializeField] private List<Transform> SpawnPoints = new List<Transform>();
-    [SerializeField] private GameObject _spectator;
-    [SerializeField] private float _spawnPointOffset;
+    [SerializeField] private List<GameObject> SpawnObjects = new List<GameObject>();
+    [SerializeField] private Vector3 _spawnPointOffset;
 
     private void Start()
     {
@@ -27,16 +27,14 @@ public class BenchManager : MonoBehaviour
 
             if (random == 0)
             {
-                SpawnPoints[i].gameObject.SetActive(false);
+                spCache.gameObject.SetActive(false);
             }
             else if (random >= 1)
             {
-                Vector3 _spawnpointPos = new Vector3(SpawnPoints[i].transform.position.x,
-                    SpawnPoints[i].transform.position.y + _spawnPointOffset,
-                    SpawnPoints[i].transform.position.z);
+                Vector3 _spawnpointPos = spCache.transform.position + _spawnPointOffset;
 
 
-                Instantiate(_spectator, _spawnpointPos, Quaternion.identity,transform.parent);
+                Instantiate(SpawnObjects[Random.Range(0,SpawnObjects.Count)], _spawnpointPos, spCache.transform.rotation, spCache);
             }
         }
     }
