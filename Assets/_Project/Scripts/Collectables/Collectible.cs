@@ -1,12 +1,11 @@
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
-{
 
-    [Header("Effetti")]
+{ 
     [SerializeField] private ParticleSystem _collectEffectPrefab;
     [SerializeField] private AudioClip _collectSound;
-    [SerializeField] private int _trophyAmount = 10;
+    [SerializeField] private int _trophyAmount;
 
 
     private void OnTriggerEnter(Collider other)
@@ -17,7 +16,6 @@ public class Collectible : MonoBehaviour
         }
 
     }
-
     private void Collect()
     {
         if (_collectSound != null && AudioManager.Instance != null)

@@ -25,7 +25,6 @@ public class OptionsManager : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
-
         _masterVolume = Mathf.Clamp(value, 0.0001f, 1f);
         _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_masterVolume) * 20);
     }
