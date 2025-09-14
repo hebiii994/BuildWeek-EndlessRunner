@@ -117,7 +117,7 @@ PrefabInstance:
       addedObject: {fileID: 414401996516674194}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d6cbc5192fd4f9a4ca91844849594b42, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8286328709777728600}
+      addedObject: {fileID: 4668736276323778321}
   m_SourcePrefab: {fileID: 100100000, guid: d6cbc5192fd4f9a4ca91844849594b42, type: 3}
 --- !u!1 &3453040407033113979 stripped
 GameObject:
@@ -145,7 +145,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.34, z: 0}
---- !u!114 &8286328709777728600
+--- !u!114 &4668736276323778321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,4 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b929f53fded888b44bde3cc0bcecfbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreValue: 1
+  _collectEffectPrefab: {fileID: 0}
+  _collectSound: {fileID: 0}
+  _trophyAmount: 1

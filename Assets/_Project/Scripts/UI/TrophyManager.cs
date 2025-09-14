@@ -14,6 +14,7 @@ public class TrophyManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
             _totalTrophies = PlayerPrefs.GetInt("TotalTrophies", 0);

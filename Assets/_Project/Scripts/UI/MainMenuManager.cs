@@ -44,10 +44,22 @@ public class MainMenuManager : MonoBehaviour
         _shopMenu.SetActive(true);
     }
 
+    public void CloseShop()
+    {
+        _mainMenu.SetActive(true);
+        _shopMenu.SetActive(false);
+    }
+
     public void ShowLeaderboard()
     {
         _mainMenu.SetActive(false);
         _leaderboardMenu.SetActive(true);
+    }
+
+    public void CloseLeaderboard()
+    {
+        _mainMenu.SetActive(true);
+        _leaderboardMenu.SetActive(false);
     }
 
     public void BackToMainMenu()
