@@ -17,15 +17,15 @@ public class BiomeManager : MonoBehaviour
         _roadSoFar++;
         switch (_roadSoFar)
         {
-            case >= 0 and <= 15:
+            case >= 0 and <= 2:
                 return _roadString;
                
 
-            case > 15 and <= 30:
+            case > 3 and <= 5:
                 return _parkingString;
                 
 
-            case > 30:
+            case > 5:
                 return _streetString;
 
 
