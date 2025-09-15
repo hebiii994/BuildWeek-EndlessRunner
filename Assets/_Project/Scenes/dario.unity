@@ -168,10 +168,8 @@ MonoBehaviour:
   hitPoint: {fileID: 79775648}
   cam: {fileID: 0}
   playerController: {fileID: 515025735}
-  extraBallSpeed: 30
-  frontCamDistance: 30
   ballPrefab: {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
-  maxBalls: 10
+  maxBalls: 5
   currentBalls: 0
   shootCooldown: 0.5
 --- !u!114 &515025735 stripped
@@ -496,10 +494,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042434634268129985, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482780026835825758, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
-      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7887061131611694050, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
