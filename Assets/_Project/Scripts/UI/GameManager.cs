@@ -7,9 +7,14 @@ public enum GameState { Start, InGame, Paused, GameOver }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public bool isGracePeriodActive { get; private set; }
+    public bool isGracePeriodActive { get; private set; } = true;
     private GameState _currentState = GameState.Start;
 
+    [Header("Statistiche")]
+     public float MetersTraveled = 0f;
+     public float TimeElapsed = 0f;
+
+    
     private void Awake()
     {
         if (Instance == null) Instance = this;

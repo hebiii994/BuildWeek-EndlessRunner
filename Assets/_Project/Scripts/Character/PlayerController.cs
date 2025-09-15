@@ -32,12 +32,7 @@ public class PlayerController : MonoBehaviour
     private float originalHeight;
     private Vector3 originalCenter;
 
-    [Header("Statistiche")]
-    [SerializeField] private float metersTraveled = 0f;
-    [SerializeField] private float timeElapsed = 0f;
-
-    public float MetersTraveled => metersTraveled;
-    public float TimeElapsed => timeElapsed;
+   
 
     void Awake()
     {
@@ -82,8 +77,8 @@ public class PlayerController : MonoBehaviour
         Vector3 move = Vector3.forward * forwardSpeed;
 
         // Aggiorna statistiche
-        metersTraveled = transform.position.z;
-        timeElapsed += Time.deltaTime;
+        GameManager. Instance.MetersTraveled = transform.position.z;
+        GameManager.Instance.TimeElapsed += Time.deltaTime;
 
         // Gestione corsie
         if (Input.GetKeyDown(KeyCode.A) && currentLane > 0) currentLane--;
