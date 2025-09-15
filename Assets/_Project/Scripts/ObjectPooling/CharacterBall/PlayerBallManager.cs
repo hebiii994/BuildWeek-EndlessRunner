@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -7,6 +8,11 @@ public class PlayerBallManager : MonoBehaviour
     public Transform hitPoint;
     public Camera cam;
     public PlayerController playerController;
+
+    [Header("Tiro")]
+    [SerializeField] private float extraBallSpeed = 10f; // aggiunta oltre alla velocità del player
+    [SerializeField] private float frontCamDistance = 15f; // distanza fissa davanti alla camera
+
 
     [Header("Pool")]
     public GameObject ballPrefab;
@@ -65,25 +71,30 @@ public class PlayerBallManager : MonoBehaviour
 
     private void ShootBall()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            Vector3 dir = (hit.point - hitPoint.position).normalized;
-            BallController ball = ballPool.Get();
+        // Converto il click in un punto davanti alla camera
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = frontCamDistance; // distanza fissa davanti alla camera
+        Vector3 worldPos = cam.ScreenToWorldPoint(mousePos);
 
-            // Posiziona la palla
-            ball.transform.position = hitPoint.position + dir * 0.5f; // mezzo metro davanti al player
+        // Direzione dalla mano (hitPoint) al punto cliccato
+        Vector3 dir = (worldPos - hitPoint.position).normalized;
 
-            // Ignora collisione con il player
-            Collider playerCol = playerController.GetComponent<CharacterController>();
-            Collider ballCol = ball.GetComponent<Collider>();
-            if (playerCol != null && ballCol != null)
-                Physics.IgnoreCollision(ballCol, playerCol, true);
+        // Prendo una palla dal pool
+        BallController ball = ballPool.Get();
 
-            // Lancia la palla
-            ball.Launch(dir, this, playerController.forwardSpeed);
-            currentBalls--;
-        }
+        // Posiziono la palla davanti al player
+        ball.transform.position = hitPoint.position;
+
+        // Ignora collisione col player
+        Collider playerCol = playerController.GetComponent<CharacterController>();
+        Collider ballCol = ball.GetComponent<Collider>();
+        if (playerCol != null && ballCol != null)
+            Physics.IgnoreCollision(ballCol, playerCol, true);
+
+        // Lancia la palla con velocità = velocità del player + extra
+        ball.Launch(dir, this, playerController.forwardSpeed + extraBallSpeed);
+
+        currentBalls--;
     }
 
 

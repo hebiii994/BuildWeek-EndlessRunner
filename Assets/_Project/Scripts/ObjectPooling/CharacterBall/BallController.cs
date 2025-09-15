@@ -6,6 +6,7 @@ public class BallController : MonoBehaviour
     private Rigidbody rb;
     private Transform startPoint;
     private bool returning = false;
+    private bool returned = false;
     private PlayerBallManager owner;
 
     private float maxX; // limite laterale del campo
@@ -17,7 +18,7 @@ public class BallController : MonoBehaviour
     }
 
     // Lancia il pallone verso la direzione cliccata, velocità uguale al player
-    public void Launch(Vector3 direction, PlayerBallManager manager, float playerSpeed)
+    public void Launch(Vector3 direction, PlayerBallManager manager, float finalSpeed)
     {
         owner = manager;
         startPoint = manager.hitPoint;
@@ -26,7 +27,7 @@ public class BallController : MonoBehaviour
         // Imposto il limite laterale corretto
         maxX = manager.playerController.laneDistance;
 
-        rb.velocity = direction.normalized * playerSpeed;
+        rb.velocity = direction.normalized * finalSpeed;
         rb.angularVelocity = Vector3.zero;
 
         // Avvia il controllo per la palla persa
@@ -46,13 +47,20 @@ public class BallController : MonoBehaviour
 
     private IEnumerator ReturnToPlayer()
     {
-        while (Vector3.Distance(transform.position, startPoint.position) > 0.1f)
+        while (!returned)
         {
             transform.position = Vector3.MoveTowards(transform.position, startPoint.position, 30f * Time.deltaTime);
             yield return null;
         }
+    }
 
-        owner.ReturnBall(this);
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("BallReturn") && returning) //Se colpisce il boxCollider E sta tornando
+        {
+            returned = true;
+            owner.ReturnBall(this);
+        }
     }
 
     private IEnumerator CheckOutOfBounds()

@@ -24,10 +24,10 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     [Header("Riferimenti")]
+    [SerializeField] private Animator animator;
     private CharacterController controller;
     private Transform modelTransform;
-    [SerializeField] private Animator animator;
-
+    
     [Header("Grandezze")]
     private float originalHeight;
     private Vector3 originalCenter;
