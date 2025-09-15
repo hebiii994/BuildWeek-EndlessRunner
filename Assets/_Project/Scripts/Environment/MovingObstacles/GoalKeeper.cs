@@ -6,7 +6,6 @@ using UnityEngine;
 public class GoalKeeper : AbstractMover
 {
     [SerializeField] private float _timeToStartMoving = 3f;
-    [SerializeField] private float _timeToFinishMoving = 2.5f;
     [SerializeField] private float _maxDistance = 5f;
 
     private bool shouldMove = false;

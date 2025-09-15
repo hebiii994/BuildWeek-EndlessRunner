@@ -18,9 +18,9 @@ public class ShopPowerUp : AbstractPowerUp
             Debug.LogError("SaveData or PowerUp is null. Cannot save power-up state.");
             return;
         }
-        if (!data.ownedPowerUp.Contains(powerUp.PowerUpID))
+        if (!data.powerUpsID.Contains(powerUp.PowerUpID))
         {
-            data.ownedPowerUp.Add(powerUp.PowerUpID);
+            data.powerUpsID.Add(powerUp.PowerUpID);
             Debug.Log($"Power-up {powerUp.PowerUpID} added to owned power-ups.");
         }
         else

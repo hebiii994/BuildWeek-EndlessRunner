@@ -9,8 +9,7 @@
         private int currentLaneIndex = 0; // Indice della corsia corrente
         private int targetLaneIndex; // Indice della corsia target
         private Vector3 startPosition; // Posizione iniziale
-        private Vector3 targetPosition; // Posizione target
-    
+        private Vector3 targetPosition; // Posizione target    
 
         private GameObject player; // Riferimento al giocatore
 
