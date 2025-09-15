@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New In-Game Power-Up", menuName = "Power-Ups/InGame/Invincibility Power-Up")]
+[CreateAssetMenu(fileName = "Invincibility PowerUp", menuName = "ScriptableObjects/PowerUp/InGame/Invincibility Power-Up")]
 public class InvincibilityPowerUp : AbstractPowerUp
 {
 
-    private float _powerUpDuration = 5f;
+    private float _powerUpDuration = 5f; //Nota bene: Ho visto che la durata di invincibility è stata impostata nel Life Controller. 
+                                         //Secondo me avrebbe più senso metterla qui, così da impostare un moltiplicatore
+                                         //Lascio tutto così per evitare conflitti inutili su Git.
     public float PowerUpDuration => _powerUpDuration;
 
     Collider _collider;
@@ -29,14 +31,14 @@ public class InvincibilityPowerUp : AbstractPowerUp
 
     public override void ApplyEffect(GameObject player)
     {
-        // Implementa l'effetto specifico del power-up qui
-        Debug.Log($"Power-up {PowerUpID} applied to {player.name} for {PowerUpDuration} seconds.");
+        LifeController lc = player.GetComponent<LifeController>();
+        if (lc != null)
+        {
+            lc.StartCoroutine("Invincibility");
+            Debug.Log($"Power-up {PowerUpID} applied to {player.name}");
+        }
+        
         // Esempio: Aumenta la velocità del giocatore per la durata del power-up
-        // PlayerController controller = player.GetComponent<PlayerController>();
-        // if (controller != null)
-        // {
-        //     controller.StartCoroutine(ApplySpeedBoost(controller));
-        // }
-    }
 
+    }
 }
