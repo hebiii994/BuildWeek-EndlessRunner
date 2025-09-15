@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5773099208555881566}
   - component: {fileID: 1075858600630331104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 194064690641499879}
   - component: {fileID: 5165782674498496226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9196569964099568714}
   - component: {fileID: 128725303625182787}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8663831208252844902}
   - component: {fileID: 6632336451865441051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3979315570404594825}
   - component: {fileID: 3718472157670234539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,8 +276,7 @@ GameObject:
   - component: {fileID: 3656977280297561948}
   - component: {fileID: 2967632053055202645}
   - component: {fileID: 5025001530764443072}
-  - component: {fileID: 7601962217984111179}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdBench (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,49 +376,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7601962217984111179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213096444397947427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 6720930545935966417}
-  - {fileID: 5129606332089402680}
-  - {fileID: 7969477745642754186}
-  - {fileID: 7666212629380457224}
-  - {fileID: 922290119912176685}
-  - {fileID: 26446593991446941}
-  - {fileID: 7366825315386622191}
-  - {fileID: 3979315570404594825}
-  - {fileID: 6714363780852783015}
-  - {fileID: 4518244365235142180}
-  - {fileID: 8783584329222264606}
-  - {fileID: 510138113229010666}
-  - {fileID: 5730453017872591958}
-  - {fileID: 832168094412406359}
-  - {fileID: 4558674076602121519}
-  - {fileID: 2178426495569250623}
-  - {fileID: 7638063798964589354}
-  - {fileID: 467393941674110446}
-  - {fileID: 6736656229965260450}
-  - {fileID: 3454863621609084391}
-  - {fileID: 4671433370994624802}
-  - {fileID: 8891530045889090339}
-  - {fileID: 4215556342120670163}
-  - {fileID: 5947703103746578835}
-  - {fileID: 9027208326487223501}
-  - {fileID: 5292680666318814424}
-  - {fileID: 7559687939455552621}
-  - {fileID: 1030302904680448614}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &332516466885808656
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7510576518922795699}
   - component: {fileID: 1025471067101507173}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7638063798964589354}
   - component: {fileID: 8936953098577855426}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7743206430547887683}
   - component: {fileID: 1818763770280319553}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321039257008208659}
   - component: {fileID: 4296507338926323676}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6287259550908972857}
   - component: {fileID: 5280634013551091119}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2449334792890506465}
   - component: {fileID: 7883884485958126923}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6686334266585025576}
   - component: {fileID: 881442281512551312}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +760,7 @@ GameObject:
   - component: {fileID: 7727469548280980908}
   - component: {fileID: 4388996908504525716}
   - component: {fileID: 5712246932681297715}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideWalkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3954730432515604274}
   - component: {fileID: 82475984019811843}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9182614794036922570}
   - component: {fileID: 2491666174241540761}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2328679343536506997}
   - component: {fileID: 3491997691701401135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,8 +1035,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4552272371974480315}
-  m_Layer: 0
-  m_Name: Bench
+  m_Layer: 10
+  m_Name: Bench_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,14 +1051,14 @@ Transform:
   m_GameObject: {fileID: 954374119975325804}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4566262, y: 1.1402216, z: -0.009153252}
+  m_LocalPosition: {x: 1.4566262, y: 1.1402217, z: -0.00915329}
   m_LocalScale: {x: 0.05, y: 1, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6250004077967483373}
   - {fileID: 8326497478378714786}
   - {fileID: 3656977280297561948}
-  m_Father: {fileID: 7467645644363075412}
+  m_Father: {fileID: 3633162122626749561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089600244410172856
 GameObject:
@@ -1114,7 +1070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7947299487402140385}
   - component: {fileID: 9022193336557614706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178426495569250623}
   - component: {fileID: 3702832972111063490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1219,7 +1175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6986044436930842618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spawnPoint_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,7 +1191,7 @@ Transform:
   m_GameObject: {fileID: 1123611084114783985}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.3, y: 1, z: 0.4052}
+  m_LocalPosition: {x: -0.3, y: 2, z: 0.40520003}
   m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1251,7 +1207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 152275959368727643}
   - component: {fileID: 4221911305024098150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1304,7 +1260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5183886443054193408}
   - component: {fileID: 7725789903735795370}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1357,7 +1313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6179927887350717989}
   - component: {fileID: 3481866176831048274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: triggerPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510138113229010666}
   - component: {fileID: 8106230870213930066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7213545066287174911}
   - component: {fileID: 4412752577694555821}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1516,7 +1472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077384120698077894}
   - component: {fileID: 2373962560142101399}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1569,7 +1525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3995492776634076236}
   - component: {fileID: 3488576947603316583}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1622,7 +1578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649972843636185531}
   - component: {fileID: 8004641560977339834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1675,7 +1631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7448582778544138452}
   - component: {fileID: 6636893130838788425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1728,7 +1684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2783459558142358290}
   - component: {fileID: 2927801733981503135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1886,7 +1842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5292680666318814424}
   - component: {fileID: 7702230721389713761}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1939,7 +1895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6917249423832127779}
   - component: {fileID: 3534940952148325685}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,6 +1938,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2089064460069933384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 811860306008273206}
+  m_Layer: 10
+  m_Name: spawnPoint_L (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &811860306008273206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089064460069933384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.3, y: 2, z: -0.14800003}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2140513819717393237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +1979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 26446593991446941}
   - component: {fileID: 4921688555201401573}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2045,7 +2032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3685113368915230949}
   - component: {fileID: 3381783911870199076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2098,7 +2085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6064670570806594891}
   - component: {fileID: 8874128271192930956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2151,7 +2138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5828310013118437936}
   - component: {fileID: 4384573283996294501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2204,7 +2191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6834833881143044299}
   - component: {fileID: 5343507452453622145}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2257,7 +2244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6398357599631358813}
   - component: {fileID: 1911605243789167647}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,7 +2300,7 @@ GameObject:
   - component: {fileID: 3144033187527491347}
   - component: {fileID: 2530048639844358306}
   - component: {fileID: 1370509571939695685}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideWalkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2430,7 +2417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5472856423757021648}
   - component: {fileID: 4073629115481590245}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2483,7 +2470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7181359228354029334}
   - component: {fileID: 3112129273511752735}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2536,7 +2523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4364279298792818892}
   - component: {fileID: 2491349528040735690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,7 +2575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5574146725483103274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideWalkSpawerGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2626,7 +2613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5050493197805314713}
   - component: {fileID: 5614245124472619516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,7 +2666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3433270171976635428}
   - component: {fileID: 2530441678768620812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2735,7 +2722,7 @@ GameObject:
   - component: {fileID: 4982542824915615711}
   - component: {fileID: 6974841565363921121}
   - component: {fileID: 1811670210881871273}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideWalkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2852,7 +2839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4558674076602121519}
   - component: {fileID: 1434165750593672614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2905,7 +2892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832168094412406359}
   - component: {fileID: 4641212824228452099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2958,7 +2945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8425344830854250740}
   - component: {fileID: 5700973430419264045}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3011,7 +2998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5341609848820683018}
   - component: {fileID: 3070677966881510022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3064,7 +3051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4215556342120670163}
   - component: {fileID: 8944874844791986725}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3117,7 +3104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5265374935491453727}
   - component: {fileID: 2480160973810133315}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3170,7 +3157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6441054605329817326}
   - component: {fileID: 5207496844742298017}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3223,7 +3210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7147047535893504396}
   - component: {fileID: 7190350467659261331}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3276,7 +3263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6736656229965260450}
   - component: {fileID: 2682695469780686116}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3329,7 +3316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7328895378164992564}
   - component: {fileID: 3271933936809586373}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3382,7 +3369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7889283729984167697}
   - component: {fileID: 3654847711644867444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3435,7 +3422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8619465841289391583}
   - component: {fileID: 2650530266063423687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3478,6 +3465,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3412928579931809102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218333043033345771}
+  m_Layer: 10
+  m_Name: spawnPoint_C (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218333043033345771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412928579931809102}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 2, z: -0.14800003}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3467764726227113344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,7 +3506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2337598525339448556}
   - component: {fileID: 8207578748706489515}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3531,6 +3549,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3525705219906225574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8713710251393626132}
+  m_Layer: 10
+  m_Name: spawnPoint_R (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8713710251393626132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525705219906225574}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.3, y: 2, z: 0.12399994}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3556068280571683306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,7 +3590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874469715228832885}
   - component: {fileID: 5652543000086315805}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3594,7 +3643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041717931824525033}
   - component: {fileID: 2317826401197167732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3647,7 +3696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 922290119912176685}
   - component: {fileID: 5380229270397354183}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3700,7 +3749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4316198352723029847}
   - component: {fileID: 4015263996880607644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3753,7 +3802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843746599799644344}
   - component: {fileID: 2955651080911150623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3796,6 +3845,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3753875478384760700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6883238927493295336}
+  m_Layer: 10
+  m_Name: spawnPoint_L (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6883238927493295336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753875478384760700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.3, y: 2, z: 0.12399994}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3782617297668700443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3806,7 +3886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2447041985610769664}
   - component: {fileID: 3650666278867897260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3859,7 +3939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4518244365235142180}
   - component: {fileID: 7890497238147239391}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3912,7 +3992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8530243895198776733}
   - component: {fileID: 5884354717166788461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3955,6 +4035,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3848244960381014034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8914894877469520463}
+  m_Layer: 10
+  m_Name: spawnPoint_R (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8914894877469520463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3848244960381014034}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.3, y: 2, z: -0.14800003}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3859792077212242353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,7 +4076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9027208326487223501}
   - component: {fileID: 4743689603321152829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4018,7 +4129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3529296519500486965}
   - component: {fileID: 1017031291144654314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4071,7 +4182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6443852034485167646}
   - component: {fileID: 5644456663938096936}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4125,8 +4236,7 @@ GameObject:
   - component: {fileID: 8326497478378714786}
   - component: {fileID: 6092904765307646822}
   - component: {fileID: 6378276702549631338}
-  - component: {fileID: 6079208706217769813}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdBench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4226,49 +4336,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6079208706217769813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3957374054721627102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 4966981712614767478}
-  - {fileID: 2509740624543759112}
-  - {fileID: 8530243895198776733}
-  - {fileID: 3089680983473384474}
-  - {fileID: 7765296087727268632}
-  - {fileID: 8619465841289391583}
-  - {fileID: 3433270171976635428}
-  - {fileID: 1843746599799644344}
-  - {fileID: 330190693720951396}
-  - {fileID: 6499728000647128477}
-  - {fileID: 2447041985610769664}
-  - {fileID: 6686334266585025576}
-  - {fileID: 1116209795746445113}
-  - {fileID: 2337598525339448556}
-  - {fileID: 7149776566964696984}
-  - {fileID: 5827548418542477054}
-  - {fileID: 2412541198846142533}
-  - {fileID: 4687467743468596459}
-  - {fileID: 259886808411214152}
-  - {fileID: 7889283729984167697}
-  - {fileID: 5294397130030843363}
-  - {fileID: 5183886443054193408}
-  - {fileID: 1659251208357167738}
-  - {fileID: 1474292231221917011}
-  - {fileID: 4364279298792818892}
-  - {fileID: 386585539739054034}
-  - {fileID: 5828310013118437936}
-  - {fileID: 2142428239151619430}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &3976425849120017565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,7 +4346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4587876504648235632}
   - component: {fileID: 2879408277393175349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4332,7 +4399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5595556594448650112}
   - component: {fileID: 2464824001257075571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4385,7 +4452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7020822583023391581}
   - component: {fileID: 6465043296185302934}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4438,7 +4505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976317751307748944}
   - component: {fileID: 6148780586687105476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4491,7 +4558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7366825315386622191}
   - component: {fileID: 2553426469768970491}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4544,7 +4611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7543334659252261967}
   - component: {fileID: 7370655006706349259}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4597,7 +4664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5813574399435484754}
   - component: {fileID: 4281916469013731205}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4650,7 +4717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1659251208357167738}
   - component: {fileID: 8115808102281970294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4703,7 +4770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030302904680448614}
   - component: {fileID: 812200421588328656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4756,7 +4823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2781356192978606500}
   - component: {fileID: 5709678055084026070}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4809,7 +4876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7666212629380457224}
   - component: {fileID: 3162672078607252084}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4862,7 +4929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820898414461379536}
   - component: {fileID: 5815544127821002697}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4915,7 +4982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2896815777887924363}
   - component: {fileID: 6761002498506700054}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4968,7 +5035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5141884644221466424}
   - component: {fileID: 1801473473913774136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5021,7 +5088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2499188483601436482}
   - component: {fileID: 1705498068919940857}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5074,7 +5141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7765296087727268632}
   - component: {fileID: 4733939108496427446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5127,7 +5194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7149776566964696984}
   - component: {fileID: 5963366991888534560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5180,7 +5247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5709862423896176778}
   - component: {fileID: 392680032154601611}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5233,7 +5300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3454863621609084391}
   - component: {fileID: 8237152676946481868}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5286,7 +5353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764876738242890493}
   - component: {fileID: 6773659815060310028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5338,7 +5405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1998013767985475463}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spawnPoint_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5354,7 +5421,7 @@ Transform:
   m_GameObject: {fileID: 4557816543974009460}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.3, y: 1, z: 0.4052}
+  m_LocalPosition: {x: 0.3, y: 2, z: 0.40520003}
   m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5373,7 +5440,7 @@ GameObject:
   - component: {fileID: 3907230226070033900}
   - component: {fileID: 7559613751754370409}
   - component: {fileID: 1745559526015080861}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideWalkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5490,7 +5557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7559687939455552621}
   - component: {fileID: 864056572394027733}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5543,7 +5610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9049024981258874852}
   - component: {fileID: 340130802280055318}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5596,7 +5663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4044866403396004422}
   - component: {fileID: 8129248748015364409}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5649,7 +5716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250859292246150858}
   - component: {fileID: 2564418352942990517}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5702,7 +5769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2828201413661803216}
   - component: {fileID: 79486248594836025}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5755,7 +5822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330190693720951396}
   - component: {fileID: 5337699853832429313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5811,7 +5878,7 @@ GameObject:
   - component: {fileID: 3044702061610492827}
   - component: {fileID: 1376197803581173128}
   - component: {fileID: 3909481182262574948}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideWalkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5928,7 +5995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4216082589448897938}
   - component: {fileID: 7070276020535968992}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5982,8 +6049,7 @@ GameObject:
   - component: {fileID: 8233317869175962985}
   - component: {fileID: 2225130347967423173}
   - component: {fileID: 4284699989901670050}
-  - component: {fileID: 7776959470228127549}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdBench (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6083,49 +6149,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7776959470228127549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5037442889126297087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 4268940804940898278}
-  - {fileID: 2449334792890506465}
-  - {fileID: 2058019991289345640}
-  - {fileID: 7743206430547887683}
-  - {fileID: 5586549490883474346}
-  - {fileID: 1206387991971958985}
-  - {fileID: 2682693623200019655}
-  - {fileID: 1321039257008208659}
-  - {fileID: 2726454232914335292}
-  - {fileID: 5050493197805314713}
-  - {fileID: 3526107696287132516}
-  - {fileID: 2783459558142358290}
-  - {fileID: 6625768061719337845}
-  - {fileID: 3685113368915230949}
-  - {fileID: 6287259550908972857}
-  - {fileID: 8309836037544137817}
-  - {fileID: 3800903490706473318}
-  - {fileID: 6177610766762711751}
-  - {fileID: 6398357599631358813}
-  - {fileID: 6441054605329817326}
-  - {fileID: 649972843636185531}
-  - {fileID: 194064690641499879}
-  - {fileID: 47343909257380009}
-  - {fileID: 33777313834087732}
-  - {fileID: 2781356192978606500}
-  - {fileID: 7947299487402140385}
-  - {fileID: 6750490850373800872}
-  - {fileID: 731992342548670459}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &5118694818380158044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,7 +6159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5730453017872591958}
   - component: {fileID: 7347942155869334786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6189,7 +6212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5827548418542477054}
   - component: {fileID: 7976752447557596414}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6242,7 +6265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6134277596313781220}
   - component: {fileID: 2692101371376975274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6295,7 +6318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5947703103746578835}
   - component: {fileID: 7235619400627755626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6348,7 +6371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8864953197332233504}
   - component: {fileID: 300125335498556847}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6401,7 +6424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4559613073439462273}
   - component: {fileID: 245611023583932416}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6454,7 +6477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7771902943285984236}
   - component: {fileID: 8329693069277187914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6507,7 +6530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2398413569730517369}
   - component: {fileID: 3544037932099873762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6560,7 +6583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6499728000647128477}
   - component: {fileID: 7891883865567169477}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6613,7 +6636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2886402998964474984}
   - component: {fileID: 663433061393663770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6666,7 +6689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1116209795746445113}
   - component: {fileID: 62030793970101949}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6719,7 +6742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4403622520015343525}
   - component: {fileID: 2429752566673977432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6772,7 +6795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1253702043808067945}
   - component: {fileID: 1318711922330852813}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6825,7 +6848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2682693623200019655}
   - component: {fileID: 7722146111528630740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6878,7 +6901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780687932915792162}
   - component: {fileID: 6384672207055302506}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6931,7 +6954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8522105925121956349}
   - component: {fileID: 7045533513571556197}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6984,7 +7007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5333357637251324724}
   - component: {fileID: 6779217386230842566}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7037,7 +7060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3089680983473384474}
   - component: {fileID: 2234284606017303357}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7090,7 +7113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7969477745642754186}
   - component: {fileID: 1783413376621060891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7143,7 +7166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8891530045889090339}
   - component: {fileID: 3202849877576426782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7196,7 +7219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7550832693989903616}
   - component: {fileID: 382378881651470968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7249,7 +7272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687467743468596459}
   - component: {fileID: 861722029365863435}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7302,7 +7325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9119731915159611167}
   - component: {fileID: 2834072797443050140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7355,7 +7378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467393941674110446}
   - component: {fileID: 981778062437678470}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7409,8 +7432,7 @@ GameObject:
   - component: {fileID: 5414187934206551486}
   - component: {fileID: 109513457981777592}
   - component: {fileID: 5081983386396166637}
-  - component: {fileID: 3573707969884062267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdBench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7510,49 +7532,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3573707969884062267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6113496258248481354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 2063090771043077557}
-  - {fileID: 7550832693989903616}
-  - {fileID: 5766358299441699448}
-  - {fileID: 1250859292246150858}
-  - {fileID: 7510576518922795699}
-  - {fileID: 3020325806237796207}
-  - {fileID: 4403622520015343525}
-  - {fileID: 7181359228354029334}
-  - {fileID: 976317751307748944}
-  - {fileID: 1820898414461379536}
-  - {fileID: 3529296519500486965}
-  - {fileID: 2896815777887924363}
-  - {fileID: 1874469715228832885}
-  - {fileID: 9196569964099568714}
-  - {fileID: 2886402998964474984}
-  - {fileID: 7448582778544138452}
-  - {fileID: 321158797371391007}
-  - {fileID: 6917249423832127779}
-  - {fileID: 3977128589323929807}
-  - {fileID: 7328895378164992564}
-  - {fileID: 4316198352723029847}
-  - {fileID: 5472856423757021648}
-  - {fileID: 1857219165334062305}
-  - {fileID: 4780687932915792162}
-  - {fileID: 8663831208252844902}
-  - {fileID: 9125442212616999635}
-  - {fileID: 7077003945244690129}
-  - {fileID: 5709862423896176778}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &6192102317960092216
 GameObject:
   m_ObjectHideFlags: 0
@@ -7563,7 +7542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3826527397476817579}
   - component: {fileID: 3938219357616441653}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7616,7 +7595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8783584329222264606}
   - component: {fileID: 1786632866237465645}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7669,7 +7648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2063090771043077557}
   - component: {fileID: 2226841873574675681}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7722,7 +7701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7082937247279689235}
   - component: {fileID: 7748876432857331557}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7775,7 +7754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3020325806237796207}
   - component: {fileID: 2371836804360395835}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7828,7 +7807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1206387991971958985}
   - component: {fileID: 6414668940771688181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7881,7 +7860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1857219165334062305}
   - component: {fileID: 5807716007147169670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7934,7 +7913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5294397130030843363}
   - component: {fileID: 5785824268240756233}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7987,7 +7966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077003945244690129}
   - component: {fileID: 4703631063782590538}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8040,7 +8019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274792938511054745}
   - component: {fileID: 4171559812082037255}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8083,6 +8062,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6793428276386456277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7402762162067166749}
+  m_Layer: 10
+  m_Name: spawnPoint_C (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7402762162067166749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793428276386456277}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0.02800003}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &6796340610126721979
 GameObject:
   m_ObjectHideFlags: 0
@@ -8093,7 +8103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6177610766762711751}
   - component: {fileID: 4048743496690312820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8146,7 +8156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33777313834087732}
   - component: {fileID: 3720397534116466759}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8199,7 +8209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6714363780852783015}
   - component: {fileID: 7440634914739585639}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8252,7 +8262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9125442212616999635}
   - component: {fileID: 2107901280909643952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8305,7 +8315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47343909257380009}
   - component: {fileID: 135094817813942683}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8358,7 +8368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142428239151619430}
   - component: {fileID: 7083146205925876459}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8411,7 +8421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4671433370994624802}
   - component: {fileID: 7740757062848794109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8464,7 +8474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8041131582061556675}
   - component: {fileID: 4717052030629788799}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8517,7 +8527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6720930545935966417}
   - component: {fileID: 5037757571257836099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8570,7 +8580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474292231221917011}
   - component: {fileID: 9141832808081920008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8613,6 +8623,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7263992176947345760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3966677373594883916}
+  m_Layer: 10
+  m_Name: spawnPoint_C (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3966677373594883916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263992176947345760}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0.12399994}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7266725581396941059
 GameObject:
   m_ObjectHideFlags: 0
@@ -8623,7 +8664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6560656812676740562}
   - component: {fileID: 2324907828939584816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8676,7 +8717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9148087502161575288}
   - component: {fileID: 3362051580666939236}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8719,6 +8760,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7339008214583724991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6512666287484888370}
+  m_Layer: 10
+  m_Name: spawnPoint_R (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6512666287484888370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7339008214583724991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.3, y: 2, z: 0.02800003}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7359988403283699525
 GameObject:
   m_ObjectHideFlags: 0
@@ -8730,8 +8802,8 @@ GameObject:
   - component: {fileID: 7467645644363075412}
   - component: {fileID: 8162657016380353997}
   - component: {fileID: 327458266613490180}
-  - component: {fileID: 2545169339397637108}
-  m_Layer: 0
+  - component: {fileID: 4360703815354831029}
+  m_Layer: 10
   m_Name: Stadiumroad 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8753,7 +8825,7 @@ Transform:
   m_Children:
   - {fileID: 5301173739359642589}
   - {fileID: 5574146725483103274}
-  - {fileID: 4552272371974480315}
+  - {fileID: 3633162122626749561}
   - {fileID: 1455959246262543854}
   - {fileID: 829718721252019717}
   m_Father: {fileID: 0}
@@ -8808,7 +8880,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2545169339397637108
+--- !u!114 &4360703815354831029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8821,14 +8893,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnableObjects:
-  - poolTag: Trophy
-    spawnChance: 1
+  - poolTag: JumpObstacle
+    spawnChance: 0.8
+    canHaveTrophy: 1
+    trophyPoolTag: Trophy
+    trophyChance: 0.5
+    trophySpawnOffset: {x: 0, y: 2, z: 0}
+  - poolTag: SlideObstacle
+    spawnChance: 0.8
+    canHaveTrophy: 1
+    trophyPoolTag: Trophy
+    trophyChance: 0.5
+    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   - poolTag: Defensor
-    spawnChance: 1
+    spawnChance: 0.8
+    canHaveTrophy: 0
+    trophyPoolTag: Trophy
+    trophyChance: 0.5
+    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   _spawnPoints:
-  - {fileID: 6986044436930842618}
-  - {fileID: 3405919155367641056}
+  - {fileID: 6883238927493295336}
+  - {fileID: 8822034820218888919}
+  - {fileID: 811860306008273206}
   - {fileID: 1998013767985475463}
+  - {fileID: 3966677373594883916}
+  - {fileID: 7402762162067166749}
+  - {fileID: 1218333043033345771}
+  - {fileID: 3405919155367641056}
+  - {fileID: 8713710251393626132}
+  - {fileID: 6512666287484888370}
+  - {fileID: 8914894877469520463}
+  - {fileID: 6986044436930842618}
+  maxObjectsToSpawn: 5
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &7420237163158208761
 GameObject:
   m_ObjectHideFlags: 0
@@ -8839,7 +8938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386585539739054034}
   - component: {fileID: 6836108559738183950}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8892,7 +8991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3529209623630987082}
   - component: {fileID: 4848409369923185439}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8935,6 +9034,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7537757810930902080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8822034820218888919}
+  m_Layer: 10
+  m_Name: spawnPoint_L (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8822034820218888919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7537757810930902080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.3, y: 2, z: 0.02800003}
+  m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5301173739359642589}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7540441100904410502
 GameObject:
   m_ObjectHideFlags: 0
@@ -8945,7 +9075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7939631388793119036}
   - component: {fileID: 2089085768496532500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8998,7 +9128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058019991289345640}
   - component: {fileID: 8741075758609058012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9051,7 +9181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731992342548670459}
   - component: {fileID: 805749801469055215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9103,7 +9233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3405919155367641056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spawnPoint_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9119,7 +9249,7 @@ Transform:
   m_GameObject: {fileID: 7606430118208057794}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000119209275, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 0.4052}
+  m_LocalPosition: {x: 0, y: 2, z: 0.40520003}
   m_LocalScale: {x: 0.03745302, y: 1.3349999, z: 0.010000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9135,7 +9265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4268940804940898278}
   - component: {fileID: 5477806856631501155}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9188,7 +9318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6625768061719337845}
   - component: {fileID: 7745961112890322385}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9241,7 +9371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8309836037544137817}
   - component: {fileID: 270557805153209921}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9294,7 +9424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6709419094365866987}
   - component: {fileID: 3159423423147788973}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9347,7 +9477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2726454232914335292}
   - component: {fileID: 105111657217387502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9400,7 +9530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6035575258704376301}
   - component: {fileID: 581219326044225197}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9453,7 +9583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259886808411214152}
   - component: {fileID: 4086311662452627080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9506,7 +9636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36627466162039171}
   - component: {fileID: 2588061680268941189}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9559,7 +9689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321158797371391007}
   - component: {fileID: 3360432078374454188}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9612,7 +9742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5129606332089402680}
   - component: {fileID: 4901192369035052943}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9655,6 +9785,223 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &8163333830402694551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3633162122626749561}
+  - component: {fileID: 3923397973463482432}
+  m_Layer: 10
+  m_Name: Bench
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3633162122626749561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163333830402694551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4552272371974480315}
+  m_Father: {fileID: 7467645644363075412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3923397973463482432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163333830402694551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPoints:
+  - {fileID: 7082937247279689235}
+  - {fileID: 4587876504648235632}
+  - {fileID: 3954730432515604274}
+  - {fileID: 5341609848820683018}
+  - {fileID: 4216082589448897938}
+  - {fileID: 1358644640564049925}
+  - {fileID: 7077384120698077894}
+  - {fileID: 2828201413661803216}
+  - {fileID: 7771902943285984236}
+  - {fileID: 152275959368727643}
+  - {fileID: 5773099208555881566}
+  - {fileID: 5265374935491453727}
+  - {fileID: 4044866403396004422}
+  - {fileID: 2499188483601436482}
+  - {fileID: 9182614794036922570}
+  - {fileID: 9148087502161575288}
+  - {fileID: 6834833881143044299}
+  - {fileID: 537733479708828118}
+  - {fileID: 8041131582061556675}
+  - {fileID: 274792938511054745}
+  - {fileID: 6035575258704376301}
+  - {fileID: 7302700406276609764}
+  - {fileID: 6560656812676740562}
+  - {fileID: 9170653757058677325}
+  - {fileID: 2398413569730517369}
+  - {fileID: 6134277596313781220}
+  - {fileID: 5595556594448650112}
+  - {fileID: 1764876738242890493}
+  - {fileID: 4966981712614767478}
+  - {fileID: 2509740624543759112}
+  - {fileID: 8530243895198776733}
+  - {fileID: 3089680983473384474}
+  - {fileID: 7765296087727268632}
+  - {fileID: 8619465841289391583}
+  - {fileID: 3433270171976635428}
+  - {fileID: 1843746599799644344}
+  - {fileID: 330190693720951396}
+  - {fileID: 6499728000647128477}
+  - {fileID: 2447041985610769664}
+  - {fileID: 6686334266585025576}
+  - {fileID: 1116209795746445113}
+  - {fileID: 2337598525339448556}
+  - {fileID: 7149776566964696984}
+  - {fileID: 5827548418542477054}
+  - {fileID: 2412541198846142533}
+  - {fileID: 4687467743468596459}
+  - {fileID: 259886808411214152}
+  - {fileID: 7889283729984167697}
+  - {fileID: 5294397130030843363}
+  - {fileID: 5183886443054193408}
+  - {fileID: 1659251208357167738}
+  - {fileID: 1474292231221917011}
+  - {fileID: 4364279298792818892}
+  - {fileID: 386585539739054034}
+  - {fileID: 5828310013118437936}
+  - {fileID: 2142428239151619430}
+  - {fileID: 6720930545935966417}
+  - {fileID: 5129606332089402680}
+  - {fileID: 7969477745642754186}
+  - {fileID: 7666212629380457224}
+  - {fileID: 922290119912176685}
+  - {fileID: 26446593991446941}
+  - {fileID: 7366825315386622191}
+  - {fileID: 3979315570404594825}
+  - {fileID: 6714363780852783015}
+  - {fileID: 4518244365235142180}
+  - {fileID: 8783584329222264606}
+  - {fileID: 510138113229010666}
+  - {fileID: 5730453017872591958}
+  - {fileID: 832168094412406359}
+  - {fileID: 4558674076602121519}
+  - {fileID: 2178426495569250623}
+  - {fileID: 7638063798964589354}
+  - {fileID: 467393941674110446}
+  - {fileID: 6736656229965260450}
+  - {fileID: 3454863621609084391}
+  - {fileID: 4671433370994624802}
+  - {fileID: 8891530045889090339}
+  - {fileID: 4215556342120670163}
+  - {fileID: 5947703103746578835}
+  - {fileID: 9027208326487223501}
+  - {fileID: 5292680666318814424}
+  - {fileID: 7559687939455552621}
+  - {fileID: 1030302904680448614}
+  - {fileID: 4268940804940898278}
+  - {fileID: 2449334792890506465}
+  - {fileID: 2058019991289345640}
+  - {fileID: 7743206430547887683}
+  - {fileID: 5586549490883474346}
+  - {fileID: 1206387991971958985}
+  - {fileID: 2682693623200019655}
+  - {fileID: 1321039257008208659}
+  - {fileID: 2726454232914335292}
+  - {fileID: 5050493197805314713}
+  - {fileID: 3526107696287132516}
+  - {fileID: 2783459558142358290}
+  - {fileID: 6625768061719337845}
+  - {fileID: 3685113368915230949}
+  - {fileID: 6287259550908972857}
+  - {fileID: 8309836037544137817}
+  - {fileID: 3800903490706473318}
+  - {fileID: 6177610766762711751}
+  - {fileID: 6398357599631358813}
+  - {fileID: 6441054605329817326}
+  - {fileID: 649972843636185531}
+  - {fileID: 194064690641499879}
+  - {fileID: 47343909257380009}
+  - {fileID: 33777313834087732}
+  - {fileID: 2781356192978606500}
+  - {fileID: 7947299487402140385}
+  - {fileID: 6750490850373800872}
+  - {fileID: 731992342548670459}
+  - {fileID: 2063090771043077557}
+  - {fileID: 7550832693989903616}
+  - {fileID: 5766358299441699448}
+  - {fileID: 1250859292246150858}
+  - {fileID: 7510576518922795699}
+  - {fileID: 3020325806237796207}
+  - {fileID: 4403622520015343525}
+  - {fileID: 7181359228354029334}
+  - {fileID: 976317751307748944}
+  - {fileID: 1820898414461379536}
+  - {fileID: 3529296519500486965}
+  - {fileID: 2896815777887924363}
+  - {fileID: 1874469715228832885}
+  - {fileID: 9196569964099568714}
+  - {fileID: 2886402998964474984}
+  - {fileID: 7448582778544138452}
+  - {fileID: 321158797371391007}
+  - {fileID: 6917249423832127779}
+  - {fileID: 3977128589323929807}
+  - {fileID: 7328895378164992564}
+  - {fileID: 4316198352723029847}
+  - {fileID: 5472856423757021648}
+  - {fileID: 1857219165334062305}
+  - {fileID: 4780687932915792162}
+  - {fileID: 8663831208252844902}
+  - {fileID: 9125442212616999635}
+  - {fileID: 7077003945244690129}
+  - {fileID: 5709862423896176778}
+  - {fileID: 5333357637251324724}
+  - {fileID: 8425344830854250740}
+  - {fileID: 7147047535893504396}
+  - {fileID: 6064670570806594891}
+  - {fileID: 8864953197332233504}
+  - {fileID: 7543334659252261967}
+  - {fileID: 2041717931824525033}
+  - {fileID: 3995492776634076236}
+  - {fileID: 6054978431124088045}
+  - {fileID: 9119731915159611167}
+  - {fileID: 6709419094365866987}
+  - {fileID: 36627466162039171}
+  - {fileID: 5813574399435484754}
+  - {fileID: 8522105925121956349}
+  - {fileID: 2836624360554134350}
+  - {fileID: 4559613073439462273}
+  - {fileID: 9049024981258874852}
+  - {fileID: 5141884644221466424}
+  - {fileID: 7213545066287174911}
+  - {fileID: 6443852034485167646}
+  - {fileID: 7939631388793119036}
+  - {fileID: 1253702043808067945}
+  - {fileID: 6361439159827725863}
+  - {fileID: 7020822583023391581}
+  - {fileID: 2328679343536506997}
+  - {fileID: 3529209623630987082}
+  - {fileID: 3826527397476817579}
+  - {fileID: 6660714949555052429}
+  SpawnObjects:
+  - {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
+  _spawnPointOffset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &8192832732943101442
 GameObject:
   m_ObjectHideFlags: 0
@@ -9665,7 +10012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3977128589323929807}
   - component: {fileID: 4828164354867489882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9719,8 +10066,7 @@ GameObject:
   - component: {fileID: 6250004077967483373}
   - component: {fileID: 6927246738156679888}
   - component: {fileID: 190752246091346872}
-  - component: {fileID: 3758627267808036177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdBench (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9820,49 +10166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3758627267808036177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197761381374344910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 7082937247279689235}
-  - {fileID: 4587876504648235632}
-  - {fileID: 3954730432515604274}
-  - {fileID: 5341609848820683018}
-  - {fileID: 4216082589448897938}
-  - {fileID: 1358644640564049925}
-  - {fileID: 7077384120698077894}
-  - {fileID: 2828201413661803216}
-  - {fileID: 7771902943285984236}
-  - {fileID: 152275959368727643}
-  - {fileID: 5773099208555881566}
-  - {fileID: 5265374935491453727}
-  - {fileID: 4044866403396004422}
-  - {fileID: 2499188483601436482}
-  - {fileID: 9182614794036922570}
-  - {fileID: 9148087502161575288}
-  - {fileID: 6834833881143044299}
-  - {fileID: 537733479708828118}
-  - {fileID: 8041131582061556675}
-  - {fileID: 274792938511054745}
-  - {fileID: 6035575258704376301}
-  - {fileID: 7302700406276609764}
-  - {fileID: 6560656812676740562}
-  - {fileID: 9170653757058677325}
-  - {fileID: 2398413569730517369}
-  - {fileID: 6134277596313781220}
-  - {fileID: 5595556594448650112}
-  - {fileID: 1764876738242890493}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &8204039887941368580
 GameObject:
   m_ObjectHideFlags: 0
@@ -9873,7 +10176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2412541198846142533}
   - component: {fileID: 8232107051105928775}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9926,7 +10229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7302700406276609764}
   - component: {fileID: 1476487793230456991}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9979,7 +10282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5586549490883474346}
   - component: {fileID: 1361020529141462813}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10032,7 +10335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 537733479708828118}
   - component: {fileID: 1624601702935457968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10085,7 +10388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6361439159827725863}
   - component: {fileID: 8058883789399065330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10138,7 +10441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2836624360554134350}
   - component: {fileID: 3931319475947624240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10191,7 +10494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3800903490706473318}
   - component: {fileID: 5646122483219520129}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10244,7 +10547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6054978431124088045}
   - component: {fileID: 8486164156671552167}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10297,7 +10600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5766358299441699448}
   - component: {fileID: 8056135021301137750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10350,7 +10653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6750490850373800872}
   - component: {fileID: 1597128770938874869}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10403,7 +10706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9170653757058677325}
   - component: {fileID: 3151788039667144648}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10456,7 +10759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3526107696287132516}
   - component: {fileID: 3465732018668574774}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10508,9 +10811,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5301173739359642589}
-  m_Layer: 0
-  m_Name: RoadPoints
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: SpawnPoints
+  m_TagString: SpawnPointContainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10528,9 +10831,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6986044436930842618}
-  - {fileID: 3405919155367641056}
+  - {fileID: 6883238927493295336}
+  - {fileID: 8822034820218888919}
+  - {fileID: 811860306008273206}
   - {fileID: 1998013767985475463}
+  - {fileID: 3966677373594883916}
+  - {fileID: 7402762162067166749}
+  - {fileID: 1218333043033345771}
+  - {fileID: 3405919155367641056}
+  - {fileID: 8713710251393626132}
+  - {fileID: 6512666287484888370}
+  - {fileID: 8914894877469520463}
+  - {fileID: 6986044436930842618}
   - {fileID: 6179927887350717989}
   m_Father: {fileID: 7467645644363075412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10544,7 +10856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4966981712614767478}
   - component: {fileID: 1999932742533577453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10598,8 +10910,7 @@ GameObject:
   - component: {fileID: 4174270836565648371}
   - component: {fileID: 8120489198300142216}
   - component: {fileID: 8750005046469904191}
-  - component: {fileID: 8356746501182867559}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdBench (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10699,49 +11010,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8356746501182867559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064345836201173176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fe73a3fb7fbc340a1ca14a4f96f794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 5333357637251324724}
-  - {fileID: 8425344830854250740}
-  - {fileID: 7147047535893504396}
-  - {fileID: 6064670570806594891}
-  - {fileID: 8864953197332233504}
-  - {fileID: 7543334659252261967}
-  - {fileID: 2041717931824525033}
-  - {fileID: 3995492776634076236}
-  - {fileID: 6054978431124088045}
-  - {fileID: 9119731915159611167}
-  - {fileID: 6709419094365866987}
-  - {fileID: 36627466162039171}
-  - {fileID: 5813574399435484754}
-  - {fileID: 8522105925121956349}
-  - {fileID: 2836624360554134350}
-  - {fileID: 4559613073439462273}
-  - {fileID: 9049024981258874852}
-  - {fileID: 5141884644221466424}
-  - {fileID: 7213545066287174911}
-  - {fileID: 6443852034485167646}
-  - {fileID: 7939631388793119036}
-  - {fileID: 1253702043808067945}
-  - {fileID: 6361439159827725863}
-  - {fileID: 7020822583023391581}
-  - {fileID: 2328679343536506997}
-  - {fileID: 3529209623630987082}
-  - {fileID: 3826527397476817579}
-  - {fileID: 6660714949555052429}
-  _spectator: {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: 0.5
 --- !u!1 &9099452328211660033
 GameObject:
   m_ObjectHideFlags: 0
@@ -10752,7 +11020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1358644640564049925}
   - component: {fileID: 1664109532968589050}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10805,7 +11073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2509740624543759112}
   - component: {fileID: 5359993262474250214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10858,7 +11126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6660714949555052429}
   - component: {fileID: 254115829332972982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CrowdSpawnPoint (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10914,7 +11182,7 @@ GameObject:
   - component: {fileID: 919806024513657308}
   - component: {fileID: 1397210736758040524}
   - component: {fileID: 5104945337768008226}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SideWalkSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11030,8 +11298,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1455959246262543854}
-  m_Layer: 0
-  m_Name: Bench (1)
+  m_Layer: 10
+  m_Name: Bench_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
