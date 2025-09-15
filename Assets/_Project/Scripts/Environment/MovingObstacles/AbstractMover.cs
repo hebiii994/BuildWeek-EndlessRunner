@@ -10,9 +10,8 @@ public abstract class AbstractMover : MonoBehaviour
 
     [SerializeField] public GameObject obstacleMesh { get; set; } // Mesh dell'ostacolo
 
-    protected virtual void Move(Vector3 direction)
+    public virtual void Move()
     {
-        transform.position += direction * moveSpeed * Time.deltaTime;
     }
 
 }

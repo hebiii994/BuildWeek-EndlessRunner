@@ -50,7 +50,7 @@
             }
         }
 
-        private void Move()
+        public override void Move()
         {
             if (!_hasMovedToTarget && player != null)
             {
