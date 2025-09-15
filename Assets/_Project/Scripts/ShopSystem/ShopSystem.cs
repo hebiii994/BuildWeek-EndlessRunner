@@ -60,7 +60,7 @@ public class ShopSystem : MonoBehaviour
         {
             // Deduce il costo dal valore del giocatore
             _saveData.playerCoins -= powerUp.Cost;
-            _saveData.ownedPowerUp.Add(powerUp.PowerUpID);
+            _saveData.powerUpsID.Add(powerUp.PowerUpID);
             // Applica il power-up al giocatore
             // La logica di salvataggio è in applyEffect
             powerUp.ApplyEffect(player);
