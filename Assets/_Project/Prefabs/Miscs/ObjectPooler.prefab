@@ -54,7 +54,7 @@ MonoBehaviour:
   - tag: Defensor
     prefab:
     - {fileID: 9166520238540079600, guid: 10046e5b0dba65349a430d7067715f6c, type: 3}
-    size: 10
+    size: 20
   - tag: Trophy
     prefab:
     - {fileID: 3453040407033113979, guid: 47f233ee538e68549b36329c661ce799, type: 3}
@@ -70,8 +70,8 @@ MonoBehaviour:
   - tag: JumpObstacle
     prefab:
     - {fileID: 3366083256283645392, guid: 5457db9bbeb8bae408fbc675802b5efc, type: 3}
-    size: 10
+    size: 20
   - tag: SlideObstacle
     prefab:
     - {fileID: 8868581454519076062, guid: 1d026cf6b6a9e0a48841d162ebdc98db, type: 3}
-    size: 10
+    size: 20

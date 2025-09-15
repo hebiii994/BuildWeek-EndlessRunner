@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3752850219532526113}
   - component: {fileID: 9042993907618238883}
+  - component: {fileID: 3600922216041667381}
+  - component: {fileID: 1210235871399782783}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,3 +48,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MetersTraveled: 0
   TimeElapsed: 0
+--- !u!114 &3600922216041667381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012435568281196029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1c68b29557b3d46a8585a647736355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1210235871399782783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012435568281196029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf89300667920064c98e85f7c39a607b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballsCounterText: {fileID: 0}
+  _ballsIcon: {fileID: 0}
+  _trophyCounterText: {fileID: 0}
+  _trophyIcon: {fileID: 0}
+  _powerupSlots: []
+  _pauseMenu: {fileID: 0}
+  _gameOverMenu: {fileID: 0}
+  _optionsMenu: {fileID: 0}

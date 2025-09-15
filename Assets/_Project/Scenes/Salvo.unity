@@ -749,6 +749,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5713585220026327511, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
   m_PrefabInstance: {fileID: 1590139241}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1186964247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3012435568281196029, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+  m_PrefabInstance: {fileID: 4601518956511992899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1186964252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186964247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf89300667920064c98e85f7c39a607b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballsCounterText: {fileID: 1749174188}
+  _ballsIcon: {fileID: 532512578}
+  _trophyCounterText: {fileID: 1272468764}
+  _trophyIcon: {fileID: 175758390}
+  _powerupSlots: []
+  _pauseMenu: {fileID: 822616357}
+  _gameOverMenu: {fileID: 1049159904}
+  _optionsMenu: {fileID: 1056647680}
+--- !u!114 &1186964253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186964247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1c68b29557b3d46a8585a647736355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1272468764 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2008412268792640018, guid: 1f3b4f5f9cb907742b602f09b87f89a4, type: 3}
@@ -1081,7 +1118,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3012435568281196029, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1186964253}
+    - targetCorrespondingSourceObject: {fileID: 3012435568281196029, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1186964252}
   m_SourcePrefab: {fileID: 100100000, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
 --- !u!1001 &7138567149889904482
 PrefabInstance:
