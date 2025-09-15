@@ -11,6 +11,9 @@ public class SaveData
 
     public GameObject _playerPreFab;
     public List<string> ownedPowerUp;
+    //Nota bene: Ho messo GameObject per farmi capire che sono oggetti di gioco,
+    //aggiorner� dopo che avremo definito una classe power-up
+    public List<string> powerUpsID; // Lista degli ID dei power-up acquistati
 
     [System.Serializable]
     public class GameRecord
