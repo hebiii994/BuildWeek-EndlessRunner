@@ -13,6 +13,9 @@ public class ShopItem : MonoBehaviour
         UpdateButton(TrophyManager.Instance.GetTrophies());
 
         _buyButton.onClick.AddListener(Buy);
+
+        if (PurchaseTracker.Instance.IsPurchased(_itemName))
+            _buyButton.interactable = false;
     }
 
     private void OnDisable()
@@ -25,14 +28,28 @@ public class ShopItem : MonoBehaviour
 
     private void UpdateButton(int currentTrophies)
     {
-        _buyButton.interactable = currentTrophies >= _price;
+        if (PurchaseTracker.Instance.IsPurchased(_itemName))
+        {
+            _buyButton.interactable = false;
+        }
+        else
+        {
+            _buyButton.interactable = currentTrophies >= _price;
+        }
     }
 
     private void Buy()
     {
         if (TrophyManager.Instance.SpendTrophies(_price))
         {
-            Debug.Log($"Acquistato {_itemName} per {_price} trofei!");
+            Debug.Log($"Bought {_itemName} for {_price} Trophies!");
+            PurchaseTracker.Instance.Purchase(_itemName);
+            _buyButton.interactable = false;
+        }
+        else
+        {
+            Debug.Log("Not enough trophies to buy this power-up!");
         }
     }
+
 }

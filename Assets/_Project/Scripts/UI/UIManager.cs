@@ -26,10 +26,17 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         UpdateBalls(0);
-        UpdateTrophyUI(TrophyManager.Instance.GetTrophies());
 
-        TrophyManager.Instance.OnTrophyChanged += UpdateTrophyUI;
+        if (TrophyManager.Instance != null)
+        {
+            UpdateTrophyUI(TrophyManager.Instance.GetTrophies());
+            TrophyManager.Instance.OnTrophyChanged += UpdateTrophyUI;
+        }
+
+        if (PurchaseTracker.Instance != null)
+            RefreshPowerupIcons();
     }
+
 
     private void OnDestroy()
     {
@@ -77,6 +84,20 @@ public class UIManager : MonoBehaviour
             _powerupSlots[slotIndex].enabled = true;
         }
     }
+
+    public void RefreshPowerupIcons()
+    {
+        for (int i = 0; i < _powerupSlots.Length; i++)
+        {
+            string itemName = "PowerUp" + (i + 1);
+            if (PurchaseTracker.Instance.IsPurchased(itemName))
+                _powerupSlots[i].enabled = true;  
+            else
+                _powerupSlots[i].enabled = false;  
+        }
+    }
+
+
 
     public void ClearPowerup(int slotIndex)
     {
