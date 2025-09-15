@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Street
+  - Ball
+  - BallReturn
+  - SpawnPointContainer
   layers:
   - Default
   - TransparentFX

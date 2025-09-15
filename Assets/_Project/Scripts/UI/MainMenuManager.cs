@@ -23,7 +23,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene"); 
+        SceneManager.LoadScene(SceneNames.Game);
     }
 
     public void ShowOptions()
@@ -32,16 +32,34 @@ public class MainMenuManager : MonoBehaviour
         _optionsMenu.SetActive(true);
     }
 
+    public void CloseOptions()
+    {
+        _mainMenu.SetActive(true);
+        _optionsMenu.SetActive(false);
+    }
+
     public void ShowShop()
     {
         _mainMenu.SetActive(false);
         _shopMenu.SetActive(true);
     }
 
+    public void CloseShop()
+    {
+        _mainMenu.SetActive(true);
+        _shopMenu.SetActive(false);
+    }
+
     public void ShowLeaderboard()
     {
         _mainMenu.SetActive(false);
         _leaderboardMenu.SetActive(true);
+    }
+
+    public void CloseLeaderboard()
+    {
+        _mainMenu.SetActive(true);
+        _leaderboardMenu.SetActive(false);
     }
 
     public void BackToMainMenu()

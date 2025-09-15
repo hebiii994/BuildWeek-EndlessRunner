@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = -20f;
     private float verticalVelocity;
     private bool isSliding = false;
+    private bool isJumping = false;
 
     [Header("Ground Check Custom")]
     [SerializeField] private Transform groundCheck;
@@ -23,11 +24,10 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     [Header("Riferimenti")]
+    [SerializeField] private Animator animator;
     private CharacterController controller;
     private Transform modelTransform;
-    [SerializeField] private Animator animator;
-
-
+    
     [Header("Grandezze")]
     private float originalHeight;
     private Vector3 originalCenter;
@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float metersTraveled = 0f;
     [SerializeField] private float timeElapsed = 0f;
 
+    public float MetersTraveled => metersTraveled;
+    public float TimeElapsed => timeElapsed;
 
     void Awake()
     {
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // nuovo ground check
+        // Nuovo ground check
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         // Avanzamento costante
@@ -100,25 +102,32 @@ public class PlayerController : MonoBehaviour
         // Salto e scivolata
         if (isGrounded)
         {
-            // Se siamo a terra e la velocità verticale è negativa, la resettiamo per "ancorarci"
+            // Reset salto se a terra
+            if (isJumping && verticalVelocity <= 0)
+            {
+                isJumping = false;
+            }
+
+            // Reset velocità verticale
             if (verticalVelocity < 0)
             {
                 verticalVelocity = -2f;
             }
 
-            // Gestione degli input quando si è a terra
-            if (Input.GetKeyDown(KeyCode.Space))
+            // Salto solo se non stai saltando o scivolando
+            if (Input.GetKeyDown(KeyCode.Space) && !isJumping && !isSliding)
             {
-                verticalVelocity = jumpForce;
-                if (animator != null) animator.SetTrigger("Jump");
+                StartJump();
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            // Slide solo se non stai saltando o scivolando
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !isJumping && !isSliding)
             {
+                isSliding = true; // <-- subito
                 StartCoroutine(Slide());
-                if (animator != null) animator.SetTrigger("Slide");
             }
         }
+
         else
         {
             // Applica la gravità solo quando il personaggio è in aria
@@ -133,6 +142,17 @@ public class PlayerController : MonoBehaviour
         // Aumenta velocità nel tempo 
          forwardSpeed += Time.deltaTime * speed_multiplier;
     }
+    
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Controlla se l'oggetto ha un Interactable
+        Interactable interactable = hit.gameObject.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            interactable.OnCollisionHappened(gameObject);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if (groundCheck != null)
@@ -143,13 +163,11 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator Slide()
     {
-        if (isSliding) yield break;
-        isSliding = true;
+        if (animator != null) animator.SetTrigger("Slide"); // subito
 
         controller.height = originalHeight / 2f;
         controller.center = originalCenter / 2f;
-        Debug.Log("Height: " + controller.height + " | Center: " + controller.center);
-        Debug.Log("OHeight: " + originalHeight + " | OCenter: " + originalCenter);
+
         yield return new WaitForSeconds(0.6f);
 
         controller.height = originalHeight;
@@ -157,6 +175,7 @@ public class PlayerController : MonoBehaviour
 
         isSliding = false;
     }
+
 
 
     // Funzione ricorsiva per trovare un child ovunque nella gerarchia
@@ -170,4 +189,10 @@ public class PlayerController : MonoBehaviour
         }
         return null;
     }
+    private void StartJump()
+{
+    verticalVelocity = jumpForce;
+    isJumping = true;
+    if (animator != null) animator.SetTrigger("Jump");
+}
 }
