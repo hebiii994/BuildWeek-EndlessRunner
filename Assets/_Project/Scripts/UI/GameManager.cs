@@ -7,7 +7,6 @@ public enum GameState { Start, InGame, Paused, GameOver }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public bool isGracePeriodActive { get; private set; } = true;
     private GameState _currentState = GameState.Start;
 
     public float MetersTraveled = 0f;
@@ -40,7 +39,6 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1f;
                 UIManager.Instance.ShowPauseMenu(false);
                 UIManager.Instance.ShowGameOver(false);
-                StartCoroutine(GracePeriodCoroutine());
                 break;
 
             case GameState.Paused:
@@ -54,16 +52,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    private IEnumerator GracePeriodCoroutine()
-    {
-        isGracePeriodActive = true;
-        Debug.Log("Periodo di grazia INIZIATO.");
-
-        yield return new WaitForSeconds(3f);
-
-        isGracePeriodActive = false;
-        Debug.Log("Periodo di grazia FINITO.");
-    }
+    
     public void StartGame() => SetState(GameState.InGame);
     public void PauseGame() => SetState(GameState.Paused);
     public void ResumeGame() => SetState(GameState.InGame);
