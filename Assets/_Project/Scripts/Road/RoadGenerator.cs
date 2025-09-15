@@ -26,7 +26,6 @@ public class RoadGenerator : MonoBehaviour
 
         _objectPooler = ObjectPooler.Instance;
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        _biomeManager.UpdateBiome();
         for (int i = 0; i < _numberOfRoads; i++)
         {
             SpawnRoad();
@@ -36,7 +35,7 @@ public class RoadGenerator : MonoBehaviour
     {
         string tag = _biomeManager.UpdateBiome();
         GameObject road = _objectPooler.SpawnFromPool(tag, transform.forward * _zSpawn, transform.rotation);
-
+        _biomeManager._roadSoFar++;
         _activeRoads.Add(road);
         _zSpawn += _roadLength;
     }
