@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065e019a695200640954962e57dbc78c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roadTags: Stadium
+  _roadTags: 
   _roadLength: 100
   _numberOfRoads: 5
 --- !u!114 &6723706330449272663
@@ -61,6 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roadSoFar: 0
-  _roadString: Street
+  _stadiumString: Stadium
   _parkingString: Parking
-  _streetString: Stadium
+  _roadString: Street
