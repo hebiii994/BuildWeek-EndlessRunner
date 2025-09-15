@@ -5,11 +5,13 @@
     public class MovingObstacle : AbstractMover
     {
         [SerializeField] private float playerDetectionRange = 5f; // Distanza di rilevamento del giocatore
+        [SerializeField] protected Transform[] targetPos;
         private int currentLaneIndex = 0; // Indice della corsia corrente
         private int targetLaneIndex; // Indice della corsia target
         private Vector3 startPosition; // Posizione iniziale
         private Vector3 targetPosition; // Posizione target
-        private bool _hasMovedToTarget = false; // Stato di movimento verso il target
+    
+
         private GameObject player; // Riferimento al giocatore
 
         protected void Awake()
@@ -32,9 +34,11 @@
             SetNewTarget();
         }
 
-        private void Update()
+    //La funzione di Update deve essere cancellata in fase finale perché la funzione testFunction è appunto
+    //Una funzione solo di testing
+        public override void Update()
         {
-            Move();
+            base.Update();
             TestFunction();
         }
 

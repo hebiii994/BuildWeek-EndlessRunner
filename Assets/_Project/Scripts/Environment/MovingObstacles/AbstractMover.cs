@@ -5,13 +5,14 @@ using UnityEngine;
 public abstract class AbstractMover : MonoBehaviour
 {
     [SerializeField] protected float moveSpeed = 5f; // Velocità di movimento
+    [SerializeField] public GameObject obstacleMesh; // Mesh dell'ostacolo
+    public bool _hasMovedToTarget { get; protected set; } = false; // Stato di movimento verso il target
 
-    [SerializeField] protected Transform[] targetPos;
+    public abstract void Move();
 
-    [SerializeField] public GameObject obstacleMesh { get; set; } // Mesh dell'ostacolo
-
-    public virtual void Move()
+    public virtual void Update()
     {
+        Move();
     }
 
 }
