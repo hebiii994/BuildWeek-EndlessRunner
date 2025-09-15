@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class SaveSystem 
+public class SaveSystem
 {
     public static string GetPath() => Application.persistentDataPath + "/save.data";
 
@@ -41,11 +41,19 @@ public class SaveSystem
         return data;
     }
 
-    public static bool SaveWithNewScore(float newScore)
+    public static void AddNewGame(float meters, float time)
     {
         SaveData data = Load() ?? new SaveData();
-        data.UpdateHighScores(newScore);
-        return Save(data);
+        data.AddGameRecord(meters, time);
+        Save(data);
     }
+
+
+    //public static bool SaveWithNewScore(float newScore)
+    //{
+    //    SaveData data = Load() ?? new SaveData();
+    //    data.UpdateHighScores(newScore);
+    //    return Save(data);
+    //}
 
 }

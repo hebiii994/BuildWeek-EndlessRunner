@@ -10,9 +10,8 @@ public class GameManager : MonoBehaviour
     public bool isGracePeriodActive { get; private set; } = true;
     private GameState _currentState = GameState.Start;
 
-    [Header("Statistiche")]
-     public float MetersTraveled = 0f;
-     public float TimeElapsed = 0f;
+    public float MetersTraveled = 0f;
+    public float TimeElapsed = 0f;
 
     
     private void Awake()
@@ -68,7 +67,13 @@ public class GameManager : MonoBehaviour
     public void StartGame() => SetState(GameState.InGame);
     public void PauseGame() => SetState(GameState.Paused);
     public void ResumeGame() => SetState(GameState.InGame);
-    public void EndGame() => SetState(GameState.GameOver);
+    public void EndGame()
+    {
+        SetState(GameState.GameOver);
+        SaveSystem.AddNewGame(MetersTraveled, TimeElapsed);
+    }
+
+
 
     public void RestartGame()
     {
