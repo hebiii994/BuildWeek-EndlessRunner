@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         Vector3 move = Vector3.forward * forwardSpeed;
 
         // Aggiorna statistiche
-        GameManager. Instance.MetersTraveled = transform.position.z;
+        GameManager.Instance.MetersTraveled = transform.position.z;
         GameManager.Instance.TimeElapsed += Time.deltaTime;
 
         // Gestione corsie
