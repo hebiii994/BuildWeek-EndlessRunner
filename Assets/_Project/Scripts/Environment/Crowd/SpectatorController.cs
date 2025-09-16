@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpectatorController : MonoBehaviour
 {
     public float _maxMoveDistance = 3f;  
-    public float _moveSpeed = 2f;     
+    public float _moveSpeed = 2f;
 
     private Vector3 _startPosition;
 
