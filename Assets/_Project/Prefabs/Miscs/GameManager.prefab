@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3752850219532526113}
   - component: {fileID: 9042993907618238883}
-  - component: {fileID: 3600922216041667381}
-  - component: {fileID: 1210235871399782783}
+  - component: {fileID: 2510782505359781211}
+  - component: {fileID: 4196651649067545239}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MetersTraveled: 0
   TimeElapsed: 0
---- !u!114 &3600922216041667381
+--- !u!114 &2510782505359781211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1c68b29557b3d46a8585a647736355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1210235871399782783
+--- !u!114 &4196651649067545239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

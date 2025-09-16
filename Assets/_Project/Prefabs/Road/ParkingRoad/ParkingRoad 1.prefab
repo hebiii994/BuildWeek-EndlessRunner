@@ -5677,6 +5677,12 @@ MonoBehaviour:
     trophyPoolTag: Trophy
     trophyChance: 0.5
     trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+  - poolTag: MovingObstacle
+    spawnChance: 0.731
+    canHaveTrophy: 0
+    trophyPoolTag: Trophy
+    trophyChance: 0.5
+    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   _spawnPoints:
   - {fileID: 7648429350159572588}
   - {fileID: 8066926650835231791}
