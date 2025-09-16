@@ -163,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 9125967045225141648}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -185,5 +185,4 @@ MonoBehaviour:
   moveSpeed: 5
   obstacleMesh: {fileID: 5706327902092159036}
   _timeToStartMoving: 3
-  _timeToFinishMoving: 2.5
   _maxDistance: 5
