@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = -20f;
     private float verticalVelocity;
     private bool isSliding = false;
+    private bool isJumping = false;
 
     [Header("Ground Check Custom")]
     [SerializeField] private Transform groundCheck;
@@ -23,22 +24,19 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     [Header("Riferimenti")]
+    [SerializeField] private Animator animator;
     private CharacterController controller;
     private Transform modelTransform;
-    [SerializeField] private Animator animator;
-
-
+    
     [Header("Grandezze")]
     private float originalHeight;
     private Vector3 originalCenter;
+    private float originalRadius;
 
-    [Header("Statistiche")]
-    [SerializeField] private float metersTraveled = 0f;
-    [SerializeField] private float timeElapsed = 0f;
-
-    public float MetersTraveled => metersTraveled;
-    public float TimeElapsed => timeElapsed;
-
+    [Header("Slide Settings")]
+    public float slideDuration = 1.16f; // durata totale slide
+    public AnimationCurve animationCurve;  // curva (tempo normalizzato -> moltiplicatore )
+    
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -55,21 +53,25 @@ public class PlayerController : MonoBehaviour
                 // Prendo dimensioni locali rispetto al pivot
                 originalHeight = modelCollider.bounds.size.y;
                 originalCenter = modelCollider.transform.localPosition;
+                originalRadius = Mathf.Max(modelCollider.bounds.size.x, modelCollider.bounds.size.z) / 2f;
                 controller.height = originalHeight;
                 controller.center = originalCenter;
-                controller.radius = Mathf.Max(modelCollider.bounds.size.x, modelCollider.bounds.size.z) / 2f;
+                controller.radius = originalRadius;
+                
 
             }
             else
             {
                 originalHeight = controller.height;
                 originalCenter = controller.center;
+                originalRadius = controller.radius;
             }
         }
         else
         {
             originalHeight = controller.height;
             originalCenter = controller.center;
+            originalRadius = controller.radius;
         }
     }
 
@@ -82,8 +84,8 @@ public class PlayerController : MonoBehaviour
         Vector3 move = Vector3.forward * forwardSpeed;
 
         // Aggiorna statistiche
-        metersTraveled = transform.position.z;
-        timeElapsed += Time.deltaTime;
+        GameManager.Instance.MetersTraveled = transform.position.z;
+        GameManager.Instance.TimeElapsed += Time.deltaTime;
 
         // Gestione corsie
         if (Input.GetKeyDown(KeyCode.A) && currentLane > 0) currentLane--;
@@ -102,25 +104,32 @@ public class PlayerController : MonoBehaviour
         // Salto e scivolata
         if (isGrounded)
         {
-            // Se siamo a terra e la velocità verticale è negativa, la resettiamo per "ancorarci"
+            // Reset salto se a terra
+            if (isJumping && verticalVelocity <= 0)
+            {
+                isJumping = false;
+            }
+
+            // Reset velocità verticale
             if (verticalVelocity < 0)
             {
                 verticalVelocity = -2f;
             }
 
-            // Gestione degli input quando si è a terra
-            if (Input.GetKeyDown(KeyCode.Space))
+            // Salto solo se non stai saltando o scivolando
+            if (Input.GetKeyDown(KeyCode.Space) && !isJumping && !isSliding)
             {
-                verticalVelocity = jumpForce;
-                if (animator != null) animator.SetTrigger("Jump");
+                StartJump();
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            // Slide solo se non stai saltando o scivolando
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !isJumping && !isSliding)
             {
+                isSliding = true; 
                 StartCoroutine(Slide());
-                if (animator != null) animator.SetTrigger("Slide");
             }
         }
+
         else
         {
             // Applica la gravità solo quando il personaggio è in aria
@@ -156,21 +165,31 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator Slide()
     {
-        if (isSliding) yield break;
-        isSliding = true;
+        // faccio partire subito l'animazione di slide
+        if (animator != null) animator.SetTrigger("Slide");
+        float elapsed = 0f;
+        controller.radius = originalRadius * 0.2f;
 
-        controller.height = originalHeight / 2f;
-        controller.center = originalCenter / 2f;
-        Debug.Log("Height: " + controller.height + " | Center: " + controller.center);
-        Debug.Log("OHeight: " + originalHeight + " | OCenter: " + originalCenter);
-        yield return new WaitForSeconds(0.6f);
+        while (elapsed < slideDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / slideDuration);
 
+            // Applica le curve al collider
+            controller.height = originalHeight * animationCurve.Evaluate(t);
+            controller.center = originalCenter * animationCurve.Evaluate(t);
+            
+
+            yield return null;
+        }
+
+        // Reset collider
         controller.height = originalHeight;
         controller.center = originalCenter;
+        controller.radius = originalRadius;
 
         isSliding = false;
     }
-
 
     // Funzione ricorsiva per trovare un child ovunque nella gerarchia
     Transform FindChildByName(Transform parent, string name)
@@ -182,5 +201,11 @@ public class PlayerController : MonoBehaviour
             if (found != null) return found;
         }
         return null;
+    }
+    private void StartJump()
+    {
+        verticalVelocity = jumpForce;
+        isJumping = true;
+        if (animator != null) animator.SetTrigger("Jump");
     }
 }

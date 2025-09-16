@@ -7,27 +7,50 @@ public class SaveData
 {
     public string username;
     public List<float> highScores;
-    public int value;
-    //Aggiungo quest'altra variabile per tenere traccia del giocatore
-    //Così da poter aggiornare i power-up applicati
+    public int playerCoins;
+
     public GameObject _playerPreFab;
+    public List<string> ownedPowerUp;
     //Nota bene: Ho messo GameObject per farmi capire che sono oggetti di gioco,
-    //aggiornerò dopo che avremo definito una classe power-up
-    public List<string> powerUps;
+    //aggiornerï¿½ dopo che avremo definito una classe power-up
+    public List<string> powerUpsID; // Lista degli ID dei power-up acquistati
 
-
-
-
-    public void UpdateHighScores(float newScore, int maxScores = 10)
+    [System.Serializable]
+    public class GameRecord
     {
-        if (highScores == null)
-            highScores = new List<float>();
+        public float Meters;
+        public float Time;
+        public GameRecord(float meters, float time)
+        {
+            Meters = meters;
+            Time = time;
+        }
+    }
 
-        highScores.Add(newScore);
-        highScores.Sort((a, b) => b.CompareTo(a)); // Ordine decrescente
+    public List<GameRecord> lastGames = new List<GameRecord>();
 
-        // Mantieni solo i migliori punteggi
-        if (highScores.Count > maxScores)
-            highScores.RemoveRange(maxScores, highScores.Count - maxScores);
+    public void AddGameRecord(float meters, float time, int maxRecords = 5)
+    {
+        lastGames.Add(new GameRecord(meters, time));
+        lastGames.Sort((a, b) => b.Meters.CompareTo(a.Meters));
+
+        if (lastGames.Count > maxRecords)
+            lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);
     }
 }
+
+
+
+    //public void UpdateHighScores(float newScore, int maxScores = 5)
+    //{
+    //    if (highScores == null)
+    //        highScores = new List<float>();
+
+    //    highScores.Add(newScore);
+    //    highScores.Sort((a, b) => b.CompareTo(a)); // Ordine decrescente
+
+    //    // Mantieni solo i migliori punteggi
+    //    if (highScores.Count > maxScores)
+    //        highScores.RemoveRange(maxScores, highScores.Count - maxScores);
+    //}
+

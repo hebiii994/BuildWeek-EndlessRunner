@@ -1,27 +1,38 @@
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
-{
-    [SerializeField] private int _scoreValue = 1; 
 
-    // [SerializeField] private AudioClip _collectSound;
-    // [SerializeField] private GameObject _collectEffect;
+{ 
+    [SerializeField] private ParticleSystem _collectEffectPrefab;
+    [SerializeField] private AudioClip _collectSound;
+    [SerializeField] private int _trophyAmount = 1;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Comunica all'UIManager di aggiungere punti
-            if (UIManager.Instance != null)
-            {
-                UIManager.Instance.AddScore(_scoreValue);
-            }
-
-            // effetti sonori/visivi per il futuro
-            // if (_collectSound) AudioSource.PlayClipAtPoint(_collectSound, transform.position);
-            // if (_collectEffect) Instantiate(_collectEffect, transform.position, Quaternion.identity);
-
-            gameObject.SetActive(false);
+            Collect();
         }
+
+    }
+    private void Collect()
+    {
+        if (_collectSound != null && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySound(_collectSound);
+        }
+
+        if (_collectEffectPrefab != null)
+        {
+            Instantiate(_collectEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        if (TrophyManager.Instance != null)
+        {
+            TrophyManager.Instance.AddTrophies(_trophyAmount);
+        }
+
+        gameObject.SetActive(false);
     }
 }

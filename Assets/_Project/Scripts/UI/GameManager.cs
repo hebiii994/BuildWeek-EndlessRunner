@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public enum GameState { Start, InGame, Paused, GameOver }
 
@@ -8,6 +9,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     private GameState _currentState = GameState.Start;
 
+    public float MetersTraveled = 0f;
+    public float TimeElapsed = 0f;
+
+    
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -16,8 +21,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //SetState(GameState.Start);
-        SetState(GameState.InGame); 
+        // SetState(GameState.Start);
+        SetState(GameState.InGame);
     }
 
     public void SetState(GameState newState)
@@ -47,11 +52,17 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
+    
     public void StartGame() => SetState(GameState.InGame);
     public void PauseGame() => SetState(GameState.Paused);
     public void ResumeGame() => SetState(GameState.InGame);
-    public void EndGame() => SetState(GameState.GameOver);
+    public void EndGame()
+    {
+        SetState(GameState.GameOver);
+        SaveSystem.AddNewGame(MetersTraveled, TimeElapsed);
+    }
+
+
 
     public void RestartGame()
     {

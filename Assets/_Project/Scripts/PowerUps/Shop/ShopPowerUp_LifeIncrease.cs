@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-[CreateAssetMenu(fileName = "PowerUp", menuName = "ScriptableObject/PowerUp/Shop/LifeIncrease")]
+[CreateAssetMenu(fileName = "LifeIncreaser", menuName = "ScriptableObjects/PowerUp/Shop/LifeIncrease")]
 public class ShopPowerUp_LifeIncrease : ShopPowerUp
 {
     //[SerializeField] private int _lifeIncreaseAmount = 1; // Quantità di vita da aumentare
-    protected override void ApplyEffect(GameObject player)
+    public override void ApplyEffect(GameObject player)
     {
         if (player.CompareTag("Player") && player != null)
         {
