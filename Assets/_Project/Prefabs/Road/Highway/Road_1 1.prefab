@@ -495,16 +495,22 @@ MonoBehaviour:
     spawnChance: 0.8
     canHaveTrophy: 1
     trophyPoolTag: Trophy
-    trophyChance: 0.5
+    trophyChance: 0.377
     trophySpawnOffset: {x: 0, y: 2, z: 0}
   - poolTag: SlideObstacle
     spawnChance: 0.8
     canHaveTrophy: 1
     trophyPoolTag: Trophy
-    trophyChance: 0.5
+    trophyChance: 0.605
     trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   - poolTag: Defensor
     spawnChance: 0.8
+    canHaveTrophy: 0
+    trophyPoolTag: Trophy
+    trophyChance: 0.5
+    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+  - poolTag: MovingObstacle
+    spawnChance: 0.695
     canHaveTrophy: 0
     trophyPoolTag: Trophy
     trophyChance: 0.5

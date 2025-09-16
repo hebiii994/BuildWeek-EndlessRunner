@@ -94,7 +94,6 @@ public class ObstacleSpawner : MonoBehaviour
     private void TrySpawnObjectAtPoint(Transform spawnPoint)
     {
         if (_spawnableObjects.Count == 0) return;
-
         SpawnableObject objectToTry = _spawnableObjects[Random.Range(0, _spawnableObjects.Count)];
 
         if (Random.value < objectToTry.spawnChance)
@@ -104,27 +103,38 @@ public class ObstacleSpawner : MonoBehaviour
 
             if (Physics.Raycast(rayStartPoint, Vector3.down, out hit, 10f, _groundLayer, QueryTriggerInteraction.Collide))
             {
-                Vector3 spawnPosition = hit.point;
-                Quaternion spawnRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                GameObject spawnedObject = ObjectPooler.Instance.SpawnFromPool(objectToTry.poolTag, spawnPosition, spawnRotation);
+
+                GameObject spawnedObject = ObjectPooler.Instance.SpawnFromPool(objectToTry.poolTag, hit.point, Quaternion.identity);
 
                 if (spawnedObject != null)
                 {
+                    Vector3 finalPosition = hit.point;
+                    Quaternion finalRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+
+                    Collider objectCollider = spawnedObject.GetComponent<Collider>();
+                    if (objectCollider != null)
+                    {
+                        float yOffset = objectCollider.bounds.extents.y;
+                        finalPosition += new Vector3(0, yOffset, 0);
+                    }
+
+
+                    spawnedObject.transform.position = finalPosition;
+                    spawnedObject.transform.rotation = finalRotation;
+
                     spawnedObject.transform.SetParent(transform);
+
                     if (objectToTry.canHaveTrophy && Random.value < objectToTry.trophyChance)
                     {
-                        Vector3 trophyPosition = spawnedObject.transform.position + spawnedObject.transform.TransformDirection(objectToTry.trophySpawnOffset);
-                        GameObject spawnedTrophy = ObjectPooler.Instance.SpawnFromPool(objectToTry.trophyPoolTag, trophyPosition, Quaternion.identity);
+                        GameObject spawnedTrophy = ObjectPooler.Instance.SpawnFromPool(objectToTry.trophyPoolTag, Vector3.zero, Quaternion.identity);
                         if (spawnedTrophy != null)
                         {
-                            spawnedTrophy.transform.SetParent(transform);
+                            spawnedTrophy.transform.SetParent(spawnedObject.transform);
+                            spawnedTrophy.transform.localPosition = objectToTry.trophySpawnOffset;
+                            spawnedTrophy.transform.localRotation = Quaternion.identity;
                         }
                     }
                 }
-            }
-            else
-            {
-                Debug.LogError($"<color=red>[{gameObject.name}] Raycast FALLITO anche con QueryTriggerInteraction.Collide! Controlla la geometria del prefab della strada.</color>", this.gameObject);
             }
         }
     }

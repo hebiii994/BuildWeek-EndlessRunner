@@ -429,13 +429,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.16773126, y: -0.25488698, z: 0.044943444, w: 0.95125127}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: -30, z: 0}
 --- !u!1001 &761922244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,6 +614,8 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -729,6 +731,33 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb4f221857b6c744a9f5f4e44b743204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replacementShader: {fileID: 4800000, guid: 5da00c735cdb2604fa26fcdc58803556, type: 3}
+  curvature: 0.00015
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab95e4bed567d634c9359ee6c322bec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1133855325}
 --- !u!1 &1049159904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4893141237436061023, guid: 2e6da5cf874f73d47b3f1f6d2759b54a, type: 3}
@@ -749,43 +778,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5713585220026327511, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
   m_PrefabInstance: {fileID: 1590139241}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1186964247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3012435568281196029, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
-  m_PrefabInstance: {fileID: 4601518956511992899}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1186964252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186964247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf89300667920064c98e85f7c39a607b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ballsCounterText: {fileID: 1749174188}
-  _ballsIcon: {fileID: 532512578}
-  _trophyCounterText: {fileID: 1272468764}
-  _trophyIcon: {fileID: 175758390}
-  _powerupSlots: []
-  _pauseMenu: {fileID: 822616357}
-  _gameOverMenu: {fileID: 1049159904}
-  _optionsMenu: {fileID: 1056647680}
---- !u!114 &1186964253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186964247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c1c68b29557b3d46a8585a647736355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1272468764 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2008412268792640018, guid: 1f3b4f5f9cb907742b602f09b87f89a4, type: 3}
@@ -805,6 +797,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 448385914836546553, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
+      propertyPath: m_SkinWidth
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 926208968654049237, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
       propertyPath: cam
       value: 
@@ -852,6 +848,14 @@ PrefabInstance:
     - target: {fileID: 4042434634268129985, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887061131611694050, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
+      propertyPath: slideHeight
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887061131611694050, guid: c493960fb4c8d1e46b39e828a8180950, type: 3}
+      propertyPath: slideCenterY
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1087,44 +1091,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _ballsIcon
       value: 
       objectReference: {fileID: 532512578}
-    - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _pauseMenu
       value: 
       objectReference: {fileID: 822616357}
-    - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _trophyIcon
       value: 
       objectReference: {fileID: 175758390}
-    - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _optionsMenu
       value: 
       objectReference: {fileID: 1056647680}
-    - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _gameOverMenu
       value: 
       objectReference: {fileID: 1049159904}
-    - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _ballsCounterText
       value: 
       objectReference: {fileID: 1749174188}
-    - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _trophyCounterText
       value: 
       objectReference: {fileID: 1272468764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3012435568281196029, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1186964253}
-    - targetCorrespondingSourceObject: {fileID: 3012435568281196029, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1186964252}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
 --- !u!1001 &7138567149889904482
 PrefabInstance:
@@ -1231,6 +1229,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[6].tag
+      value: MovingObstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[7].tag
+      value: SlideObstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[7].size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[7].prefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[6].prefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 730718568124341424, guid: 850be2522584dd54eb278bdee30e910d, type: 3}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[7].prefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 8868581454519076062, guid: 1d026cf6b6a9e0a48841d162ebdc98db, type: 3}
     - target: {fileID: 5341723745783326209, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: m_Name
       value: ObjectPooler
