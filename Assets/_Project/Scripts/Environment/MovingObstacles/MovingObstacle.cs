@@ -72,7 +72,7 @@
         // Attiva il movimento semplice
         private void StartSimpleMovement()
         {
-            obstacleMesh.transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            obstacleMesh.transform.position = Vector3.MoveTowards(obstacleMesh.transform.position, targetPosition, moveSpeed * Time.deltaTime);
         }
 
 
