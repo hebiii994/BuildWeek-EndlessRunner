@@ -15,9 +15,7 @@ public class PlayerBallManager : MonoBehaviour
 
 
     [Header("Pool")]
-    public GameObject ballPrefab;
     public int maxBalls = 5;
-    private ObjectPool<BallController> ballPool;
     public int currentBalls;
     public int CurrentBalls => currentBalls;
 
@@ -30,23 +28,6 @@ public class PlayerBallManager : MonoBehaviour
     {
         if (cam == null)
             cam = Camera.main;
-
-        ballPool = new ObjectPool<BallController>(() =>
-        {
-            BallController ball = Instantiate(ballPrefab).GetComponent<BallController>();
-            ball.gameObject.SetActive(false);
-            return ball;
-        }, ball =>
-        {
-            ball.gameObject.SetActive(true);
-        }, ball =>
-        {
-            ball.gameObject.SetActive(false);
-        }, ball =>
-        {
-            Destroy(ball.gameObject);
-        }, false, maxBalls, maxBalls);
-
 
         currentBalls = maxBalls;
     }
@@ -73,17 +54,16 @@ public class PlayerBallManager : MonoBehaviour
     {
         // Converto il click in un punto davanti alla camera
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = frontCamDistance; // distanza fissa davanti alla camera
+        mousePos.z = frontCamDistance;
         Vector3 worldPos = cam.ScreenToWorldPoint(mousePos);
 
         // Direzione dalla mano (hitPoint) al punto cliccato
         Vector3 dir = (worldPos - hitPoint.position).normalized;
 
-        // Prendo una palla dal pool
-        BallController ball = ballPool.Get();
+        // Prendo la palla dall’ObjectPooler
+        GameObject ballObj = ObjectPooler.Instance.SpawnFromPool("Ball", hitPoint.position, Quaternion.identity);
 
-        // Posiziono la palla davanti al player
-        ball.transform.position = hitPoint.position;
+        BallController ball = ballObj.GetComponent<BallController>();
 
         // Ignora collisione col player
         Collider playerCol = playerController.GetComponent<CharacterController>();
@@ -91,16 +71,16 @@ public class PlayerBallManager : MonoBehaviour
         if (playerCol != null && ballCol != null)
             Physics.IgnoreCollision(ballCol, playerCol, true);
 
-        // Lancia la palla con velocità = velocità del player + extra
+        // Lancia la palla
         ball.Launch(dir, this, playerController.forwardSpeed + extraBallSpeed);
 
         currentBalls--;
     }
 
-
     public void ReturnBall(BallController ball)
     {
-        ballPool.Release(ball);
+        ball.gameObject.SetActive(false); // nasconde la palla e la riusa il Pool
         currentBalls = Mathf.Min(currentBalls + 1, maxBalls);
     }
+
 }

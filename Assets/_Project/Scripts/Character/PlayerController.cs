@@ -31,9 +31,12 @@ public class PlayerController : MonoBehaviour
     [Header("Grandezze")]
     private float originalHeight;
     private Vector3 originalCenter;
+    private float originalRadius;
 
-   
-
+    [Header("Slide Settings")]
+    public float slideDuration = 1.16f; // durata totale slide
+    public AnimationCurve animationCurve;  // curva (tempo normalizzato -> moltiplicatore )
+    
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -50,21 +53,25 @@ public class PlayerController : MonoBehaviour
                 // Prendo dimensioni locali rispetto al pivot
                 originalHeight = modelCollider.bounds.size.y;
                 originalCenter = modelCollider.transform.localPosition;
+                originalRadius = Mathf.Max(modelCollider.bounds.size.x, modelCollider.bounds.size.z) / 2f;
                 controller.height = originalHeight;
                 controller.center = originalCenter;
-                controller.radius = Mathf.Max(modelCollider.bounds.size.x, modelCollider.bounds.size.z) / 2f;
+                controller.radius = originalRadius;
+                
 
             }
             else
             {
                 originalHeight = controller.height;
                 originalCenter = controller.center;
+                originalRadius = controller.radius;
             }
         }
         else
         {
             originalHeight = controller.height;
             originalCenter = controller.center;
+            originalRadius = controller.radius;
         }
     }
 
@@ -77,7 +84,7 @@ public class PlayerController : MonoBehaviour
         Vector3 move = Vector3.forward * forwardSpeed;
 
         // Aggiorna statistiche
-        GameManager. Instance.MetersTraveled = transform.position.z;
+        GameManager.Instance.MetersTraveled = transform.position.z;
         GameManager.Instance.TimeElapsed += Time.deltaTime;
 
         // Gestione corsie
@@ -118,7 +125,7 @@ public class PlayerController : MonoBehaviour
             // Slide solo se non stai saltando o scivolando
             if (Input.GetKeyDown(KeyCode.LeftShift) && !isJumping && !isSliding)
             {
-                isSliding = true; // <-- subito
+                isSliding = true; 
                 StartCoroutine(Slide());
             }
         }
@@ -158,20 +165,31 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator Slide()
     {
-        if (animator != null) animator.SetTrigger("Slide"); // subito
+        // faccio partire subito l'animazione di slide
+        if (animator != null) animator.SetTrigger("Slide");
+        float elapsed = 0f;
+        controller.radius = originalRadius * 0.2f;
 
-        controller.height = originalHeight / 2f;
-        controller.center = originalCenter / 2f;
+        while (elapsed < slideDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / slideDuration);
 
-        yield return new WaitForSeconds(0.6f);
+            // Applica le curve al collider
+            controller.height = originalHeight * animationCurve.Evaluate(t);
+            controller.center = originalCenter * animationCurve.Evaluate(t);
+            
 
+            yield return null;
+        }
+
+        // Reset collider
         controller.height = originalHeight;
         controller.center = originalCenter;
+        controller.radius = originalRadius;
 
         isSliding = false;
     }
-
-
 
     // Funzione ricorsiva per trovare un child ovunque nella gerarchia
     Transform FindChildByName(Transform parent, string name)
@@ -185,9 +203,9 @@ public class PlayerController : MonoBehaviour
         return null;
     }
     private void StartJump()
-{
-    verticalVelocity = jumpForce;
-    isJumping = true;
-    if (animator != null) animator.SetTrigger("Jump");
-}
+    {
+        verticalVelocity = jumpForce;
+        isJumping = true;
+        if (animator != null) animator.SetTrigger("Jump");
+    }
 }
