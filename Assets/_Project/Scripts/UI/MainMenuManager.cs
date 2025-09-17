@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -8,9 +9,25 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject _shopMenu;
     [SerializeField] private GameObject _leaderboardMenu;
 
+    [Header("Riferimenti Audio Opzioni")]
+    [SerializeField] private Slider _masterVolumeSlider;
+    [SerializeField] private Slider _musicVolumeSlider;
+    [SerializeField] private Slider _sfxVolumeSlider;
+
     private void Start()
     {
         ShowMainMenu();
+
+        if (OptionsManager.Instance != null)
+        {
+            if (_masterVolumeSlider) _masterVolumeSlider.value = OptionsManager.Instance.GetMasterVolume();
+            if (_musicVolumeSlider) _musicVolumeSlider.value = OptionsManager.Instance.GetMusicVolume();
+            if (_sfxVolumeSlider) _sfxVolumeSlider.value = OptionsManager.Instance.GetSFXVolume();
+        }
+        else
+        {
+            Debug.LogWarning("OptionsManager non trovato!");
+        }
     }
 
     public void ShowMainMenu()

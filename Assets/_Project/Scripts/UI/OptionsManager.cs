@@ -17,6 +17,10 @@ public class OptionsManager : MonoBehaviour
             Instance = this;
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
+
+            SetMasterVolume(_masterVolume);
+            SetMusicVolume(_musicVolume);
+            SetSFXVolume(_sfxVolume);
         }
         else
         {
