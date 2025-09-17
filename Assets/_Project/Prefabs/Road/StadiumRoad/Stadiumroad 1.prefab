@@ -8900,10 +8900,10 @@ MonoBehaviour:
     trophyChance: 0.5
     trophySpawnOffset: {x: 0, y: 2, z: 0}
   - poolTag: SlideObstacle
-    spawnChance: 0.8
+    spawnChance: 7.57
     canHaveTrophy: 1
-    trophyPoolTag: Trophy
-    trophyChance: 0.5
+    trophyPoolTag: Invincibility_PowerUp
+    trophyChance: 1
     trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   - poolTag: Defensor
     spawnChance: 0.8
@@ -8912,10 +8912,10 @@ MonoBehaviour:
     trophyChance: 0.5
     trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   - poolTag: MovingObstacle
-    spawnChance: 0.713
+    spawnChance: 1
     canHaveTrophy: 0
     trophyPoolTag: Trophy
-    trophyChance: 0.5
+    trophyChance: 0.4
     trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   _spawnPoints:
   - {fileID: 6883238927493295336}
