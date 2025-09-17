@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     private bool isSliding = false;
     private bool isJumping = false;
 
+    [Header("Audio")] 
+    public AudioClip jumpSound;
+    public AudioClip slideSound;
+    
+
     [Header("Ground Check Custom")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.2f;
@@ -167,6 +172,10 @@ public class PlayerController : MonoBehaviour
     {
         // faccio partire subito l'animazione di slide
         if (animator != null) animator.SetTrigger("Slide");
+
+        if (AudioManager.Instance != null && slideSound != null) 
+            AudioManager.Instance.PlaySound(slideSound);
+
         float elapsed = 0f;
         controller.radius = originalRadius * 0.2f;
 
@@ -207,5 +216,8 @@ public class PlayerController : MonoBehaviour
         verticalVelocity = jumpForce;
         isJumping = true;
         if (animator != null) animator.SetTrigger("Jump");
+
+        if (AudioManager.Instance != null && jumpSound != null)
+            AudioManager.Instance.PlaySound(jumpSound);
     }
 }

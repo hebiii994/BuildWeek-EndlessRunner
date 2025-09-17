@@ -4,7 +4,7 @@
 
     public class MovingObstacle : AbstractMover
     {
-    [SerializeField] private float playerDetectionRange = 5f; // Distanza di rilevamento del giocatore
+    //[SerializeField] private float playerDetectionRange = 5f; // Distanza di rilevamento del giocatore
     [SerializeField] protected Transform[] targetLanes;
     private int currentLaneIndex = 0; // Indice della corsia corrente
     private int targetLaneIndex; // Indice della corsia target
