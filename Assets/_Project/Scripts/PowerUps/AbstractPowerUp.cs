@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public abstract class AbstractPowerUp : ScriptableObject
     [SerializeField] private GameObject _powerUpPrefab;
     [SerializeField] private string _powerUpID; // Identificatore univoco
 
+    public Action OnTakingPowerUp;
     public GameObject PowerUpPrefab => _powerUpPrefab;
     public string PowerUpID => _powerUpID;
 

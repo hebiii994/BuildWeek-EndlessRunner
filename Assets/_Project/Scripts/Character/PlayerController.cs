@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     private bool isSliding = false;
     private bool isJumping = false;
 
+    [Header("Audio")] 
+    public AudioClip jumpSound;
+    public AudioClip slideSound;
+    
+
     [Header("Ground Check Custom")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.2f;
@@ -31,14 +36,12 @@ public class PlayerController : MonoBehaviour
     [Header("Grandezze")]
     private float originalHeight;
     private Vector3 originalCenter;
+    private float originalRadius;
 
-    [Header("Statistiche")]
-    [SerializeField] private float metersTraveled = 0f;
-    [SerializeField] private float timeElapsed = 0f;
-
-    public float MetersTraveled => metersTraveled;
-    public float TimeElapsed => timeElapsed;
-
+    [Header("Slide Settings")]
+    public float slideDuration = 1.16f; // durata totale slide
+    public AnimationCurve animationCurve;  // curva (tempo normalizzato -> moltiplicatore )
+    
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -55,21 +58,25 @@ public class PlayerController : MonoBehaviour
                 // Prendo dimensioni locali rispetto al pivot
                 originalHeight = modelCollider.bounds.size.y;
                 originalCenter = modelCollider.transform.localPosition;
+                originalRadius = Mathf.Max(modelCollider.bounds.size.x, modelCollider.bounds.size.z) / 2f;
                 controller.height = originalHeight;
                 controller.center = originalCenter;
-                controller.radius = Mathf.Max(modelCollider.bounds.size.x, modelCollider.bounds.size.z) / 2f;
+                controller.radius = originalRadius;
+                
 
             }
             else
             {
                 originalHeight = controller.height;
                 originalCenter = controller.center;
+                originalRadius = controller.radius;
             }
         }
         else
         {
             originalHeight = controller.height;
             originalCenter = controller.center;
+            originalRadius = controller.radius;
         }
     }
 
@@ -82,8 +89,8 @@ public class PlayerController : MonoBehaviour
         Vector3 move = Vector3.forward * forwardSpeed;
 
         // Aggiorna statistiche
-        metersTraveled = transform.position.z;
-        timeElapsed += Time.deltaTime;
+        GameManager.Instance.MetersTraveled = transform.position.z;
+        GameManager.Instance.TimeElapsed += Time.deltaTime;
 
         // Gestione corsie
         if (Input.GetKeyDown(KeyCode.A) && currentLane > 0) currentLane--;
@@ -123,7 +130,7 @@ public class PlayerController : MonoBehaviour
             // Slide solo se non stai saltando o scivolando
             if (Input.GetKeyDown(KeyCode.LeftShift) && !isJumping && !isSliding)
             {
-                isSliding = true; // <-- subito
+                isSliding = true; 
                 StartCoroutine(Slide());
             }
         }
@@ -163,20 +170,35 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator Slide()
     {
-        if (animator != null) animator.SetTrigger("Slide"); // subito
+        // faccio partire subito l'animazione di slide
+        if (animator != null) animator.SetTrigger("Slide");
 
-        controller.height = originalHeight / 2f;
-        controller.center = originalCenter / 2f;
+        if (AudioManager.Instance != null && slideSound != null) 
+            AudioManager.Instance.PlaySound(slideSound);
 
-        yield return new WaitForSeconds(0.6f);
+        float elapsed = 0f;
+        controller.radius = originalRadius * 0.2f;
 
+        while (elapsed < slideDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / slideDuration);
+
+            // Applica le curve al collider
+            controller.height = originalHeight * animationCurve.Evaluate(t);
+            controller.center = originalCenter * animationCurve.Evaluate(t);
+            
+
+            yield return null;
+        }
+
+        // Reset collider
         controller.height = originalHeight;
         controller.center = originalCenter;
+        controller.radius = originalRadius;
 
         isSliding = false;
     }
-
-
 
     // Funzione ricorsiva per trovare un child ovunque nella gerarchia
     Transform FindChildByName(Transform parent, string name)
@@ -190,9 +212,12 @@ public class PlayerController : MonoBehaviour
         return null;
     }
     private void StartJump()
-{
-    verticalVelocity = jumpForce;
-    isJumping = true;
-    if (animator != null) animator.SetTrigger("Jump");
-}
+    {
+        verticalVelocity = jumpForce;
+        isJumping = true;
+        if (animator != null) animator.SetTrigger("Jump");
+
+        if (AudioManager.Instance != null && jumpSound != null)
+            AudioManager.Instance.PlaySound(jumpSound);
+    }
 }

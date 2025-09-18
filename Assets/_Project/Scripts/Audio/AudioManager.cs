@@ -1,20 +1,39 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
     [Header("Riferimenti Audio")]
-    [SerializeField] private AudioMixer _masterMixer;
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _sfxSource;
 
-    [Header("Nomi dei Parametri del Mixer")]
-    [SerializeField] private string _masterVolumeParam = "MasterVolume";
-    [SerializeField] private string _musicVolumeParam = "MusicVolume";
-    [SerializeField] private string _sfxVolumeParam = "SFXVolume";
+    [SerializeField] private AudioClip _menuMusic;
+    [SerializeField] private AudioClip _gameMusic;
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+        if (scene.name == SceneNames.MainMenu) 
+        {
+            PlayMusic(_menuMusic);
+        }
+        else if (scene.name == SceneNames.Game) 
+        {
+            PlayMusic(_gameMusic);
+        }
+    }
 
     void Awake()
     {
@@ -46,24 +65,4 @@ public class AudioManager : MonoBehaviour
             _sfxSource.PlayOneShot(clip);
         }
     }
-
-
-    public void SetMasterVolume(float volume)
-    {
-
-        _masterMixer.SetFloat(_masterVolumeParam, Mathf.Log10(Mathf.Max(volume, 0.0001f)) * 20);
-    }
-
-
-    public void SetMusicVolume(float volume)
-    {
-        _masterMixer.SetFloat(_musicVolumeParam, Mathf.Log10(Mathf.Max(volume, 0.0001f)) * 20);
-    }
-
-
-    public void SetSFXVolume(float volume)
-    {
-        _masterMixer.SetFloat(_sfxVolumeParam, Mathf.Log10(Mathf.Max(volume, 0.0001f)) * 20);
-    }
 }
-

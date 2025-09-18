@@ -8900,13 +8900,25 @@ MonoBehaviour:
     trophyChance: 0.5
     trophySpawnOffset: {x: 0, y: 2, z: 0}
   - poolTag: SlideObstacle
-    spawnChance: 0.8
+    spawnChance: 7.57
     canHaveTrophy: 1
-    trophyPoolTag: Trophy
-    trophyChance: 0.5
+    trophyPoolTag: Invincibility_PowerUp
+    trophyChance: 1
     trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   - poolTag: Defensor
     spawnChance: 0.8
+    canHaveTrophy: 0
+    trophyPoolTag: Trophy
+    trophyChance: 0.5
+    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+  - poolTag: MovingObstacle
+    spawnChance: 1
+    canHaveTrophy: 0
+    trophyPoolTag: Trophy
+    trophyChance: 0.4
+    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+  - poolTag: Target
+    spawnChance: 0.713
     canHaveTrophy: 0
     trophyPoolTag: Trophy
     trophyChance: 0.5
@@ -10000,8 +10012,11 @@ MonoBehaviour:
   - {fileID: 3826527397476817579}
   - {fileID: 6660714949555052429}
   SpawnObjects:
-  - {fileID: 5310794801891165247, guid: 17446f3f3bac5b649bd89e683fcc6eed, type: 3}
-  _spawnPointOffset: {x: 0, y: 0.5, z: 0}
+  - {fileID: 6439392394240095347, guid: 72fb2168421e34642b371ad82faa08bb, type: 3}
+  - {fileID: 6493136924671701921, guid: e8ffbdb191af159479d203a0a6673021, type: 3}
+  - {fileID: 2673100680405863355, guid: 4c3246a712a38ce41ad45b7703d61218, type: 3}
+  - {fileID: 3426357710926166015, guid: f6a7bbf650d0e4a4382af8ad420401de, type: 3}
+  _spawnPointOffset: {x: 0, y: -0.4, z: 0}
 --- !u!1 &8192832732943101442
 GameObject:
   m_ObjectHideFlags: 0

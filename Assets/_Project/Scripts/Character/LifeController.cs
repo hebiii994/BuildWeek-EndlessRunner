@@ -66,9 +66,11 @@ public class LifeController : MonoBehaviour
 
     private IEnumerator Invincibility()
     {
+        Debug.Log("Starting Invincibility Coroutine");
         isInvincible = true;
         yield return new WaitForSeconds(invincibleTime);
         isInvincible = false;
+        Debug.Log("Invincibility has Ended!");
     }
 
     private void Die()

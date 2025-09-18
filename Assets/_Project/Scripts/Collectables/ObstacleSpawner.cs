@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,23 +62,26 @@ public class ObstacleSpawner : MonoBehaviour
 
         Debug.LogWarning($"Nessun contenitore con il tag 'SpawnPointContainer' trovato su {gameObject.name}. Assicurati di aver assegnato il tag corretto.", this.gameObject);
     }
-    private void OnEnable()
+
+    public void SpawnObjectsImmediate()
     {
-        SpawnObjects();
+        StartCoroutine(SpawnWithPhysicsDelay());
+
     }
 
-    private void SpawnObjects()
+
+    private IEnumerator SpawnWithPhysicsDelay()
     {
-        if (_spawnPoints.Count == 0 || _spawnableObjects.Count == 0) return;
+        yield return new WaitForFixedUpdate();
+
+        if (_spawnPoints.Count == 0 || _spawnableObjects.Count == 0) yield break;
 
         List<Transform> availablePoints = new List<Transform>(_spawnPoints);
         int amountToSpawn = Random.Range(1, maxObjectsToSpawn + 1);
 
         for (int i = 0; i < amountToSpawn; i++)
         {
-            if (availablePoints.Count == 0) break; 
-
-
+            if (availablePoints.Count == 0) break;
             int spawnIndex = Random.Range(0, availablePoints.Count);
             Transform spawnPoint = availablePoints[spawnIndex];
             availablePoints.RemoveAt(spawnIndex);
@@ -85,42 +89,53 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
+
+
     private void TrySpawnObjectAtPoint(Transform spawnPoint)
     {
-        // Scegliamo un tipo di oggetto
+        if (_spawnableObjects.Count == 0) return;
         SpawnableObject objectToTry = _spawnableObjects[Random.Range(0, _spawnableObjects.Count)];
 
         if (Random.value < objectToTry.spawnChance)
         {
-
             Vector3 rayStartPoint = spawnPoint.position + Vector3.up * 5f;
             RaycastHit hit;
 
-            if (Physics.Raycast(rayStartPoint, Vector3.down, out hit, 10f, _groundLayer))
+            if (Physics.Raycast(rayStartPoint, Vector3.down, out hit, 10f, _groundLayer, QueryTriggerInteraction.Collide))
             {
-                Vector3 spawnPosition = hit.point;
 
-                Quaternion spawnRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-
-
-                GameObject spawnedObject = ObjectPooler.Instance.SpawnFromPool(objectToTry.poolTag, spawnPosition, spawnRotation);
+                GameObject spawnedObject = ObjectPooler.Instance.SpawnFromPool(objectToTry.poolTag, hit.point, Quaternion.identity);
 
                 if (spawnedObject != null)
                 {
+                    Vector3 finalPosition = hit.point;
+                    Quaternion finalRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+
+                    Collider objectCollider = spawnedObject.GetComponent<Collider>();
+                    if (objectCollider != null)
+                    {
+                        float yOffset = objectCollider.bounds.extents.y;
+                        finalPosition += new Vector3(0, yOffset, 0);
+                    }
+
+
+                    spawnedObject.transform.position = finalPosition;
+                    spawnedObject.transform.rotation = finalRotation;
+
                     spawnedObject.transform.SetParent(transform);
 
                     if (objectToTry.canHaveTrophy && Random.value < objectToTry.trophyChance)
                     {
-                        Vector3 trophyPosition = spawnedObject.transform.position + spawnedObject.transform.TransformDirection(objectToTry.trophySpawnOffset);
-                        GameObject spawnedTrophy = ObjectPooler.Instance.SpawnFromPool(objectToTry.trophyPoolTag, trophyPosition, Quaternion.identity);
+                        GameObject spawnedTrophy = ObjectPooler.Instance.SpawnFromPool(objectToTry.trophyPoolTag, Vector3.zero, Quaternion.identity);
                         if (spawnedTrophy != null)
                         {
-                            spawnedTrophy.transform.SetParent(transform);
+                            spawnedTrophy.transform.SetParent(spawnedObject.transform);
+                            spawnedTrophy.transform.localPosition = objectToTry.trophySpawnOffset;
+                            spawnedTrophy.transform.localRotation = Quaternion.identity;
                         }
                     }
                 }
             }
-            
         }
     }
 }

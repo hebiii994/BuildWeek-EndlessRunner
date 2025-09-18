@@ -9,6 +9,7 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] private float _roadLength = 50f;
     [SerializeField] private int _numberOfRoads = 5;
 
+    private int _totalRoadsSpawned = 0;
     private ObjectPooler _objectPooler;
     private float _zSpawn = 0f;
     private List<GameObject> _activeRoads = new List<GameObject>();
@@ -26,6 +27,7 @@ public class RoadGenerator : MonoBehaviour
 
         _objectPooler = ObjectPooler.Instance;
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        _totalRoadsSpawned = 0;
         for (int i = 0; i < _numberOfRoads; i++)
         {
             SpawnRoad();
@@ -35,9 +37,28 @@ public class RoadGenerator : MonoBehaviour
     {
         string tag = _biomeManager.UpdateBiome();
         GameObject road = _objectPooler.SpawnFromPool(tag, transform.forward * _zSpawn, transform.rotation);
+        
+        ObstacleSpawner spawner = road.GetComponent<ObstacleSpawner>();
+        if (spawner != null)
+        {
+            if (_totalRoadsSpawned == 0)
+            {
+                Debug.Log("Primo blocco: nessun ostacolo.");
+            }
+            else
+            {
+                Debug.Log($"Blocco {_totalRoadsSpawned}: forzo spawn ostacoli.");
+                spawner.SpawnObjectsImmediate();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Nessun ObstacleSpawner trovato sul blocco!");
+        }
         _biomeManager._roadSoFar++;
         _activeRoads.Add(road);
         _zSpawn += _roadLength;
+        _totalRoadsSpawned++;
     }
     private void Update()
     {

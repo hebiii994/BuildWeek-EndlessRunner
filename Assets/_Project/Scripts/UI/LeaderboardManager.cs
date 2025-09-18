@@ -19,10 +19,8 @@ public class LeaderboardManager : MonoBehaviour
         }
     }
 
-    [Header("Leaderboard settings")]
     public int maxEntries = 5;
 
-    [Header("UI References")]
     public TMP_Text[] metersTexts;
     public TMP_Text[] timeTexts;
 
@@ -47,17 +45,22 @@ public class LeaderboardManager : MonoBehaviour
         SaveData data = SaveSystem.Load();
         entries.Clear();
 
-        if (data != null)
+        if (data != null && data.lastGames != null)  
         {
             foreach (var record in data.lastGames)
             {
                 entries.Add(new LeaderboardEntry(record.Meters, record.Time));
             }
-        }
 
-        entries.Sort((a, b) => b.Meters.CompareTo(a.Meters));
-        if (entries.Count > maxEntries)
-            entries.RemoveRange(maxEntries, entries.Count - maxEntries);
+            entries.Sort((a, b) =>
+            {
+                int cmp = b.Meters.CompareTo(a.Meters);
+                return cmp != 0 ? cmp : a.Time.CompareTo(b.Time);
+            });
+
+            if (entries.Count > maxEntries)
+                entries.RemoveRange(maxEntries, entries.Count - maxEntries);
+        }
 
         UpdateUI();
     }

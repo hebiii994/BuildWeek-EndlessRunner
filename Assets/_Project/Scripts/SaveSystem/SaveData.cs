@@ -21,12 +21,22 @@ public class SaveData
     {
         public float Meters;
         public float Time;
-
         public GameRecord(float meters, float time)
         {
             Meters = meters;
             Time = time;
         }
+    }
+
+    public List<GameRecord> lastGames = new List<GameRecord>();
+
+    public void AddGameRecord(float meters, float time, int maxRecords = 5)
+    {
+        lastGames.Add(new GameRecord(meters, time));
+        lastGames.Sort((a, b) => b.Meters.CompareTo(a.Meters));
+
+        if (lastGames.Count > maxRecords)
+            lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);
     }
 
     public List<GameRecord> lastGames = new List<GameRecord>();
@@ -52,3 +62,7 @@ public class SaveData
     //        highScores.RemoveRange(maxScores, highScores.Count - maxScores);
     //}
 }
+
+
+  
+
