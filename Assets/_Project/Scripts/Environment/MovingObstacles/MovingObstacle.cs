@@ -1,89 +1,96 @@
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-    public class MovingObstacle : AbstractMover
-    {
-    [SerializeField] private float playerDetectionRange = 5f; // Distanza di rilevamento del giocatore
+public class MovingObstacle : AbstractMover
+{
+    [SerializeField] private float _timeBeforeNextMove = 2f;
     [SerializeField] protected Transform[] targetLanes;
-    private int currentLaneIndex = 0; // Indice della corsia corrente
-    private int targetLaneIndex; // Indice della corsia target
-    private Vector3 startPosition; // Posizione iniziale
-    private Vector3 targetPosition; // Posizione target    
-    
-    private GameObject player; // Riferimento al giocatore
-    
+    private int currentLaneIndex = 0;
+    private int targetLaneIndex;
+    private Vector3 targetLocalPosition;
+
+    private float waitTimer = 0f;
+    private bool isWaiting = false;
+
     protected void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null)
+        if (GameObject.FindGameObjectWithTag("Player") == null)
         {
-            Debug.LogWarning("Player object not found in MovingDefensors.");
+            Debug.LogWarning("Player non trovato.");
         }
     }
-    
+
     protected void OnEnable()
     {
         if (obstacleMesh == null)
         {
-            Debug.LogWarning("Obstacle mesh not assigned in MovingDefensors.");
+            Debug.LogError("obstacleMesh non assegnato.");
             return;
         }
-        startPosition = obstacleMesh.transform.position;
+
         if (targetLanes == null || targetLanes.Length == 0)
         {
-            Debug.LogError("Missing the Lanes prefab!");
+            Debug.LogError("targetLanes non assegnato.");
             return;
         }
+
         SetNewTarget();
     }
 
     public override void Move()
     {
-        obstacleMesh.transform.position = Vector3.MoveTowards(obstacleMesh.transform.position, targetPosition, moveSpeed * Time.deltaTime);
-        if (Vector3.Distance(obstacleMesh.transform.position, targetPosition) < 0.1f)
+        if (isWaiting)
         {
-            //_hasMovedToTarget = true;
-            currentLaneIndex = targetLaneIndex; // Aggiorna la corsia corrente
-            SetNewTarget();
+            waitTimer += Time.deltaTime;
+            if (waitTimer >= _timeBeforeNextMove)
+            {
+                isWaiting = false;
+                waitTimer = 0f;
+                SetNewTarget();
+            }
+            return;
         }
-        if (!_hasMovedToTarget)
+
+        obstacleMesh.transform.localPosition = Vector3.MoveTowards(
+            obstacleMesh.transform.localPosition,
+            targetLocalPosition,
+            moveSpeed * Time.deltaTime
+        );
+
+        if (Vector3.Distance(obstacleMesh.transform.localPosition, targetLocalPosition) < 0.05f)
         {
-            //if (Vector3.Distance(obstacleMesh.transform.position, player.transform.position) < playerDetectionRange)
-            //{
-            //    Debug.Log("It Was Me, Dio!");   
-            //}
+            currentLaneIndex = targetLaneIndex;
+            isWaiting = true;
+            waitTimer = 0f;
         }
     }
 
-    // Metodo per cambiare target (opzionale)
-    public void SetNewTarget()
+    private void SetNewTarget()
     {
-        //_hasMovedToTarget = false; // Reset dello stato
-
-        if (targetLanes != null && targetLanes.Length > 0)
+        if (targetLanes.Length == 1)
         {
-            // Allinea le corsie alla posizione iniziale dell'ostacolo
-            foreach (Transform lane in targetLanes)
-            {
-                float yPos = startPosition.y;
-                lane.transform.position = new Vector3(lane.transform.position.x, yPos, lane.transform.position.z);
-            }
-
-            targetLaneIndex = Random.Range(0, targetLanes.Length);
-
-            if (currentLaneIndex == targetLaneIndex || Vector3.Distance(obstacleMesh.transform.position, targetPosition) < 0.1f)
-            {
-                targetLaneIndex = (targetLaneIndex + 1) % targetLanes.Length; // Cambia corsia se è la stessa
-            }
-
-            Debug.Log($"Target position set to: {targetLanes[targetLaneIndex]}");
+            targetLaneIndex = 0;
         }
         else
         {
-            Debug.LogWarning("Lanes positions not set in MovingDefensors.");
-            targetLaneIndex = 0;
+            int newIndex;
+            do
+            {
+                newIndex = Random.Range(0, targetLanes.Length);
+            } while (newIndex == currentLaneIndex);
+
+            targetLaneIndex = newIndex;
         }
-        targetPosition = targetLanes[targetLaneIndex].transform.position; // Imposta la posizione target
+
+        Vector3 laneLocalPos = targetLanes[targetLaneIndex].localPosition;
+
+        targetLocalPosition = new Vector3(
+            laneLocalPos.x,
+            obstacleMesh.transform.localPosition.y,
+            obstacleMesh.transform.localPosition.z
+        );
+
+        Debug.Log($"Nuovo target: corsia {targetLaneIndex}, localPosition {targetLocalPosition}");
     }
 }
