@@ -40,7 +40,7 @@ public class MovingObstacle : AbstractMover
 
     public override void Move()
     {
-        if (isWaiting)
+        if (isWaiting) //Attesa quando raggiunge la destinazione
         {
             waitTimer += Time.deltaTime;
             if (waitTimer >= _timeBeforeNextMove)
@@ -52,12 +52,9 @@ public class MovingObstacle : AbstractMover
             return;
         }
 
-        obstacleMesh.transform.localPosition = Vector3.MoveTowards(
-            obstacleMesh.transform.localPosition,
-            targetLocalPosition,
-            moveSpeed * Time.deltaTime
-        );
+        obstacleMesh.transform.localPosition = Vector3.MoveTowards(obstacleMesh.transform.localPosition, targetLocalPosition, moveSpeed * Time.deltaTime);
 
+        //Raggiunto il target
         if (Vector3.Distance(obstacleMesh.transform.localPosition, targetLocalPosition) < 0.05f)
         {
             currentLaneIndex = targetLaneIndex;
@@ -74,22 +71,16 @@ public class MovingObstacle : AbstractMover
         }
         else
         {
-            int newIndex;
-            do
-            {
-                newIndex = Random.Range(0, targetLanes.Length);
-            } while (newIndex == currentLaneIndex);
-
-            targetLaneIndex = newIndex;
+            int newIndex;          
+            newIndex = Random.Range(0, targetLanes.Length);
+            
+            if (newIndex == currentLaneIndex)
+                targetLaneIndex = Random.Range(0, targetLanes.Length); //Mi assicuro che non setti sè stesso            
         }
 
         Vector3 laneLocalPos = targetLanes[targetLaneIndex].localPosition;
 
-        targetLocalPosition = new Vector3(
-            laneLocalPos.x,
-            obstacleMesh.transform.localPosition.y,
-            obstacleMesh.transform.localPosition.z
-        );
+        targetLocalPosition = new Vector3(laneLocalPos.x, obstacleMesh.transform.localPosition.y, obstacleMesh.transform.localPosition.z);
 
         Debug.Log($"Nuovo target: corsia {targetLaneIndex}, localPosition {targetLocalPosition}");
     }
