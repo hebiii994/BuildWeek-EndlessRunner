@@ -17,10 +17,7 @@ public class OptionsManager : MonoBehaviour
             Instance = this;
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
-
-            SetMasterVolume(_masterVolume);
-            SetMusicVolume(_musicVolume);
-            SetSFXVolume(_sfxVolume);
+            Load();
         }
         else
         {
@@ -28,24 +25,54 @@ public class OptionsManager : MonoBehaviour
         }
     }
 
+    private void Load()
+    {
+        SaveData data = SaveSystem.Load() ?? new SaveData();
+
+        _masterVolume = data.masterVolume;
+        _musicVolume = data.musicVolume;
+        _sfxVolume = data.sfxVolume;
+
+        ApplyVolumes();
+    }
+
+    private void Save()
+    {
+        SaveData data = SaveSystem.Load() ?? new SaveData();
+        data.masterVolume = _masterVolume;
+        data.musicVolume = _musicVolume;
+        data.sfxVolume = _sfxVolume;
+        SaveSystem.Save(data);
+    }
+
+    private void ApplyVolumes()
+    {
+        _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_masterVolume) * 20);
+        _audioMixer.SetFloat("MusicVolume", Mathf.Log10(_musicVolume) * 20);
+        _audioMixer.SetFloat("SFXVolume", Mathf.Log10(_sfxVolume) * 20);
+    }
+
     public void SetMasterVolume(float value)
     {
         _masterVolume = Mathf.Clamp(value, 0.0001f, 1f);
-        _audioMixer.SetFloat("MasterVolume", Mathf.Log10(_masterVolume) * 20);
+        Save();
+        ApplyVolumes();
     }
     public float GetMasterVolume() => _masterVolume;
 
     public void SetMusicVolume(float value)
     {
         _musicVolume = Mathf.Clamp(value, 0.0001f, 1f);
-        _audioMixer.SetFloat("MusicVolume", Mathf.Log10(_musicVolume) * 20);
+        Save();
+        ApplyVolumes();
     }
     public float GetMusicVolume() => _musicVolume;
 
     public void SetSFXVolume(float value)
     {
         _sfxVolume = Mathf.Clamp(value, 0.0001f, 1f);
-        _audioMixer.SetFloat("SFXVolume", Mathf.Log10(_sfxVolume) * 20);
+        Save();
+        ApplyVolumes();
     }
     public float GetSFXVolume() => _sfxVolume;
 }

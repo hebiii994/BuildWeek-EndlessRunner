@@ -17,7 +17,8 @@ public class TrophyManager : MonoBehaviour
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
-            _totalTrophies = PlayerPrefs.GetInt("TotalTrophies", 0);
+            SaveData data = SaveSystem.Load() ?? new SaveData();
+            _totalTrophies = data.totalTrophies;
         }
         else
         {
@@ -48,7 +49,8 @@ public class TrophyManager : MonoBehaviour
 
     private void Save()
     {
-        PlayerPrefs.SetInt("TotalTrophies", _totalTrophies);
-        PlayerPrefs.Save();
+        SaveData data = SaveSystem.Load() ?? new SaveData();
+        data.totalTrophies = _totalTrophies;
+        SaveSystem.Save(data);
     }
 }
