@@ -182,7 +182,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2638910482219425336}
-  - component: {fileID: 284211240114683606}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -205,25 +204,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8360617517416890923}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &284211240114683606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5062580654786478828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ecae6059e8fce248ac8bceffd9e8395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  obstacleMesh: {fileID: 6306314919057074047}
-  playerDetectionRange: 25
-  targetLanes:
-  - {fileID: 4708398477458822720}
-  - {fileID: 1262341070471203469}
-  - {fileID: 7521909669984108515}
 --- !u!1 &5950557425556473070
 GameObject:
   m_ObjectHideFlags: 0
