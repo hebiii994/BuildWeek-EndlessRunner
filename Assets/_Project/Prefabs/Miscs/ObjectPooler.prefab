@@ -87,3 +87,7 @@ MonoBehaviour:
     prefab:
     - {fileID: 8868581454519076062, guid: 1d026cf6b6a9e0a48841d162ebdc98db, type: 3}
     size: 20
+  - tag: Invincibility_PowerUp
+    prefab:
+    - {fileID: 3691363047110089490, guid: 2f8214830c8a9114eabb82ca10fa8c20, type: 3}
+    size: 20

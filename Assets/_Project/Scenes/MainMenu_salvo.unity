@@ -282,7 +282,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2133297502}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2428572900469660827, guid: 40aaf3387185d9546a27f4d63557a36e, type: 3}
       propertyPath: m_Name
@@ -437,11 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc086db0dee3ae44b3cde4b5a9d7f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1557851513 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6970014036680920889, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
-  m_PrefabInstance: {fileID: 786073783038003874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1677109635
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,11 +483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1877169644 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2674000447391461472, guid: 40aaf3387185d9546a27f4d63557a36e, type: 3}
-  m_PrefabInstance: {fileID: 944229715}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1954216569 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7101279340733735733, guid: 3c10cae0918855240a7a040d6a61598d, type: 3}
@@ -734,8 +724,7 @@ Transform:
   - {fileID: 1076364839}
   - {fileID: 1014438505}
   - {fileID: 556217768}
-  - {fileID: 1557851513}
-  - {fileID: 1877169644}
+  - {fileID: 786073783038003875}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &786073783038003874
@@ -835,6 +824,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+--- !u!4 &786073783038003875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8903059446095130109, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+  m_PrefabInstance: {fileID: 786073783038003874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2293455478448797768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1943,6 +1937,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 944229715}
   - {fileID: 104249809}
   - {fileID: 1677109636}
   - {fileID: 2133297502}
