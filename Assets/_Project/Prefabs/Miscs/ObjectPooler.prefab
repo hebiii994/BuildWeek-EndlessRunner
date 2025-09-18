@@ -89,5 +89,13 @@ MonoBehaviour:
     size: 20
   - tag: Invincibility_PowerUp
     prefab:
-    - {fileID: 3691363047110089490, guid: 2f8214830c8a9114eabb82ca10fa8c20, type: 3}
+    - {fileID: 8868581454519076062, guid: 1d026cf6b6a9e0a48841d162ebdc98db, type: 3}
+    size: 20
+  - tag: Ball
+    prefab:
+    - {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
+    size: 20
+  - tag: MovingObstacle
+    prefab:
+    - {fileID: 730718568124341424, guid: 850be2522584dd54eb278bdee30e910d, type: 3}
     size: 20
