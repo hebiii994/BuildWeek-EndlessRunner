@@ -36,7 +36,8 @@ public class SaveData
         lastGames.Sort((a, b) => b.Meters.CompareTo(a.Meters));
 
         if (lastGames.Count > maxRecords)
-            lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);
+            lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);  
+
     }
 
 
