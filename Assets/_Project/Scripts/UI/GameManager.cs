@@ -56,13 +56,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GracePeriodCoroutine()
     {
-        isGracePeriodActive = true;
-        Debug.Log("Periodo di grazia INIZIATO.");
+        isGracePeriodActive = true;        
 
         yield return new WaitForSeconds(3f);
 
-        isGracePeriodActive = false;
-        Debug.Log("Periodo di grazia FINITO.");
+        isGracePeriodActive = false;        
     }
 
     public void StartGame() => SetState(GameState.InGame);
@@ -78,7 +76,9 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneNames.Game);
+
     }
 
     public void GoToMainMenu()
