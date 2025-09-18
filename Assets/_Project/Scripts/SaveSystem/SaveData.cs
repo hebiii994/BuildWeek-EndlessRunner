@@ -37,18 +37,7 @@ public class SaveData
 
         if (lastGames.Count > maxRecords)
             lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);
-    }
-
-    public List<GameRecord> lastGames = new List<GameRecord>();
-
-    public void AddGameRecord(float meters, float time, int maxRecords = 5)
-    {
-        lastGames.Add(new GameRecord(meters, time));
-        lastGames.Sort((a, b) => b.Meters.CompareTo(a.Meters));
-
-        if (lastGames.Count > maxRecords)
-            lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);
-    }
+    }    
 
     //public void UpdateHighScores(float newScore, int maxScores = 5)
     //{
