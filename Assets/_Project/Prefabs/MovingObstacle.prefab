@@ -218,7 +218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+<<<<<<< Updated upstream
   obstacleMesh: {fileID: 8430303053495760774}
+=======
+  obstacleMesh: {fileID: 6306314919057074047}
+>>>>>>> Stashed changes
   _timeBeforeNextMove: 1.25
   targetLanes:
   - {fileID: 4708398477458822720}
