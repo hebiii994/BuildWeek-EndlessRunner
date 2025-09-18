@@ -222,6 +222,9 @@ MonoBehaviour:
   obstacleMesh: {fileID: 8430303053495760774}
 =======
   obstacleMesh: {fileID: 6306314919057074047}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   _timeBeforeNextMove: 1.25
   targetLanes:
