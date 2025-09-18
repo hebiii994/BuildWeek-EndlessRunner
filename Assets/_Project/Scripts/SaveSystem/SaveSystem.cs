@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -13,7 +11,6 @@ public class SaveSystem
         string json = JsonUtility.ToJson(data);
 
         File.WriteAllText(path, json);
-
         Debug.Log($"Saved {json} to {path}");
 
         return true;
@@ -37,7 +34,6 @@ public class SaveSystem
         SaveData data = JsonUtility.FromJson<SaveData>(jsonString);
 
         Debug.Log($"Loaded {jsonString} from {path}");
-
         return data;
     }
 
@@ -48,12 +44,10 @@ public class SaveSystem
         Save(data);
     }
 
-
     //public static bool SaveWithNewScore(float newScore)
     //{
     //    SaveData data = Load() ?? new SaveData();
     //    data.UpdateHighScores(newScore);
     //    return Save(data);
     //}
-
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +8,13 @@ public class SaveData
     public List<float> highScores;
     public int playerCoins;
 
-    public GameObject _playerPreFab;
-    public List<string> ownedPowerUp;
-    //Nota bene: Ho messo GameObject per farmi capire che sono oggetti di gioco,
-    //aggiorner� dopo che avremo definito una classe power-up
-    public List<string> powerUpsID; // Lista degli ID dei power-up acquistati
+    //public GameObject _playerPreFab;
+    public List<string> ownedPowerUps = new List<string>();
+    public int totalTrophies = 0;
+
+    public float masterVolume = 1f;
+    public float musicVolume = 1f;
+    public float sfxVolume = 1f;
 
     [System.Serializable]
     public class GameRecord
@@ -35,10 +36,9 @@ public class SaveData
         lastGames.Sort((a, b) => b.Meters.CompareTo(a.Meters));
 
         if (lastGames.Count > maxRecords)
-            lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);
-    }
-}
+            lastGames.RemoveRange(maxRecords, lastGames.Count - maxRecords);  
 
+    }
 
 
     //public void UpdateHighScores(float newScore, int maxScores = 5)
@@ -48,9 +48,12 @@ public class SaveData
 
     //    highScores.Add(newScore);
     //    highScores.Sort((a, b) => b.CompareTo(a)); // Ordine decrescente
-
-    //    // Mantieni solo i migliori punteggi
+    //
     //    if (highScores.Count > maxScores)
     //        highScores.RemoveRange(maxScores, highScores.Count - maxScores);
     //}
+}
+
+
+  
 

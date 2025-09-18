@@ -485,6 +485,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      propertyPath: _ballsIcon
+      value: 
+      objectReference: {fileID: 937040931}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      propertyPath: _pauseMenu
+      value: 
+      objectReference: {fileID: 920365173}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      propertyPath: _trophyIcon
+      value: 
+      objectReference: {fileID: 698802223}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      propertyPath: _optionsMenu
+      value: 
+      objectReference: {fileID: 1670079529}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      propertyPath: _gameOverMenu
+      value: 
+      objectReference: {fileID: 960243865}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      propertyPath: _ballsCounterText
+      value: 
+      objectReference: {fileID: 463512312}
+    - target: {fileID: 4196651649067545239, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
+      propertyPath: _trophyCounterText
+      value: 
+      objectReference: {fileID: 1368851704}
     - target: {fileID: 7305893489266377941, guid: d4c51ca8c56e42c49858311c82fa9d8f, type: 3}
       propertyPath: _ballsIcon
       value: 
@@ -579,24 +607,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
-      propertyPath: pools.Array.data[7].tag
-      value: Ball
+      propertyPath: pools.Array.data[8].tag
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
-      propertyPath: pools.Array.data[7].size
-      value: 10
+      propertyPath: pools.Array.data[8].size
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
-      propertyPath: pools.Array.data[7].prefab.Array.size
+      propertyPath: pools.Array.data[8].prefab.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
-      propertyPath: pools.Array.data[7].prefab.Array.data[0]
+      propertyPath: pools.Array.data[8].prefab.Array.data[0]
       value: 
-      objectReference: {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
+      objectReference: {fileID: 5148981513411356761, guid: db1d1216009df754782a2e29adc13dd1, type: 3}
     - target: {fileID: 5341723745783326209, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: m_Name
       value: ObjectPooler

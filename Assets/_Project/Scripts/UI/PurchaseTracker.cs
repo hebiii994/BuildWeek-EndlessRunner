@@ -12,6 +12,7 @@ public class PurchaseTracker : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
             Load();
         }
@@ -31,22 +32,20 @@ public class PurchaseTracker : MonoBehaviour
         if (!purchasedItems.Contains(itemName))
         {
             purchasedItems.Add(itemName);
-            PlayerPrefs.SetInt("ShopItem_" + itemName, 1);
-            PlayerPrefs.Save();
+            Save();
         }
+    }
+
+    private void Save()
+    {
+        SaveData data = SaveSystem.Load() ?? new SaveData();
+        data.ownedPowerUps = new List<string>(purchasedItems);
+        SaveSystem.Save(data);
     }
 
     private void Load()
     {
-        string[] allItems = { "PowerUp1", "PowerUp2", "PowerUp3" };
-        purchasedItems.Clear();
-
-        foreach (string item in allItems)
-        {
-            if (PlayerPrefs.GetInt("ShopItem_" + item, 0) == 1)
-            {
-                purchasedItems.Add(item);
-            }
-        }
+        SaveData data = SaveSystem.Load() ?? new SaveData();
+        purchasedItems = new List<string>(data.ownedPowerUps);
     }
 }

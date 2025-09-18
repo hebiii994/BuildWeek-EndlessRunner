@@ -7,12 +7,12 @@ public enum GameState { Start, InGame, Paused, GameOver }
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public bool isGracePeriodActive { get; private set; } = true;
     private GameState _currentState = GameState.Start;
 
     public float MetersTraveled = 0f;
     public float TimeElapsed = 0f;
 
-    
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1f;
                 UIManager.Instance.ShowPauseMenu(false);
                 UIManager.Instance.ShowGameOver(false);
+                StartCoroutine(GracePeriodCoroutine());
                 break;
 
             case GameState.Paused:
@@ -52,22 +53,32 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    
+
+    private IEnumerator GracePeriodCoroutine()
+    {
+        isGracePeriodActive = true;        
+
+        yield return new WaitForSeconds(3f);
+
+        isGracePeriodActive = false;        
+    }
+
     public void StartGame() => SetState(GameState.InGame);
     public void PauseGame() => SetState(GameState.Paused);
     public void ResumeGame() => SetState(GameState.InGame);
+
     public void EndGame()
     {
         SetState(GameState.GameOver);
         SaveSystem.AddNewGame(MetersTraveled, TimeElapsed);
     }
 
-
-
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneNames.Game);
+
     }
 
     public void GoToMainMenu()

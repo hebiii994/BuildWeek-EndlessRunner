@@ -75,7 +75,7 @@ public class MovingObstacle : AbstractMover
             newIndex = Random.Range(0, targetLanes.Length);
             
             if (newIndex == currentLaneIndex)
-                targetLaneIndex = Random.Range(0, targetLanes.Length); //Mi assicuro che non setti sè stesso            
+                targetLaneIndex = Random.Range(0, targetLanes.Length); //Mi assicuro che non setti sÃ¨ stesso            
         }
 
         Vector3 laneLocalPos = targetLanes[targetLaneIndex].localPosition;

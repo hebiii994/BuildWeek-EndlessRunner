@@ -12,7 +12,7 @@ public class PlayerBallManager : MonoBehaviour
     [Header("Tiro")]
     [SerializeField] private float extraBallSpeed = 10f; // aggiunta oltre alla velocità del player
     [SerializeField] private float frontCamDistance = 15f; // distanza fissa davanti alla camera
-
+    public AudioClip kickSound;
 
     [Header("Pool")]
     public int maxBalls = 5;
@@ -49,6 +49,12 @@ public class PlayerBallManager : MonoBehaviour
             lastShootTime = Time.time; // aggiorna l'ultimo tiro
         }
     }
+    public void AddScore(int amount)
+    {
+        //Manager dei trofei
+        TrophyManager.Instance.AddTrophies(amount);
+    }
+
 
     private void ShootBall()
     {
@@ -59,6 +65,11 @@ public class PlayerBallManager : MonoBehaviour
 
         // Direzione dalla mano (hitPoint) al punto cliccato
         Vector3 dir = (worldPos - hitPoint.position).normalized;
+
+        if (AudioManager.Instance != null && kickSound != null)
+        {
+            AudioManager.Instance.PlaySound(kickSound);
+        }
 
         // Prendo la palla dall’ObjectPooler
         GameObject ballObj = ObjectPooler.Instance.SpawnFromPool("Ball", hitPoint.position, Quaternion.identity);

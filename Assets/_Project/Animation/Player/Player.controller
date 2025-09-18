@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8632502676490034071}
-    m_Position: {x: 346.33026, y: 110.79703, z: 0}
+    m_Position: {x: 350, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8229591636068800581}
     m_Position: {x: 300, y: 210, z: 0}
@@ -118,7 +118,7 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: Slide
     m_Type: 9
@@ -232,7 +232,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 51286832887b7ec4a8a1d3f1f7960c90, type: 3}
+  m_Motion: {fileID: 7400000, guid: 1fd25a69ed10ef5448365ad37aa27eec, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

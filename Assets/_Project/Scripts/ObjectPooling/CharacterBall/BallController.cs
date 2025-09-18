@@ -7,8 +7,7 @@ public class BallController : MonoBehaviour
     private Transform startPoint;
     private bool returning = false;
     private bool returned = false;
-    private PlayerBallManager owner;
-
+    public PlayerBallManager owner { get; private set; }
     private float maxX; // limite laterale del campo
     private float minY = -10f; // altezza minima per considerare persa la palla
 
@@ -67,8 +66,8 @@ public class BallController : MonoBehaviour
     {
         while (!returning)
         {
-            // Controlla se la palla esce dai limiti laterali o scende sotto l'altezza minima
-            if (Mathf.Abs(transform.position.x) > maxX || transform.position.y < minY)
+            // Controlla se la palla esce dai limiti laterali, viene superata o scende sotto l'altezza minima
+            if (Mathf.Abs(transform.position.x) > maxX || transform.position.y < minY ||  (transform.position.z < owner.playerController.transform.position.z - 5f))
             {
                 Destroy(gameObject); // palla persa
                 yield break;
