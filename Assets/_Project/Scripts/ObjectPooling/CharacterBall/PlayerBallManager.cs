@@ -49,6 +49,12 @@ public class PlayerBallManager : MonoBehaviour
             lastShootTime = Time.time; // aggiorna l'ultimo tiro
         }
     }
+    public void AddScore(int amount)
+    {
+        //Manager dei trofei
+        TrophyManager.Instance.AddTrophies(amount);
+    }
+
 
     private void ShootBall()
     {
