@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   obstacleMesh: {fileID: 705610753132895798}
-  _timeBeforeNextMove: 2
+  _timeBeforeNextMove: 0.5
   targetLanes:
   - {fileID: 8872820228794522693}
   - {fileID: 5155073982361732438}
