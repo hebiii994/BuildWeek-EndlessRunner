@@ -71,6 +71,10 @@ MonoBehaviour:
     prefab:
     - {fileID: 3366083256283645392, guid: 5457db9bbeb8bae408fbc675802b5efc, type: 3}
     size: 20
+  - tag: MovingObstacle
+    prefab:
+    - {fileID: 730718568124341424, guid: 850be2522584dd54eb278bdee30e910d, type: 3}
+    size: 20
   - tag: SlideObstacle
     prefab:
     - {fileID: 8868581454519076062, guid: 1d026cf6b6a9e0a48841d162ebdc98db, type: 3}
