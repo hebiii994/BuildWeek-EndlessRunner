@@ -75,7 +75,11 @@ MonoBehaviour:
     prefab:
     - {fileID: 730718568124341424, guid: 850be2522584dd54eb278bdee30e910d, type: 3}
     size: 20
-  - tag: SlideObstacle
+  - tag: Ball
     prefab:
-    - {fileID: 8868581454519076062, guid: 1d026cf6b6a9e0a48841d162ebdc98db, type: 3}
+    - {fileID: 1975457108487340, guid: ec3e8f3ed27e2244caaedaf589590a03, type: 3}
+    size: 10
+  - tag: Target
+    prefab:
+    - {fileID: 5148981513411356761, guid: db1d1216009df754782a2e29adc13dd1, type: 3}
     size: 20

@@ -8917,6 +8917,12 @@ MonoBehaviour:
     trophyPoolTag: Trophy
     trophyChance: 0.4
     trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+  - poolTag: Target
+    spawnChance: 0.713
+    canHaveTrophy: 0
+    trophyPoolTag: Trophy
+    trophyChance: 0.5
+    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
   _spawnPoints:
   - {fileID: 6883238927493295336}
   - {fileID: 8822034820218888919}
