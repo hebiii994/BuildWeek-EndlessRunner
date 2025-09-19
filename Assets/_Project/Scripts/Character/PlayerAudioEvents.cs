@@ -8,7 +8,7 @@ public class PlayerAudioEvents : MonoBehaviour
 
     public void PlayFootstepSound()
     {
-        Debug.Log("Evento Passo attivato al frame: " + Time.frameCount);
+        //Debug.Log("Evento Passo attivato al frame: " + Time.frameCount);
         if (footstepSounds == null || footstepSounds.Length == 0) return;
 
         int index = Random.Range(0, footstepSounds.Length);

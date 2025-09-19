@@ -27,7 +27,7 @@ public class InvincibilityPowerUp : AbstractPowerUp
     public override void ApplyEffect(GameObject player)
     {
         // Usa il LifeController del player
-        LifeController lc = player.GetComponent<LifeController>();
+        LifeController lc = player.GetComponentInParent<LifeController>();
         if (lc != null)
         {
             lc.StartCoroutine("Invincibility"); // mantiene la logica già esistente del tuo collega
