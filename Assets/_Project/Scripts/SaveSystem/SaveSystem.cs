@@ -44,10 +44,5 @@ public class SaveSystem
         Save(data);
     }
 
-    //public static bool SaveWithNewScore(float newScore)
-    //{
-    //    SaveData data = Load() ?? new SaveData();
-    //    data.UpdateHighScores(newScore);
-    //    return Save(data);
-    //}
+    
 }

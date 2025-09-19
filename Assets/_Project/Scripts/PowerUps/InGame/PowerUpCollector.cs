@@ -1,57 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpCollector : MonoBehaviour, iCollectable
+public class PowerUpCollector : MonoBehaviour
 {
-    [SerializeField] private AbstractPowerUp powerUp;
-
-    private void Start()
-    {
-        // Verifica che il power-up sia assegnato
-        if (powerUp == null)
-        {
-            Debug.LogWarning($"PowerUp ScriptableObject not assigned on {gameObject.name}");
-        }
-    }
+    [SerializeField] private AbstractPowerUp _powerUp;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Collect(other.gameObject); // Passa il player come parametro
+            Collect(other.gameObject);
         }
     }
 
-    public void Collect()
+    private void Collect(GameObject player)
     {
-        // Implementazione base per compatibilità con iCollectable
-        Collect(GameObject.FindGameObjectWithTag("Player"));
-    }
-
-    public void Collect(GameObject player)
-    {
-        if (powerUp == null)
+        if (_powerUp != null)
         {
-            Debug.LogError("PowerUp ScriptableObject is null!");
-            return;
+            _powerUp.ApplyEffect(player);
+
+            SaveData data = SaveSystem.Load();
+            if (!data.ownedPowerUps.Contains(_powerUp.PowerUpID))
+            {
+                data.ownedPowerUps.Add(_powerUp.PowerUpID);
+                SaveSystem.Save(data);
+            }
+
+            Debug.Log($"Collected power-up: {_powerUp.PowerUpID}");
+            Destroy(gameObject);
         }
-
-        if (player == null || !player.CompareTag("Player"))
-        {
-            Debug.LogError("Player is null!");
-            return;
-        }
-
-        // Applica l'effetto del power-up al giocatore
-        powerUp.ApplyEffect(player);
-        
-        // Invoca l'evento se qualcuno è in ascolto
-        powerUp.OnTakingPowerUp?.Invoke();
-
-        Debug.Log($"Power-up {powerUp.PowerUpID} collected and applied to {player.name}!");
-        
-        // Distruggi il power-up dopo la raccolta
-        Destroy(gameObject);
     }
 }

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _powerUpPrefab: {fileID: 3691363047110089490, guid: 2f8214830c8a9114eabb82ca10fa8c20, type: 3}
   _powerUpID: Invincible
+  _cost: 25
+  _powerUpDuration: 5
