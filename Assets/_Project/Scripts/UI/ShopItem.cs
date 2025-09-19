@@ -1,55 +1,65 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopItem : MonoBehaviour
 {
-    [SerializeField] private string _itemName;
-    [SerializeField] private int _price;
+    [SerializeField] private AbstractPowerUp _powerUp;
     [SerializeField] private Button _buyButton;
+    [SerializeField] private TMP_Text _costText;
 
-    private void OnEnable()
+    private void Start()
     {
-        TrophyManager.Instance.OnTrophyChanged += UpdateButton;
+        if (_powerUp != null && _costText != null)
+        {
+            _costText.text = _powerUp.Cost.ToString();
+        }
+
+        if (_buyButton != null)
+            _buyButton.onClick.AddListener(BuyPowerUp);
+
         UpdateButton(TrophyManager.Instance.GetTrophies());
-
-        _buyButton.onClick.AddListener(Buy);
-
-        if (PurchaseTracker.Instance.IsPurchased(_itemName))
-            _buyButton.interactable = false;
+        TrophyManager.Instance.OnTrophyChanged += UpdateButton;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (TrophyManager.Instance != null)
             TrophyManager.Instance.OnTrophyChanged -= UpdateButton;
-
-        _buyButton.onClick.RemoveListener(Buy);
     }
 
     private void UpdateButton(int currentTrophies)
     {
-        if (PurchaseTracker.Instance.IsPurchased(_itemName))
-        {
-            _buyButton.interactable = false;
-        }
-        else
-        {
-            _buyButton.interactable = currentTrophies >= _price;
-        }
+        if (_powerUp == null || _buyButton == null) return;
+
+        _buyButton.interactable = currentTrophies >= _powerUp.Cost &&
+                                  !SaveSystem.Load().ownedPowerUps.Contains(_powerUp.PowerUpID);
     }
 
-    private void Buy()
+    private void BuyPowerUp()
     {
-        if (TrophyManager.Instance.SpendTrophies(_price))
+        if (_powerUp == null) return;
+
+        TrophyManager trophyManager = TrophyManager.Instance;
+        SaveData data = SaveSystem.Load();
+
+        if (trophyManager != null && data != null)
         {
-            Debug.Log($"Bought {_itemName} for {_price} Trophies!");
-            PurchaseTracker.Instance.Purchase(_itemName);
-            _buyButton.interactable = false;
-        }
-        else
-        {
-            Debug.Log("Not enough trophies to buy this power-up!");
+            if (trophyManager.SpendTrophies(_powerUp.Cost))
+            {
+                if (!data.ownedPowerUps.Contains(_powerUp.PowerUpID))
+                {
+                    data.ownedPowerUps.Add(_powerUp.PowerUpID);
+                    SaveSystem.Save(data);
+                }
+
+                Debug.Log($"Bought power-up: {_powerUp.PowerUpID}");
+                UpdateButton(trophyManager.GetTrophies());
+            }
+            else
+            {
+                Debug.Log("Not enough trophies!");
+            }
         }
     }
-
 }
