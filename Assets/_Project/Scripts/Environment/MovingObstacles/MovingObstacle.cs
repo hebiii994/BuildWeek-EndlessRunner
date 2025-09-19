@@ -82,6 +82,6 @@ public class MovingObstacle : AbstractMover
 
         targetLocalPosition = new Vector3(laneLocalPos.x, obstacleMesh.transform.localPosition.y, obstacleMesh.transform.localPosition.z);
 
-        Debug.Log($"Nuovo target: corsia {targetLaneIndex}, localPosition {targetLocalPosition}");
+        //Debug.Log($"Nuovo target: corsia {targetLaneIndex}, localPosition {targetLocalPosition}");
     }
 }
