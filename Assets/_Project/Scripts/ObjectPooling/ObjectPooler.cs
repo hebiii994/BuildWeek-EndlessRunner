@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,35 +18,16 @@ public class ObjectPooler : MonoBehaviour
 
     void Awake()
     {
-
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
-            return; 
+            return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
-        {
-            if (!poolDictionary.ContainsKey(pool.tag))
-            {
-                Queue<GameObject> objectPool = new Queue<GameObject>();
-
-                for (int i = 0; i < pool.size; i++)
-                {
-                    GameObject obj = Instantiate(pool.prefab[Random.Range(0, pool.prefab.Count)]);
-                    obj.transform.SetParent(this.transform);
-                    obj.SetActive(false);
-                    objectPool.Enqueue(obj);
-                }
-
-                poolDictionary.Add(pool.tag, objectPool);
-            }
-        }
+        InitializePools();
     }
 
     private void InitializePools()
@@ -56,16 +36,19 @@ public class ObjectPooler : MonoBehaviour
 
         foreach (Pool pool in pools)
         {
-            Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for (int i = 0; i < pool.size; i++)
+            if (!poolDictionary.ContainsKey(pool.tag))
             {
-                GameObject obj = Instantiate(pool.prefab[Random.Range(0, pool.prefab.Count)]);
-                obj.SetActive(false);
-                objectPool.Enqueue(obj);
+                Queue<GameObject> objectPool = new Queue<GameObject>();
+                for (int i = 0; i < pool.size; i++)
+                {
+                    GameObject obj = Instantiate(pool.prefab[Random.Range(0, pool.prefab.Count)]);
+                    obj.transform.SetParent(this.transform); 
+                    obj.SetActive(false);
+                    objectPool.Enqueue(obj);
+                }
+                poolDictionary.Add(pool.tag, objectPool);
             }
-
-            poolDictionary.Add(pool.tag, objectPool);
         }
     }
 
@@ -77,32 +60,14 @@ public class ObjectPooler : MonoBehaviour
             return null;
         }
 
-        if (poolDictionary[tag].Count == 0)
-        {
-            Debug.LogWarning("La Pool con il tag " + tag + " è vuota.");
-            return null;
-        }
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
+        poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
-    }
-
-
-    public void ReturnToPool(string tag, GameObject objectToReturn)
-    {
-        if (!poolDictionary.ContainsKey(tag))
-        {
-            Debug.LogWarning("La Pool con il tag " + tag + " non esiste.");
-            Destroy(objectToReturn); 
-            return;
-        }
-
-        objectToReturn.SetActive(false);
-        poolDictionary[tag].Enqueue(objectToReturn);
     }
 }

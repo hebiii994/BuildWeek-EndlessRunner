@@ -1,42 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BiomeManager : MonoBehaviour
 {
-    public float _roadSoFar = 0;
-    [SerializeField] private enum RoadBiomes { STADIUM, PARKING, ROAD};
-    [SerializeField] private string _stadiumString;
-    [SerializeField] private string _parkingString;
-    [SerializeField] private string _roadString;
 
+    [SerializeField] private int _roadsSpawnedCounter = 0;
 
+    [Header("Biome Tags")]
+    [SerializeField] private string _stadiumTag;
+    [SerializeField] private string _parkingTag;
+    [SerializeField] private string _roadTag;
 
-    public string UpdateBiome()
+    public void IncrementRoadCounter()
     {
-        if (_roadSoFar <= 10)
+        _roadsSpawnedCounter++;
+    }
+
+    public void ResetCounter()
+    {
+        _roadsSpawnedCounter = 0;
+    }
+
+    public string GetCurrentBiomeTag()
+    {
+        // I pezzi da 0 a 10 sono Stadium
+        if (_roadsSpawnedCounter <= 10)
         {
-            return _stadiumString;
+            return _stadiumTag;
         }
         // I pezzi da 11 a 20 sono Parking
-        else if (_roadSoFar <= 20)
+        else if (_roadsSpawnedCounter <= 20)
         {
-            return _parkingString;
+            return _parkingTag;
         }
         // Tutti i pezzi successivi sono Road
         else
         {
-            return _roadString;
+            return _roadTag;
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
