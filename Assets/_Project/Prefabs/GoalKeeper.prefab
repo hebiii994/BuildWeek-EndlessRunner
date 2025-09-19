@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5844628563414806737}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GoalKeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1129690829737014674}
   - component: {fileID: 3784874168907166629}
   - component: {fileID: 122884932410042288}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3020338164839345690}
   - component: {fileID: 2966846536472606676}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}

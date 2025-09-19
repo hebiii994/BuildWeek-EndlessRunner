@@ -274,10 +274,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoadGenerator
       objectReference: {fileID: 0}
-    - target: {fileID: 8969574216868396099, guid: 387f4cb699a32e5458556a6d915f0379, type: 3}
-      propertyPath: _roadLength
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1227,6 +1223,8 @@ Transform:
   - {fileID: 1146340499}
   - {fileID: 659722954}
   - {fileID: 428770816}
+  - {fileID: 2108631437}
+  - {fileID: 2132353615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1402575457
@@ -1269,7 +1267,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1371709075}
     m_Modifications:
     - target: {fileID: 2428572900469660827, guid: 40aaf3387185d9546a27f4d63557a36e, type: 3}
       propertyPath: m_Name
@@ -1326,7 +1324,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1371709075}
     m_Modifications:
     - target: {fileID: 1106684027694945099, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1421,6 +1419,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b47b403fcd3d146b80deb6763ee678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2108631437 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1106684027694945099, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+  m_PrefabInstance: {fileID: 1478453262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2132353615 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2674000447391461472, guid: 40aaf3387185d9546a27f4d63557a36e, type: 3}
+  m_PrefabInstance: {fileID: 1427817358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3933918585552749701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1833,8 +1841,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1478453262}
-  - {fileID: 1427817358}
   - {fileID: 1402575458}
   - {fileID: 1015801220}
   - {fileID: 1371709075}

@@ -8895,34 +8895,36 @@ MonoBehaviour:
   _spawnableObjects:
   - poolTag: JumpObstacle
     spawnChance: 0.8
-    canHaveTrophy: 1
-    trophyPoolTag: Trophy
-    trophyChance: 0.5
-    trophySpawnOffset: {x: 0, y: 2, z: 0}
+    checkRadius: 1
+    secondarySpawns:
+    - poolTag: Trophy
+      spawnChance: 0.425
+      spawnOffset: {x: 0, y: 2, z: 0}
+    - poolTag: Invincibility_PowerUp
+      spawnChance: 0.198
+      spawnOffset: {x: 0, y: 2, z: 0}
   - poolTag: SlideObstacle
-    spawnChance: 7.57
-    canHaveTrophy: 1
-    trophyPoolTag: Invincibility_PowerUp
-    trophyChance: 1
-    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+    spawnChance: 0.76
+    checkRadius: 1
+    secondarySpawns:
+    - poolTag: Invincibility_PowerUp
+      spawnChance: 0.23
+      spawnOffset: {x: 0, y: 0.5, z: 0}
+    - poolTag: Trophy
+      spawnChance: 0.5
+      spawnOffset: {x: 0, y: 0.5, z: 0}
   - poolTag: Defensor
     spawnChance: 0.8
-    canHaveTrophy: 0
-    trophyPoolTag: Trophy
-    trophyChance: 0.5
-    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+    checkRadius: 1
+    secondarySpawns: []
   - poolTag: MovingObstacle
     spawnChance: 1
-    canHaveTrophy: 0
-    trophyPoolTag: Trophy
-    trophyChance: 0.4
-    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+    checkRadius: 1
+    secondarySpawns: []
   - poolTag: Target
     spawnChance: 0.713
-    canHaveTrophy: 0
-    trophyPoolTag: Trophy
-    trophyChance: 0.5
-    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+    checkRadius: 1
+    secondarySpawns: []
   _spawnPoints:
   - {fileID: 6883238927493295336}
   - {fileID: 8822034820218888919}
@@ -8940,6 +8942,9 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &7420237163158208761
 GameObject:
   m_ObjectHideFlags: 0
