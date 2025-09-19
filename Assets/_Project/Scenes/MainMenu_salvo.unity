@@ -775,6 +775,46 @@ PrefabInstance:
       propertyPath: metersTexts.Array.data[4]
       value: 
       objectReference: {fileID: 3104934586103481362}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: timeTexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 3104934586103481361}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: timeTexts.Array.data[1]
+      value: 
+      objectReference: {fileID: 3104934586103481360}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: timeTexts.Array.data[2]
+      value: 
+      objectReference: {fileID: 3104934586103481359}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: timeTexts.Array.data[3]
+      value: 
+      objectReference: {fileID: 3104934586103481358}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: timeTexts.Array.data[4]
+      value: 
+      objectReference: {fileID: 3104934586103481357}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: metersTexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 3104934586103481366}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: metersTexts.Array.data[1]
+      value: 
+      objectReference: {fileID: 3104934586103481365}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: metersTexts.Array.data[2]
+      value: 
+      objectReference: {fileID: 3104934586103481364}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: metersTexts.Array.data[3]
+      value: 
+      objectReference: {fileID: 3104934586103481363}
+    - target: {fileID: 2196683749373586394, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
+      propertyPath: metersTexts.Array.data[4]
+      value: 
+      objectReference: {fileID: 3104934586103481362}
     - target: {fileID: 4164532657596802533, guid: 684cb9cbf12b4ff47a1b8d61c58ff8fd, type: 3}
       propertyPath: m_Name
       value: LeaderboardManager
@@ -1738,6 +1778,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1849971975918518720, guid: 645f721244bd722488b8a529e4166401, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1862117034669907240, guid: 645f721244bd722488b8a529e4166401, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1900,9 +1944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbd1760e18bbc74cb84a51b6e53d5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemName: PowerUp3
-  _price: 100
+  _powerUp: {fileID: 0}
   _buyButton: {fileID: 9177670155487657005}
+  _costText: {fileID: 0}
 --- !u!114 &9177670155487657012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,9 +1959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbd1760e18bbc74cb84a51b6e53d5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemName: PowerUp2
-  _price: 50
+  _powerUp: {fileID: 0}
   _buyButton: {fileID: 9177670155487657007}
+  _costText: {fileID: 0}
 --- !u!114 &9177670155487657013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,9 +1974,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbd1760e18bbc74cb84a51b6e53d5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemName: PowerUp1
-  _price: 25
+  _powerUp: {fileID: 0}
   _buyButton: {fileID: 9177670155487657009}
+  _costText: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

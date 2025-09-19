@@ -5,13 +5,15 @@ public class ShopController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _trophyCounterText;
 
-    private void OnEnable()
+    private void Start()
     {
+   
         UpdateTrophyUI(TrophyManager.Instance.GetTrophies());
         TrophyManager.Instance.OnTrophyChanged += UpdateTrophyUI;
+        
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (TrophyManager.Instance != null)
             TrophyManager.Instance.OnTrophyChanged -= UpdateTrophyUI;
