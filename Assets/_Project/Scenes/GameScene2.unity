@@ -1372,12 +1372,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[1].prefab.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
+      propertyPath: pools.Array.data[1].prefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 4781395462644960536, guid: 0019a84d7db6bae4b9895df9f188d71d, type: 3}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[1].prefab.Array.data[1]
       value: 
-      objectReference: {fileID: 4781395462644960536, guid: 0019a84d7db6bae4b9895df9f188d71d, type: 3}
+      objectReference: {fileID: 2444199614095502544, guid: f745245287effab489615950db9e15ed, type: 3}
     - target: {fileID: 4312130142915950033, guid: d4e306557578ec84a9f7de1ad08733fb, type: 3}
       propertyPath: pools.Array.data[1].prefab.Array.data[2]
       value: 
