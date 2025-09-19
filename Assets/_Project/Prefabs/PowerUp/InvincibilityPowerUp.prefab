@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5139821343866162156}
   - component: {fileID: 2566976774311246892}
   - component: {fileID: 9100738472718923554}
-  - component: {fileID: 737385185808593948}
   - component: {fileID: 3857586669657845479}
+  - component: {fileID: 3905683147013370101}
   m_Layer: 0
   m_Name: InvincibilityPowerUp
   m_TagString: Untagged
@@ -29,10 +29,11 @@ Transform:
   m_GameObject: {fileID: 3691363047110089490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3091187, y: 0.5230498, z: 0.76630497}
+  m_LocalPosition: {x: 6.3091187, y: 1.05, z: 0.76630497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1115097759547261243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2566976774311246892
@@ -50,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3691363047110089490}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -85,8 +86,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &737385185808593948
-BoxCollider:
+--- !u!114 &3857586669657845479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691363047110089490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce435a74ef2901840b2dc5bcc36650d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _powerUp: {fileID: 11400000, guid: 65b80e403c9911e438e3aa424e320227, type: 2}
+--- !u!135 &3905683147013370101
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,18 +118,67 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.74
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3857586669657845479
-MonoBehaviour:
+--- !u!1001 &644902037181130448
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5139821343866162156}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+      propertyPath: m_Name
+      value: Invincibility_Mesh
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+--- !u!4 &1115097759547261243 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4b5e448f9465e0947bb76299ad0269c8, type: 3}
+  m_PrefabInstance: {fileID: 644902037181130448}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3691363047110089490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce435a74ef2901840b2dc5bcc36650d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUp: {fileID: 11400000, guid: 65b80e403c9911e438e3aa424e320227, type: 2}

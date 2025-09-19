@@ -4,6 +4,13 @@ public class PowerUpCollector : MonoBehaviour
 {
     [SerializeField] private AbstractPowerUp _powerUp;
 
+    private SaveData data;
+
+    private void Start()
+    {
+        data = SaveSystem.Load();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -18,7 +25,6 @@ public class PowerUpCollector : MonoBehaviour
         {
             _powerUp.ApplyEffect(player);
 
-            SaveData data = SaveSystem.Load();
             if (!data.ownedPowerUps.Contains(_powerUp.PowerUpID))
             {
                 data.ownedPowerUps.Add(_powerUp.PowerUpID);
