@@ -24,6 +24,7 @@ public class ObjectPooler : MonoBehaviour
             return;
         }
         Instance = this;
+        transform.parent = null;
         DontDestroyOnLoad(gameObject);
 
 

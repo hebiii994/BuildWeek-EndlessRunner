@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4325495456448579708}
   - component: {fileID: 7452567505342809008}
   - component: {fileID: 2443377306241273375}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Obstacle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8529531755723671289}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pivot_Obstacle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

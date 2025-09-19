@@ -659,28 +659,32 @@ MonoBehaviour:
   _spawnableObjects:
   - poolTag: JumpObstacle
     spawnChance: 0.8
-    canHaveTrophy: 1
-    trophyPoolTag: Trophy
-    trophyChance: 0.377
-    trophySpawnOffset: {x: 0, y: 2, z: 0}
+    checkRadius: 1
+    secondarySpawns:
+    - poolTag: Invincibility_PowerUp
+      spawnChance: 0.123
+      spawnOffset: {x: 0, y: 2, z: 0}
+    - poolTag: Trophy
+      spawnChance: 0.563
+      spawnOffset: {x: 0, y: 2, z: 0}
   - poolTag: SlideObstacle
     spawnChance: 0.8
-    canHaveTrophy: 1
-    trophyPoolTag: Trophy
-    trophyChance: 0.605
-    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+    checkRadius: 1
+    secondarySpawns:
+    - poolTag: Invincibility_PowerUp
+      spawnChance: 0.142
+      spawnOffset: {x: 0, y: 0.5, z: 0}
+    - poolTag: Trophy
+      spawnChance: 0.67
+      spawnOffset: {x: 0, y: 0.5, z: 0}
   - poolTag: Defensor
     spawnChance: 0.8
-    canHaveTrophy: 0
-    trophyPoolTag: Trophy
-    trophyChance: 0.5
-    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+    checkRadius: 1
+    secondarySpawns: []
   - poolTag: MovingObstacle
     spawnChance: 0.695
-    canHaveTrophy: 0
-    trophyPoolTag: Trophy
-    trophyChance: 0.5
-    trophySpawnOffset: {x: 0, y: 0.2, z: 0}
+    checkRadius: 1
+    secondarySpawns: []
   _spawnPoints:
   - {fileID: 9195037148501269879}
   - {fileID: 2926406503190116599}
@@ -698,6 +702,9 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &427239124775720232
 GameObject:
   m_ObjectHideFlags: 0

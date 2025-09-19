@@ -3,6 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+public class SecondarySpawn
+{
+    [Tooltip("Il tag dell'oggetto secondario nell'Object Pooler (es. 'Trophy', 'InvincibilityPowerUp').")]
+    public string poolTag;
+
+    [Tooltip("La probabilità da 0 a 1 che questo oggetto appaia insieme all'ostacolo principale.")]
+    [Range(0f, 1f)]
+    public float spawnChance = 0.5f;
+
+    [Tooltip("La posizione dell'oggetto relativa all'ostacolo (es. Y=2 per metterlo sopra).")]
+    public Vector3 spawnOffset = new Vector3(0, 2f, 0);
+}
+
+
+[System.Serializable]
 public class SpawnableObject
 {
     [Tooltip("Il tag usato nell'Object Pooler per questo oggetto.")]
@@ -12,20 +27,14 @@ public class SpawnableObject
     [Range(0f, 1f)]
     public float spawnChance = 0.7f;
 
-    [Header("Trophy Settings")]
-    [Tooltip("Questo oggetto può avere un trofeo associato?")]
-    public bool canHaveTrophy;
+    [Tooltip("Il raggio usato per controllare se c'è già un altro ostacolo in questa posizione.")]
+    public float checkRadius = 1f;
 
-    [Tooltip("Il tag del trofeo nell'Object Pooler.")]
-    public string trophyPoolTag = "Trophy"; 
-
-    [Tooltip("La probabilità da 0 a 1 che il trofeo appaia, se l'oggetto viene generato.")]
-    [Range(0f, 1f)]
-    public float trophyChance = 0.5f;
-
-    [Tooltip("La posizione del trofeo relativa all'ostacolo (es. Y=2 per metterlo sopra).")]
-    public Vector3 trophySpawnOffset = new Vector3(0, 2f, 0);
+    [Header("Secondary Spawns")]
+    [Tooltip("Lista di oggetti secondari (trofei, power-up) che possono apparire con questo ostacolo.")]
+    public List<SecondarySpawn> secondarySpawns = new List<SecondarySpawn>();
 }
+
 
 public class ObstacleSpawner : MonoBehaviour
 {
@@ -42,6 +51,11 @@ public class ObstacleSpawner : MonoBehaviour
     [Tooltip("Seleziona il layer 'Ground' per allineare gli oggetti al terreno.")]
     [SerializeField] private LayerMask _groundLayer;
 
+    [Header("Overlap Prevention Settings")]
+    [Tooltip("Seleziona il layer a cui appartengono gli ostacoli per evitare sovrapposizioni.")]
+    [SerializeField] private LayerMask _obstacleLayer;
+
+
     private void Awake()
     {
         if (_spawnPoints.Count > 0) return;
@@ -54,21 +68,17 @@ public class ObstacleSpawner : MonoBehaviour
                 {
                     _spawnPoints.Add(point);
                 }
-
                 Debug.Log($"Trovati e assegnati {_spawnPoints.Count} spawn points dal contenitore '{child.name}'", this.gameObject);
-                return; 
+                return;
             }
         }
-
         Debug.LogWarning($"Nessun contenitore con il tag 'SpawnPointContainer' trovato su {gameObject.name}. Assicurati di aver assegnato il tag corretto.", this.gameObject);
     }
 
     public void SpawnObjectsImmediate()
     {
         StartCoroutine(SpawnWithPhysicsDelay());
-
     }
-
 
     private IEnumerator SpawnWithPhysicsDelay()
     {
@@ -89,8 +99,6 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-
-
     private void TrySpawnObjectAtPoint(Transform spawnPoint)
     {
         if (_spawnableObjects.Count == 0) return;
@@ -101,37 +109,46 @@ public class ObstacleSpawner : MonoBehaviour
             Vector3 rayStartPoint = spawnPoint.position + Vector3.up * 5f;
             RaycastHit hit;
 
-            if (Physics.Raycast(rayStartPoint, Vector3.down, out hit, 10f, _groundLayer, QueryTriggerInteraction.Collide))
+            if (Physics.Raycast(rayStartPoint, Vector3.down, out hit, 10f, _groundLayer, QueryTriggerInteraction.Ignore))
             {
+                if (Physics.CheckSphere(hit.point, objectToTry.checkRadius, _obstacleLayer))
+                {
+                    return;
+                }
 
                 GameObject spawnedObject = ObjectPooler.Instance.SpawnFromPool(objectToTry.poolTag, hit.point, Quaternion.identity);
 
                 if (spawnedObject != null)
                 {
                     Vector3 finalPosition = hit.point;
-                    Quaternion finalRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                    Quaternion finalRotation = Quaternion.FromToRotation(Vector3.up, hit.normal) * spawnedObject.transform.rotation;
 
                     Collider objectCollider = spawnedObject.GetComponent<Collider>();
                     if (objectCollider != null)
                     {
-                        float yOffset = objectCollider.bounds.extents.y;
-                        finalPosition += new Vector3(0, yOffset, 0);
+                        finalPosition += hit.normal * objectCollider.bounds.extents.y;
                     }
-
 
                     spawnedObject.transform.position = finalPosition;
                     spawnedObject.transform.rotation = finalRotation;
-
                     spawnedObject.transform.SetParent(transform);
 
-                    if (objectToTry.canHaveTrophy && Random.value < objectToTry.trophyChance)
+                    var potentialSecondaries = new List<SecondarySpawn>(objectToTry.secondarySpawns);
+                    potentialSecondaries.Shuffle();
+
+                    foreach (var secondary in potentialSecondaries)
                     {
-                        GameObject spawnedTrophy = ObjectPooler.Instance.SpawnFromPool(objectToTry.trophyPoolTag, Vector3.zero, Quaternion.identity);
-                        if (spawnedTrophy != null)
+                        if (Random.value < secondary.spawnChance)
                         {
-                            spawnedTrophy.transform.SetParent(spawnedObject.transform);
-                            spawnedTrophy.transform.localPosition = objectToTry.trophySpawnOffset;
-                            spawnedTrophy.transform.localRotation = Quaternion.identity;
+                            GameObject spawnedSecondary = ObjectPooler.Instance.SpawnFromPool(secondary.poolTag, Vector3.zero, Quaternion.identity);
+                            if (spawnedSecondary != null)
+                            {
+                                spawnedSecondary.transform.SetParent(spawnedObject.transform);
+                                spawnedSecondary.transform.localPosition = secondary.spawnOffset;
+                                spawnedSecondary.transform.localRotation = Quaternion.identity;
+
+                                break;
+                            }
                         }
                     }
                 }
